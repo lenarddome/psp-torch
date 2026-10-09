@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# psp-torch
+benchmarks/results/_scratch/
+notebooks/oscar/results*/

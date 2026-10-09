@@ -1,0 +1,11 @@
+build,seed,seconds,iterations,patterns,evaluations,filled
+psp-torch 0.1.0 cpu float64,1,189.463,1000,123,50917,False
+psp-torch 0.1.0 cpu float64,2,218.402,1000,129,55917,False
+psp-torch 0.1.0 cpu float64,3,181.327,1000,107,36613,False
+psp-torch 0.1.0 cuda float32,1,200.627,1000,120,49756,False
+psp-torch 0.1.0 cuda float32,2,197.762,1000,114,49002,False
+psp-torch 0.1.0 cuda float32,3,197.018,1000,112,46166,False
+psp-torch 0.1.0 cuda float64,1,193.41,1000,116,51043,False
+psp-torch 0.1.0 cuda float64,3,191.89,1000,117,50893,False
+psp 1.0.6 (R),2,4285.36,1000,131,58308,False
+psp 1.0.6 (R),3,3789.86,1000,120,51323,False

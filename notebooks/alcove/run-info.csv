@@ -1,0 +1,6 @@
+stage,seconds,iterations,evaluations,patterns
+learners,1.719,,500.0,
+orders,656.411,,,
+psp,189.589,2000.0,14369.0,44.0
+uniform,7.749,,4000.0,
+volume,124.927,,35200.0,
