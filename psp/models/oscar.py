@@ -250,7 +250,7 @@ def random_initial_state(
 def _gating(
     x: torch.Tensor, eta: torch.Tensor, P: torch.Tensor
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Equation 1: per-row p-norm gating of the input by the saliences.
+    """Equation 1, 2, 3: per-row p-norm gating of the input by the saliences.
 
     ``x`` is ``(B, n)``, ``eta`` ``(B, n, n)`` (row k: the saliences feeding node k),
     ``P`` ``(B, 1, 1)``. Returns the gated input ``(B, n, n)`` and the p-norm ``(B, n)``.
@@ -303,28 +303,41 @@ def oscar(
         ``return_trials`` also ``prob``, ``activations`` and ``error`` of shape
         ``(B, T, 5)``.
     """
-    P = params["P"].reshape(-1, 1, 1)
-    alpha = params["alpha"].reshape(-1, 1, 1)
-    mu = params["mu"].reshape(-1, 1, 1)
-    rho = params["rho"].reshape(-1, 1, 1)
-    beta = params["beta"].reshape(-1, 1)
-    B = int(P.shape[0])
+    P = params["P"].reshape(-1, 1, 1) ## attention normalization parameter
+    alpha = params["alpha"].reshape(-1, 1, 1) ## weight learning parameter 
+    mu = params["mu"].reshape(-1, 1, 1) ## attention learning parameter
+    rho = params["rho"].reshape(-1, 1, 1) ## attention shift parameter (step-size)
+    beta = params["beta"].reshape(-1, 1) ## inverse temperature
+
+    ## set up sizes, devices, and dtypes (float32 or float64) for the model run; technical specifications for pytorch
+    ## this sets up the parameters needed for pytorch to distribute the work
+    B = int(P.shape[0]) ## determine batch size
     device, dtype = P.device, P.dtype
-    n = len(NODES)
+    n = len(NODES) ## the number of nodes (layers are fully connected)
     if training.ndim == 2:
         training = training.unsqueeze(0)
-    training = training.to(device, dtype)
+    training = training.to(device, dtype) ## move participant data to appropriate device (either CPU or GPU)
+    ## S = number of participants (sequences)
+    ## T = number of trials per sequence (participants)
+    ## _ = number of columns (not needed)
     S, T, _ = training.shape
+
+    ## if no sequence is given, e.g. only one participant is run, every parameter is mapped to sequence 0
     if sequence is None:
         sequence = torch.zeros(B, dtype=torch.int64, device=device)
-    sequence = sequence.to(device)
-    eye = torch.eye(n, device=device, dtype=dtype)
-    off = 1 - eye
+    sequence = sequence.to(device) ## move 
+
+    ## create a mask to reset diagonals to 0
+    eye = torch.eye(n, device=device, dtype=dtype) ## identity matrix
+    off = 1 - eye ## complement of an identity matrix
+
+    ## copy initial attention and connection weights
     eta0 = eta0.to(device, dtype) * off
     weights0 = weights0.to(device, dtype) * off
     eta = eta0.clone()
     weights = weights0.clone()
 
+    ## allocate empty tensors to store output for the current run(s)
     rare_sum = torch.zeros((B, len(STIMULI)), device=device, dtype=dtype)
     rare_count = torch.zeros((B, len(STIMULI)), device=device, dtype=dtype)
     if return_trials:
@@ -335,28 +348,40 @@ def oscar(
     first_column = torch.zeros(n, device=device, dtype=dtype)
     first_column[0] = 1.0
 
+    ## run model on all trials
     for t in range(T):
+        ## extract trials
         row = training[sequence, t]  # (B, 19)
         ctrl = row[:, 0]
         valid = ctrl != PAD
+        ## reset weights for new participant or session
         reset = ((ctrl == 1) | (ctrl == 3)).reshape(B, 1, 1)
         eta = torch.where(reset, eta0, eta)
         weights = torch.where(reset, weights0, weights)
 
-        x = row[:, COLSKIP : COLSKIP + n]
-        y = row[:, COLSKIP + n : COLSKIP + 2 * n]
-        f = row[:, -n:]
+        x = row[:, COLSKIP : COLSKIP + n] ## extract input vector
+        y = row[:, COLSKIP + n : COLSKIP + 2 * n] ## extract excitability vector (binary gates for which output node can respond)
+        f = row[:, -n:] ## extract feedback vector
+
+        ## if all excitability is 0, avoid numerical instability in softmax by setting everything to 1
         y = torch.where((y.sum(dim=1, keepdim=True) == 0), torch.ones_like(y), y)
+        ## if no feedback is provided, the input vector is its own teaching signal
         f = torch.where((f.sum(dim=1, keepdim=True) == 0), x, f)
 
-        # Equation 1 and 2: gated connection weights, self-connections removed
+        # Equation 1, 2, 3: gated connection weights, self-connections removed
         gated, _ = _gating(x, eta, P)
+        # Equation 4: calculate model predictions
         connection = weights * gated * y.unsqueeze(2) * off
         activation = connection.sum(dim=2)  # (B, n)
+        # Equation 5: calculate choice probabilities over excitable output nodes (gated softmax)
         power = torch.exp(beta * activation) * y
         prob = power / power.sum(dim=1, keepdim=True)
+
+        ## check whether current trial is a valid test trials
         test = valid & (ctrl == 2)
-        stim = row[:, 3].long()
+        stim = row[:, 3].long() ## extract current trial for all rows in the batch
+
+        ## save current outputs before learning
         rare = torch.where(test, prob[:, rare_index], torch.zeros_like(prob[:, rare_index]))
         rare_sum.scatter_add_(1, stim.unsqueeze(1), rare.unsqueeze(1))
         rare_count.scatter_add_(1, stim.unsqueeze(1), test.to(dtype).unsqueeze(1))
@@ -369,15 +394,15 @@ def oscar(
         # learning on every trial that is neither a test trial nor padding
         learn = (valid & (ctrl != 2)).reshape(B, 1, 1)
         supervised = ((ctrl == 3) | (ctrl == 4)).reshape(B, 1)
-        teacher = torch.where(supervised, x + f, x)  # (B, n): the complete input
-        present = (teacher != 0).to(dtype)  # (B, n)
+        teacher = torch.where(supervised, x + f, x)  # (B, n): the complete input + teacher
+        present = (teacher != 0).to(dtype)  # (B, n); convert all non-zero teacher to float to avoid multiplying doubles with integers
 
-        # ten recurrent attention shifts, all five nodes at once
+        ## Equation 9-10: ten recurrent attention shifts, all five nodes at once
         eta_p = eta
         for _ in range(SHIFT_ITERATIONS):
             gated_p, pnorm_p = _gating(teacher, eta_p, P)
             prediction = (weights * gated_p).sum(dim=2)  # (B, n), output all ones
-            error_p = teacher - prediction  # (B, n)
+            error_p = teacher - prediction  # (B, n); Equation 7: calculate prediction error
             salience = gated_p ** (P - 1) * teacher.unsqueeze(1)  # (B, n, n)
             activations = weights * teacher.unsqueeze(1)
             attended = prediction.unsqueeze(2) * salience
@@ -385,16 +410,18 @@ def oscar(
             out = (activations - attended) * error_p.unsqueeze(2)
             delta_eta = torch.tanh(rho / pnorm_p.unsqueeze(2) * out * teacher.unsqueeze(1))
             eta_p = (eta_p + delta_eta).clamp_min(ETA_FLOOR)
+        ## Equation 11: state displacement (reconstruction error)
         update = mu * (eta_p - eta) * present.unsqueeze(1)
         eta_new = (eta + update).clamp_min(ETA_FLOOR)
 
-        # the delta rule with the final saliences
+        # Equation 12: the delta rule with the final saliences
         gated_final, _ = _gating(teacher, eta_new, P)
         prediction_final = (weights * gated_final * off).sum(dim=2)
         error = teacher - prediction_final
         delta_w = alpha * error.unsqueeze(2) * teacher.unsqueeze(1) * gated_final
         weights_new = (weights + delta_w) * off
 
+        ## update weights for all current learning trials
         eta = torch.where(learn, eta_new, eta)
         weights = torch.where(learn, weights_new, weights)
         if return_trials:
