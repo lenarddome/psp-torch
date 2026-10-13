@@ -359,3 +359,363 @@ psp-torch 0.1.0 cuda,"3 pooled runs of 10 starts, population 10",27,50,1870,True
 psp-torch 0.1.0 cuda,"3 pooled runs of 10 starts, population 10",28,50,1775,True
 psp-torch 0.1.0 cuda,"3 pooled runs of 10 starts, population 10",29,50,1902,True
 psp-torch 0.1.0 cuda,"3 pooled runs of 10 starts, population 10",30,50,1889,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",1,47,643,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",2,46,580,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",3,48,595,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",4,50,575,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",5,47,564,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",6,50,658,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",7,49,664,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",8,50,602,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",9,47,564,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",10,46,590,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",11,50,613,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",12,48,668,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",13,49,680,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",14,46,594,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",15,48,584,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",16,49,632,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",17,49,625,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",18,48,615,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",19,49,610,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",20,49,621,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",21,49,608,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",22,49,606,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",23,50,655,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",24,49,642,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",25,49,635,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",26,47,572,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",27,50,635,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",28,47,569,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",29,48,566,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.3",30,49,632,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",1,45,549,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",2,50,617,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",3,50,666,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",4,49,671,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",5,49,588,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",6,49,640,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",7,50,679,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",8,48,626,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",9,49,598,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",10,49,666,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",11,50,650,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",12,49,619,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",13,49,622,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",14,49,604,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",15,48,632,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",16,45,567,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",17,50,629,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",18,47,575,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",19,48,608,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",20,50,605,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",21,43,491,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",22,48,571,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",23,50,660,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",24,49,651,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",25,48,619,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",26,50,607,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",27,49,605,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",28,50,629,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",29,50,640,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 10",30,49,627,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",1,50,1709,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",2,50,1729,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",3,50,1678,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",4,50,1710,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",5,50,1726,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",6,50,1703,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",7,50,1727,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",8,50,1773,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",9,50,1690,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",10,50,1730,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",11,50,1720,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",12,50,1761,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",13,50,1718,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",14,50,1736,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",15,50,1738,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",16,50,1662,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",17,50,1736,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",18,50,1791,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",19,50,1819,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",20,50,1784,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",21,50,1749,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",22,50,1713,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",23,50,1730,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",24,50,1718,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",25,49,1728,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",26,50,1682,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",27,50,1765,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",28,50,1717,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",29,50,1760,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 30",30,50,1713,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",1,50,714,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",2,50,699,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",3,50,741,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",4,50,663,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",5,50,765,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",6,50,730,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",7,50,725,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",8,50,776,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",9,50,760,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",10,50,685,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",11,50,763,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",12,50,861,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",13,50,668,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",14,50,789,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",15,50,734,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",16,50,728,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",17,50,698,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",18,50,705,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",19,50,760,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",20,49,639,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",21,49,658,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",22,50,745,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",23,50,822,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",24,49,696,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",25,50,663,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",26,50,707,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",27,50,775,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",28,49,664,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",29,50,716,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1 start, population 10, radius 0.5",30,50,735,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",1,50,1719,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",2,50,1756,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",3,50,1770,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",4,50,1757,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",5,50,1736,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",6,50,1827,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",7,50,1747,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",8,50,1786,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",9,50,1731,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",10,50,1749,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",11,50,1734,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",12,50,1699,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",13,50,1730,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",14,50,1799,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",15,50,1756,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",16,50,1696,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",17,50,1777,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",18,50,1853,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",19,50,1743,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",20,50,1718,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",21,50,1802,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",22,50,1722,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",23,50,1706,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",24,50,1750,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",25,50,1762,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",26,50,1766,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",27,50,1710,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",28,50,1683,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",29,50,1760,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","10 random starts, population 30",30,50,1795,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",1,50,1813,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",2,50,1791,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",3,50,1872,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",4,50,1914,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",5,50,1862,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",6,50,1922,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",7,50,1922,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",8,50,1895,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",9,50,1921,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",10,50,1814,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",11,50,1933,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",12,50,1882,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",13,50,1837,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",14,50,1910,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",15,50,1830,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",16,50,1801,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",17,50,1928,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",18,50,1799,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",19,50,1787,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",20,50,1738,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",21,50,1683,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",22,50,1852,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",23,50,1938,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",24,50,1891,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",25,50,1863,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",26,50,1871,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",27,50,1822,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",28,50,1858,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",29,50,1767,True
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",30,50,1939,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",1,47,604,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",2,50,639,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",3,47,577,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",4,48,577,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",5,50,660,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",6,48,604,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",7,49,649,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",8,50,649,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",9,50,643,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",10,43,551,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",11,46,585,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",12,49,609,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",13,50,592,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",14,45,541,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",15,49,653,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",16,49,641,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",17,48,635,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",18,50,661,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",19,46,550,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",20,47,616,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",21,49,604,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",22,48,614,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",23,50,638,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",24,50,653,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",25,47,603,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",26,49,598,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",27,48,606,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",28,50,633,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",29,49,635,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.3",30,49,631,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",1,50,633,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",2,49,606,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",3,50,642,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",4,46,574,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",5,49,577,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",6,50,638,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",7,50,638,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",8,49,629,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",9,49,629,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",10,49,625,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",11,49,588,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",12,45,568,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",13,49,615,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",14,50,640,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",15,46,576,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",16,50,635,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",17,50,619,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",18,50,670,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",19,47,615,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",20,44,554,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",21,50,596,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",22,50,611,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",23,45,606,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",24,49,688,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",25,49,612,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",26,49,605,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",27,50,670,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",28,49,652,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",29,50,636,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 10",30,50,646,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",1,50,1688,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",2,50,1752,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",3,50,1750,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",4,50,1739,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",5,50,1821,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",6,50,1667,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",7,50,1768,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",8,50,1737,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",9,50,1801,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",10,50,1759,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",11,50,1713,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",12,50,1751,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",13,50,1686,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",14,50,1685,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",15,50,1757,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",16,50,1744,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",17,50,1678,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",18,50,1722,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",19,50,1742,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",20,50,1784,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",21,50,1770,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",22,50,1735,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",23,50,1746,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",24,50,1748,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",25,50,1728,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",26,49,1714,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",27,50,1768,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",28,50,1675,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",29,50,1714,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 30",30,50,1777,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",1,50,682,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",2,50,698,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",3,50,750,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",4,50,734,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",5,50,724,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",6,50,697,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",7,49,688,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",8,50,694,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",9,50,760,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",10,50,668,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",11,50,679,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",12,50,750,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",13,50,711,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",14,50,731,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",15,50,724,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",16,50,761,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",17,50,723,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",18,50,794,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",19,50,653,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",20,50,778,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",21,50,668,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",22,50,685,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",23,50,701,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",24,50,791,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",25,50,758,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",26,50,729,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",27,50,745,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",28,50,722,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",29,50,757,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1 start, population 10, radius 0.5",30,50,699,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",1,50,1701,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",2,50,1706,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",3,50,1716,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",4,50,1721,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",5,50,1809,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",6,50,1747,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",7,50,1884,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",8,50,1756,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",9,50,1697,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",10,50,1709,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",11,50,1655,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",12,50,1739,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",13,50,1720,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",14,50,1760,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",15,50,1888,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",16,50,1714,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",17,50,1733,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",18,50,1755,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",19,50,1778,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",20,50,1754,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",21,50,1688,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",22,50,1773,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",23,50,1828,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",24,50,1730,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",25,50,1699,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",26,50,1742,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",27,50,1770,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",28,50,1661,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",29,50,1692,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","10 random starts, population 30",30,50,1824,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",1,50,1861,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",2,50,1835,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",3,50,1841,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",4,50,1822,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",5,50,1806,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",6,50,1848,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",7,50,1864,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",8,50,1801,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",9,50,1858,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",10,50,1847,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",11,50,1842,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",12,50,1788,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",13,50,1822,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",14,50,1831,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",15,50,1744,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",16,50,1885,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",17,50,1890,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",18,50,1939,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",19,50,1896,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",20,50,1739,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",21,50,1812,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",22,50,1919,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",23,50,1896,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",24,50,1952,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",25,50,1979,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",26,50,1850,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",27,50,1870,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",28,50,1775,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",29,50,1902,True
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","3 pooled runs of 10 starts, population 10",30,50,1889,True

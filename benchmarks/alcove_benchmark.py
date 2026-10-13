@@ -2,7 +2,8 @@
 
 Usage::
 
-    uv run python benchmarks/alcove_benchmark.py [--device cpu] [--dtype float64] [--seeds 1,2,3]
+    uv run python benchmarks/alcove_benchmark.py [--device cpu] [--dtype float64] [--seeds 1,2,3] \
+        [--machine NAME]
     uv run python benchmarks/alcove_benchmark.py --import-r <directory from r/alcove_benchmark.R>
 
 The workload is the ALCOVE recipe on the full ranges of the learning rates
@@ -32,7 +33,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from compare import RESULTS, read_rows, replace_build
+from compare import RESULTS, machine_suffix, read_rows, replace_build
 
 import psp
 from psp import pspGlobal, read_saved
@@ -150,6 +151,9 @@ def main() -> None:
     parser.add_argument("--dtype", default="float64", choices=["float32", "float64"])
     parser.add_argument("--seeds", default="1,2,3")
     parser.add_argument("--label", default=None)
+    parser.add_argument(
+        "--machine", default=None, help="name of this machine, appended to the default label"
+    )
     parser.add_argument("--iterations", type=int, default=ITERATIONS, help="for smoke tests only")
     parser.add_argument(
         "--import-r", default=None, help="merge the files r/alcove_benchmark.R wrote"
@@ -161,7 +165,9 @@ def main() -> None:
         return
     device = torch.device(args.device)
     dtype = getattr(torch, args.dtype)
-    label = args.label or f"psp-torch {psp.__version__} {device.type} {args.dtype}"
+    label = args.label or (
+        f"psp-torch {psp.__version__} {device.type} {args.dtype}" + machine_suffix(args.machine)
+    )
     run(device, dtype, [int(s) for s in args.seeds.split(",")], label, args.iterations)
 
 

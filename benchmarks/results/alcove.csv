@@ -9,3 +9,12 @@ psp-torch 0.1.0 cuda float64,1,193.41,1000,116,51043,False
 psp-torch 0.1.0 cuda float64,3,191.89,1000,117,50893,False
 psp 1.0.6 (R),2,4285.36,1000,131,58308,False
 psp 1.0.6 (R),3,3789.86,1000,120,51323,False
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,111.413,1000,123,50917,False
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,113.531,1000,129,55917,False
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,96.891,1000,107,36613,False
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,107.326,1000,120,49756,False
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,107.616,1000,114,49002,False
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,107.539,1000,112,46166,False
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,109.849,1000,116,51043,False
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,110.589,1000,61,21746,False
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,112.651,1000,117,50893,False

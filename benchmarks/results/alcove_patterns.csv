@@ -1188,3 +1188,1002 @@ psp 1.0.6 (R),3,,1
 psp 1.0.6 (R),3,"I < (III, IV, VI) < (II, V)",2
 psp 1.0.6 (R),3,"I < (III, IV) < VI < V < II",1
 psp 1.0.6 (R),3,,1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, III, IV, V) < VI",4889
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, III, IV, V, VI)",2334
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III, IV, V, VI)",16280
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II) < (III, IV, V, VI)",168
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, III, IV) < V < VI",461
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < (III, IV, V, VI)",322
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < (III, IV, V) < VI",806
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V) < VI",588
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (II, III) < V < VI",375
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < III < (II, V) < VI",1360
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < IV < III < V < II < VI,613
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < III < V < (II, VI)",515
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < IV < III < II < V < VI,371
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < III < (II, V, VI)",105
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V) < VI",603
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III, IV, V) < VI",3872
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V) < VI",4159
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V, VI)",340
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < (III, IV) < V < VI",133
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (II, III, V) < VI",527
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < II < V < VI",332
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < III < II < V < VI",73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III, IV) < V < VI",249
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < IV < (III, V) < VI",316
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, IV) < (III, V) < VI",395
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < IV < (II, V) < VI",469
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < IV < II < III < V < VI,52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V, VI)",629
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, IV) < III < V < VI",102
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < (II, IV) < V < VI",159
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < IV < II < V < VI",127
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V) < VI",1423
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < II < IV < III < V < VI,23
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < II < V < VI",82
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (II, III, V, VI)",179
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < II < (III, V) < VI",170
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < V < VI",700
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < II < VI",322
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV, V) < (II, VI)",233
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < II < IV < V < III < VI,73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V, VI)",471
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < III < V < II < VI",89
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II, IV) < V < VI",73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < III < IV < II < V < VI,47
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (III, V, VI) < II",134
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < (II, IV, V) < VI",481
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < V < II < VI",182
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III) < V < VI",71
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, V, VI) < II",124
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < V < (II, VI)",56
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, IV) < V < III < VI",145
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V) < VI",660
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V, VI)",52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV, V, VI) < II",49
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < (II, VI)",95
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV, V) < II < VI",93
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II, IV) < (V, VI)",12
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V) < VI",207
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < IV < II < V < III < VI,56
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V, VI)",189
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < IV < V < (III, VI)",213
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < VI < (III, V) < II",10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (III, V) < II < VI",55
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV, VI) < (II, V)",272
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III, IV) < (V, VI)",37
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V, VI)",405
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < IV < (III, V, VI)",57
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < (IV, V) < II < VI",14
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV, V, VI) < II",27
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II, IV, V, VI)",73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < VI < (II, V)",103
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, IV) < II < V < VI",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V) < VI",7
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < (V, VI) < II",49
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < III < V < (II, VI)",73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < VI < II",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < III < IV < V < II < VI,10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, IV) < V < (III, VI)",13
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < V < (II, VI)",16
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < II < (IV, V) < (III, VI)",18
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < VI < V < II",52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < VI < (III, V) < II",132
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV, VI) < V < II",166
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < IV < (II, V, VI)",16
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < II < (IV, V) < VI",80
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"IV < (I, II, III, V) < VI",90
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV, V) < (II, VI)",6
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, VI) < (II, V)",21
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"IV < (I, III) < (II, V) < VI",43
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, III, IV) < (V, VI)",10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < V < II < VI",13
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III) < (IV, V, VI)",28
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V, VI)",13
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < VI < (II, III, V)",60
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < V < II",38
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV, VI) < (III, V) < II",202
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV, VI) < (II, III, V)",55
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < (II, V)",98
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < IV < VI < (II, V)",21
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(II, III) < I < (IV, V) < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, II, IV, V) < VI",12
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < VI < (II, III, V)",38
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < VI < (II, V)",10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < IV < VI < III < V < II,1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III) < (IV, V) < VI",4
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < III < II < (IV, V) < VI",4
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < II < (I, IV, V, VI)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < (V, VI)",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < VI < V < II",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(II, III) < I < (IV, V, VI)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV) < (V, VI) < II",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < I < (II, IV) < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, II, III, IV, VI) < V",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, VI) < V",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V, VI)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(I, IV) < VI < III < V < II",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < (III, VI) < V < II",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V) < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < (III, IV, VI) < (II, V)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"I < IV < VI < III < (II, V)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,I < III < II < IV < V < VI,1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",1,"III < (I, IV) < (II, V) < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (III, IV, V, VI)",1308
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III, IV, V, VI)",18084
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II) < (III, IV, V, VI)",1001
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (III, IV, V) < VI",924
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, III, IV, V, VI)",2953
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < IV < (III, V) < VI",362
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (V, VI) < (III, IV)",528
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, III, IV, V) < VI",4856
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, III, IV) < V < VI",433
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (II, III) < V < VI",381
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < III < (II, V) < VI",1364
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, IV) < (III, V) < VI",434
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (III, IV) < V < VI",133
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < III < V < (II, VI)",400
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (II, III, V) < VI",620
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV, V) < (II, VI)",368
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < II < (III, V) < VI",160
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, IV) < III < V < VI",93
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV, V) < II < VI",90
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < IV < III < V < II < VI,588
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < IV < III < II < V < VI,401
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III, IV, V) < VI",3466
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II) < (V, VI) < (III, IV)",197
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < II < IV < III < V < VI,20
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < IV < II < III < V < VI,40
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < V < (II, VI)",74
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (III, V) < II < VI",353
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V) < VI",4272
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < II < V < VI",374
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < II < V < VI",85
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < V < II < VI",177
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, V, VI) < (III, IV)",22
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < III < II < V < VI",60
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V) < VI",1251
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V) < VI",535
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V) < VI",534
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III, IV) < V < VI",280
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V, VI)",593
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, V, VI) < (III, IV)",20
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < III < (II, IV, V) < VI",486
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < II < IV < V < III < VI,62
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, IV) < V < III < VI",177
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III) < V < VI",63
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < IV < II < V < III < VI,66
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < III < IV < (II, V) < VI",470
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < III < IV < II < V < VI,47
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (III, V) < (II, VI)",114
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < III < (II, IV) < V < VI",197
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < IV < II < V < VI",136
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II, IV) < (V, VI)",25
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V, VI)",477
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"IV < (I, II, III, V) < VI",64
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"IV < (I, III) < (II, V) < VI",53
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II, IV) < V < VI",78
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < III < V < II < VI",86
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V, VI)",306
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < III < (II, V, VI)",81
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < IV < V < (III, VI)",261
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (III, V, VI) < II",105
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV) < V < VI",695
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < V < II < VI",13
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < VI < (III, V) < II",114
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, IV) < V < (III, VI)",11
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (II, III, V, VI)",191
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, III, IV) < (V, VI)",18
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (III, V, VI) < II",114
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II, IV, V, VI)",54
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV, V, VI)",189
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < III < (IV, V) < II < VI",14
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, IV) < (II, V) < VI",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV, V, VI) < II",22
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < IV < (II, V, VI)",403
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (III, V) < VI < II",8
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < VI < (II, V)",91
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV, V, VI) < II",48
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < VI < (II, III, V)",46
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < (V, VI) < II",62
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV, V) < VI",602
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III, IV) < (V, VI)",45
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV, VI) < V < II",146
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV, V) < (II, VI)",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < VI < V < II",62
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV, VI) < (II, V)",260
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (III, V) < II < VI",57
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < IV < (II, V) < VI",189
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (IV, V) < (III, VI)",27
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < IV < (III, V, VI)",29
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < III < IV < (II, V, VI)",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < III < IV < V < II < VI,9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < (II, VI) < V",4
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II, IV, V) < VI",16
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V, VI)",20
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (III, V) < (II, VI)",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (III, VI) < (II, V)",94
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (IV, V, VI) < III",155
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III, IV) < V < (II, VI)",20
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II) < (IV, V, VI) < III",57
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, IV, V, VI) < III",60
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, IV, VI) < (III, V)",140
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < II < (IV, V) < VI",89
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < (III, VI) < V < II",33
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV, VI) < (III, V) < II",170
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV, VI) < (II, III, V)",52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II) < (IV, VI) < (III, V)",32
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II) < (IV, V, VI)",11
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < II < (IV, VI) < (III, V)",25
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < VI < (II, V)",8
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < IV < VI < (II, V)",20
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III) < (IV, V, VI)",16
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV, VI) < (II, V)",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, IV) < II < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (II, IV, VI) < (III, V)",54
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < VI < (III, V) < II",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < (III, VI) < (II, V)",12
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(II, III) < (I, IV, V) < VI",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < VI < (II, III, V)",25
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III, IV, VI) < V",6
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < IV < VI < III < (II, V)",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < VI < III < V < II",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"II < (I, III, IV, V, VI)",6
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV) < (V, VI)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"I < (III, IV) < (V, VI) < II",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(I, IV) < III < V < (II, VI)",34
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"II < I < (III, IV, V, VI)",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < I < (II, IV) < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"III < (I, II) < (IV, V) < VI",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,I < IV < VI < III < V < II,1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",2,"(II, III) < (I, IV, V, VI)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II, III, IV, V, VI)",11948
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II) < (III, IV, V, VI)",213
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, III, IV, V, VI)",2407
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < IV < III < V < II < VI,411
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < (III, IV, V, VI)",528
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < (III, IV, V) < VI",662
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, III, IV, V) < VI",3297
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < (III, IV) < V < VI",113
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < III < V < (II, VI)",768
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, III, IV) < V < VI",533
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (II, III) < V < VI",317
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV, V) < (II, VI)",285
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, IV) < III < V < VI",116
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V) < VI",2173
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II, III, IV, V) < VI",2478
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < III < (II, V, VI)",94
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < III < (II, V) < VI",790
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < II < V < VI",278
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < IV < (III, V) < VI",360
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < IV < III < II < V < VI,284
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V) < VI",247
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V) < VI",408
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V) < VI",717
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, IV) < (III, V) < VI",348
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV) < V < VI",559
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (II, III, V) < VI",355
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < IV < (II, V) < VI",415
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < (II, IV, V) < VI",345
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < II < (III, V) < VI",186
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (III, V) < (II, VI)",70
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < III < V < (II, VI)",63
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < IV < II < III < V < VI,52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V) < VI",357
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < III < II < V < VI",54
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < II < IV < III < V < VI,53
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < II < IV < V < III < VI,122
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < V < (II, VI)",87
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V, VI)",294
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V, VI)",55
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (III, V) < II < VI",234
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < V < (II, VI)",50
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, IV) < V < III < VI",170
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III) < V < VI",29
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < (II, IV) < V < VI",109
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < IV < V < (III, VI)",184
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V, VI)",360
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV, V) < II < VI",54
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < IV < (III, V, VI)",100
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < IV < II < V < III < VI,55
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < II < V < VI",109
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < V < II < VI",73
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < IV < II < V < VI",86
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < (IV, V) < (III, VI)",28
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V) < VI",133
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V, VI)",156
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, IV) < V < (III, VI)",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < III < IV < II < V < VI,26
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II, III, IV) < V < VI",176
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < IV < III < (V, VI)",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (II, III, V, VI)",61
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < II < (III, IV) < (V, VI)",58
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II, III, IV) < (V, VI)",22
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < VI < (II, V)",75
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < VI < V < II",43
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V, VI)",275
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < (IV, V) < II < VI",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < (V, VI) < II",52
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (II, III, IV) < (V, VI)",14
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < IV < (II, V, VI)",12
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"III < (I, II, IV) < V < VI",37
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV, VI) < (II, V)",132
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V, VI)",134
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV, V, VI) < II",27
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"III < (I, II, IV, V, VI)",28
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (III, V, VI) < II",46
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV) < V < II < VI",5
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV, V) < (II, VI)",10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III, IV, VI) < V < II",74
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < III < V < II < VI",23
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (III, V, VI) < II",47
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV, V, VI) < II",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (III, V) < II < VI",19
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"IV < (I, III) < (II, V) < VI",24
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < VI < (III, V) < II",50
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, II, III) < (IV, V, VI)",4
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"IV < (I, II, III, V) < VI",57
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < III < IV < V < II < VI,7
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < VI < (II, III, V)",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"III < (I, II, IV, V) < VI",7
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV, VI) < (II, III, V)",26
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < (II, V)",39
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"III < (I, II) < (IV, V, VI)",6
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (III, VI) < (II, V)",10
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV, VI) < (III, V) < II",79
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < VI < (II, III, V)",29
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,I < III < II < IV < V < VI,1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"III < (I, II, IV) < (V, VI)",6
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < IV < VI < (II, V)",11
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, III) < II < (IV, V) < VI",26
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < (III, VI) < V < II",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV, VI) < (II, V)",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < V < II",9
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(I, IV) < VI < III < V < II",3
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"(II, III) < (I, IV) < V < VI",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < IV < VI < (III, V) < II",2
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < (III, IV) < VI < (II, V)",1
+"psp-torch 0.1.0 cpu float64 (5800X, RTX 3060)",3,"I < III < II < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, III, IV, V) < VI",5201
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, III, IV, V, VI)",2840
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III, IV, V, VI)",15992
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II) < (III, IV, V, VI)",214
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < III < (II, V) < VI",1240
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < (III, IV, V, VI)",533
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, III, IV) < V < VI",537
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < IV < III < II < V < VI,362
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < IV < III < V < II < VI,488
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < III < V < (II, VI)",701
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V, VI)",482
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (II, III) < V < VI",324
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < (III, IV, V) < VI",592
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < III < (II, V, VI)",136
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < (III, IV) < V < VI",138
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, IV) < III < V < VI",116
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V) < VI",655
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III, IV, V) < VI",3436
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V) < VI",3940
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < IV < (III, V) < VI",355
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < V < (II, VI)",80
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < V < II < VI",162
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < II < IV < III < V < VI,55
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV, V) < (II, VI)",222
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (II, III, V) < VI",529
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < III < II < V < VI",50
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V, VI)",274
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, IV) < (III, V) < VI",357
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V) < VI",425
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < II < V < VI",346
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (II, III) < V < VI",24
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < IV < II < III < V < VI,57
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V, VI)",52
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < II < V < VI",95
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV, V) < II < VI",71
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III, IV) < V < VI",245
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V) < VI",1192
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < III < IV < (II, V) < VI",390
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < V < VI",696
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < II < (III, V) < VI",144
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < III < (II, IV) < V < VI",143
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < III < (II, IV, V) < VI",426
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V, VI)",483
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, V) < II < VI",289
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, V) < (II, VI)",88
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < III < IV < II < V < VI,32
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < V < (II, VI)",32
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < IV < II < V < VI",151
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V) < VI",649
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < II < IV < V < III < VI,71
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, IV) < V < III < VI",134
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < IV < (III, V, VI)",96
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (II, III, V, VI)",146
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II, IV) < V < VI",52
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < III < V < (II, VI)",58
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V) < VI",181
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < III < V < II < VI",69
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III, IV) < (V, VI)",27
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < IV < V < (III, VI)",175
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V, VI)",346
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < IV < II < V < III < VI,54
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < (III, IV) < (V, VI)",72
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV, VI) < V < II",156
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < VI < V < II",40
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V, VI)",152
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV, VI) < (II, V)",262
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, V, VI) < II",101
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV, V, VI) < II",58
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < IV < III < (V, VI)",6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < III < IV < (II, V, VI)",18
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < (V, VI) < II",49
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < VI < (II, V)",102
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV, V, VI) < II",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV, V) < (II, VI)",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (III, V) < II < VI",35
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < II < (IV, V) < VI",104
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV, VI) < (III, V) < II",199
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV, VI) < (II, III, V)",56
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < (II, V)",104
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < V < II",36
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < VI < (II, III, V)",73
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II, IV, V, VI)",51
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < (III, V, VI) < II",118
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, IV) < V < (III, VI)",14
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < VI < (III, V) < II",107
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < VI < (III, V) < II",6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < V < II < VI",10
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V, VI)",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V) < VI",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < VI < (II, III, V)",38
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < II < (IV, V) < (III, VI)",21
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II, IV) < (V, VI)",16
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,I < III < IV < V < II < VI,8
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (II, III, IV) < (V, VI)",24
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, II, IV, V) < VI",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(II, III, IV) < (I, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III, IV) < (II, VI) < V",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, VI) < (II, V)",15
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < IV < VI < (II, V)",18
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < III < (IV, V) < II < VI",13
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"IV < (I, III) < (II, V) < VI",47
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < VI < (II, V)",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, V) < VI < II",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"IV < (I, II, III, V) < VI",77
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III) < (IV, V, VI)",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV, VI) < (II, V)",4
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V, VI)",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < II < (I, IV, V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < (III, IV) < (V, VI) < II",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < I < (II, IV) < V < VI",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < VI < III < V < II",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < II < IV < V < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, IV) < VI < III < (II, V)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"I < IV < (III, VI) < V < II",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < (V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(I, II, III, IV, VI) < V",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"(II, III) < I < (IV, V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",1,"III < (I, IV) < (II, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < (III, IV, V, VI)",392
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III, IV, V, VI)",15297
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II) < (III, IV, V, VI)",172
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < (III, IV, V) < VI",747
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, III, IV, V, VI)",2456
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < IV < (III, V) < VI",398
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, III, IV) < V < VI",444
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, III, IV, V) < VI",4759
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < (III, IV) < V < VI",113
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < III < V < (II, VI)",619
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, IV) < (III, V) < VI",387
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < III < (II, V) < VI",1271
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < III < (II, V, VI)",144
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < II < V < VI",73
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV, V) < (II, VI)",287
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III, IV, V) < VI",3570
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, IV) < III < V < VI",116
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < IV < III < V < II < VI,713
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < IV < III < II < V < VI,350
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < V < (II, VI)",55
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < III < II < V < VI",70
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V) < VI",1260
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV, V) < II < VI",76
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < II < V < VI",299
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (II, III) < V < VI",362
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < II < IV < III < V < VI,34
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < IV < II < III < V < VI,59
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V) < VI",4051
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V, VI)",463
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < II < IV < V < III < VI,78
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V) < VI",640
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (II, III) < V < VI",35
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (II, III, V) < VI",532
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (III, V) < (II, VI)",83
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < II < (III, V) < VI",174
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V) < VI",585
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < V < II < VI",176
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (III, V) < II < VI",336
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V, VI)",53
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < III < V < II < VI",70
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V, VI)",571
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V, VI)",368
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, IV) < V < III < VI",166
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (II, III, V, VI)",156
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III, IV) < V < VI",219
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < IV < (II, V) < VI",398
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < IV < V < (III, VI)",228
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < IV < II < V < III < VI,53
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < (II, IV) < V < VI",682
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < IV < (III, V, VI)",42
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < III < V < (II, VI)",63
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < IV < II < V < VI",142
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < (II, IV, V) < VI",433
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < III < IV < II < V < VI,30
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (III, V, VI) < II",116
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < (II, IV, V, VI)",205
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < (II, IV) < V < VI",159
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II, IV) < (V, VI)",21
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < II < (IV, V) < (III, VI)",20
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II, IV, V, VI)",63
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (III, V) < II < VI",38
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III, IV) < (V, VI)",37
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV, V, VI) < II",33
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (III, V, VI) < II",89
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < (II, IV, V) < VI",571
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II, IV) < V < VI",62
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < (V, VI) < II",65
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < IV < (II, V, VI)",366
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < IV < (II, V, VI)",17
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV, V) < (II, VI)",9
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"IV < (I, II, III, V) < VI",75
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < IV < (II, V) < VI",207
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < VI < (II, V)",108
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"IV < (I, III) < (II, V) < VI",50
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV, VI) < (II, V)",270
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (III, V) < VI < II",6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < VI < V < II",46
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < VI < (II, V)",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < VI < (III, V) < II",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV, VI) < V < II",146
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < II < (IV, V) < VI",99
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV, V, VI) < II",18
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (IV, VI) < (II, III, V)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV, VI) < (III, V) < II",156
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < (IV, V) < II < VI",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < VI < (III, V) < II",122
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, III, IV) < (V, VI)",9
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (III, VI) < V < II",43
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < (III, VI) < (II, V)",87
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < VI < (II, III, V)",68
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III) < (IV, V, VI)",16
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II) < (IV, V, VI)",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV, VI) < (II, V)",6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < V < (II, VI)",24
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < V < II < VI",16
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < II < (V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < VI < (II, III, V)",40
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV, VI) < (II, III, V)",61
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II, IV, V) < VI",11
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < (I, II) < (IV, V) < VI",3
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, IV) < VI < III < V < II",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,I < III < IV < V < II < VI,1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (II, IV) < V < (III, VI)",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III) < IV < VI < (II, V)",16
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < (III, VI) < (II, V)",15
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(II, III) < (I, IV) < V < VI",3
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(II, III) < (I, IV, V, VI)",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < II < (V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, II, III) < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"(I, III, IV) < (II, VI) < V",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < (III, IV) < (V, VI) < II",4
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < III < II < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"III < I < (II, IV) < V < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",2,"I < IV < VI < III < (II, V)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III, IV, V, VI)",15674
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II) < (III, IV, V, VI)",131
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, III, IV, V, VI)",2361
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < IV < III < V < II < VI,593
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < (III, IV, V, VI)",608
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < (III, IV, V) < VI",1047
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < IV < (III, V) < VI",320
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, III, IV, V) < VI",3829
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (II, III) < V < VI",298
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III, IV, V) < VI",2742
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < (III, IV) < V < VI",92
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, III, IV) < V < VI",370
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV, V) < (II, VI)",271
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < III < V < (II, VI)",573
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV, V) < II < VI",72
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < IV < III < II < V < VI,289
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < III < (II, V, VI)",71
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, IV) < (III, V) < VI",320
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < V < II < VI",155
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < V < (II, VI)",69
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < III < (II, V) < VI",1288
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V) < VI",3778
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (II, III, V) < VI",614
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, IV) < III < V < VI",80
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V, VI)",456
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < II < IV < III < V < VI,6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V) < VI",1325
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < IV < (II, V) < VI",385
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < II < V < VI",293
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < (II, IV) < V < VI",653
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < II < V < VI",64
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < II < (III, V) < VI",130
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < (II, IV, V) < VI",396
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V, VI)",585
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V) < VI",465
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V) < VI",530
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V) < VI",444
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V, VI)",449
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V) < VI",206
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < (II, IV) < V < VI",166
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V, VI)",46
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < IV < II < V < VI",158
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < II < IV < V < III < VI,77
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < (V, VI) < II",67
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, IV) < V < III < VI",156
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < III < V < (II, VI)",53
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (III, V) < II < VI",315
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < VI < (II, V)",99
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < IV < II < V < III < VI,57
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < V < (II, VI)",26
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (III, V) < (II, VI)",79
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III, IV) < V < VI",254
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < III < II < V < VI",52
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < IV < V < (III, VI)",209
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V, VI)",262
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < IV < II < III < V < VI,26
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III, IV) < (V, VI)",37
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV, VI) < (II, V)",183
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV, V, VI) < II",31
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, IV) < V < (III, VI)",28
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (II, III) < V < VI",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II, IV) < V < VI",87
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V, VI)",136
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < VI < V < II",37
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < III < V < II < VI",79
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (II, III, V, VI)",141
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < (IV, V) < (III, VI)",40
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < II < (V, VI)",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II, IV, V, VI)",43
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (III, V) < II < VI",46
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < III < IV < II < V < VI,49
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II, IV, V) < VI",10
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV, VI) < V < II",116
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < V < II < VI",22
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < II < IV < (III, V, VI)",13
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (III, V, VI) < II",102
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II, IV) < (V, VI)",15
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (III, V, VI) < II",99
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (II, III, IV) < (V, VI)",8
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < VI < (III, V) < II",85
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, IV) < (II, V) < VI",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < VI < (III, V) < II",8
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < III < IV < V < II < VI,10
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"IV < (I, II, III, V) < VI",61
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV, V) < (II, VI)",4
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < IV < (II, V, VI)",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV, V, VI) < II",27
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < VI < (II, III, V)",39
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"IV < (I, III) < (II, V) < VI",48
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, IV) < II < V < VI",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II) < (IV, V, VI)",8
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < (IV, V) < II < VI",12
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < (II, V)",74
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III, IV) < (II, VI) < V",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV, VI) < (III, V) < II",119
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV, VI) < (II, III, V)",41
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < (V, VI) < II",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < II < (IV, V) < VI",65
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, III) < IV < VI < (II, V)",11
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < VI < (II, III, V)",16
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < V < II",24
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (III, V) < VI < II",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"III < (I, II) < (IV, V) < VI",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < IV < (III, VI) < (II, V)",5
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III) < (IV, V, VI)",6
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, IV) < VI < III < V < II",7
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV) < VI < (II, V)",4
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,I < IV < VI < III < V < II,1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(II, III) < (I, IV, V, VI)",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"(I, II, III) < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < (III, IV, VI) < (II, V)",2
+"psp-torch 0.1.0 cuda float32 (5800X, RTX 3060)",3,"I < III < II < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, III, IV, V) < VI",5136
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, III, IV, V, VI)",2210
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III, IV, V, VI)",16299
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II) < (III, IV, V, VI)",176
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < III < (II, V, VI)",166
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < III < V < (II, VI)",883
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, III, IV) < V < VI",405
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < (III, IV, V, VI)",379
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < IV < III < V < II < VI,591
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < IV < III < II < V < VI,361
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (II, III) < V < VI",326
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < III < (II, V) < VI",1293
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V, VI)",501
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < (III, IV, V) < VI",899
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < V < (II, VI)",64
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < IV < (III, V) < VI",280
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V, VI)",349
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III, IV, V) < VI",3600
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, IV) < (III, V) < VI",391
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V, VI)",55
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, IV) < III < V < VI",86
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < (III, IV) < V < VI",107
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < III < (II, V) < VI",602
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < III < V < II < VI",86
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < II < V < VI",299
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < IV < II < III < V < VI,28
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < (II, V) < VI",4198
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III, V) < VI",550
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V) < VI",1473
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < (II, IV) < V < VI",200
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < II < IV < V < III < VI,74
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < II < (III, V) < VI",132
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV, V) < (II, VI)",310
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (II, III, V) < VI",519
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < II < VI",278
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, V, VI)",625
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < III < V < (II, VI)",77
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (II, III, V, VI)",187
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"IV < (I, II, III, V) < VI",75
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < II < V < VI",71
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < (II, VI)",88
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < (II, IV, V) < VI",469
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < IV < (II, V) < VI",376
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, IV) < V < III < VI",146
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV, V) < II < VI",99
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (II, III) < V < VI",74
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < III < II < V < VI",64
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < IV < II < V < III < VI,80
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III, IV) < V < VI",268
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < IV < V < (III, VI)",256
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"IV < (I, III) < (II, V) < VI",50
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < V < VI",670
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < IV < (III, V, VI)",40
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, III, IV) < (V, VI)",16
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < II < IV < III < V < VI,15
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < IV < II < V < VI",136
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, IV) < V < (III, VI)",23
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < III < IV < II < V < VI,53
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < V < II < VI",172
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (III, V) < II < VI",54
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II, IV) < V < VI",78
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II, IV, V, VI)",67
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < (II, VI) < V",3
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V, VI)",151
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II, IV, V) < VI",14
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < V < (II, VI)",32
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (III, V, VI) < II",131
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (III, V, VI) < II",94
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II, IV) < (V, VI)",15
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < V < II < VI",11
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < III < IV < V < II < VI,15
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V) < VI",190
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV, V, VI) < II",23
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < IV < (II, V, VI)",317
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < VI < V < II",50
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < VI < (III, V) < II",121
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV, VI) < V < II",160
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < VI < (II, V)",100
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV, V) < VI",608
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV) < (V, VI) < II",54
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, IV) < (II, V) < VI",5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III, IV) < (V, VI)",41
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < VI < (II, III, V)",77
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV, VI) < (II, V)",287
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < (IV, V) < II < VI",23
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < II < (IV, V) < (III, VI)",41
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < VI < (II, III, V)",36
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV, V) < (II, VI)",8
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III, IV, V, VI) < II",65
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < II < (IV, V) < VI",108
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V) < VI",7
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < (II, V)",128
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV, VI) < (III, V) < II",233
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < (III, VI) < V < II",43
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < IV < (II, V, VI)",9
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV, VI) < (II, III, V)",76
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < IV < VI < (II, V)",21
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III) < (IV, V, VI)",16
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < III < II < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < II < (V, VI)",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"III < (I, II) < (IV, V, VI)",14
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (III, VI) < (II, V)",24
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < VI < (II, V)",6
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V, VI)",4
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < VI < (III, V) < II",9
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,I < IV < III < V < VI < II,5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, IV) < VI < III < V < II",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < IV < (III, V) < VI < II",8
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III) < (IV, V) < VI",3
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(II, III) < (I, IV, V) < VI",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < II < IV < V < VI",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV, VI) < (II, V)",5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (II, III) < IV < V < VI",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"I < (III, IV) < (V, VI) < II",5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, III) < (II, IV) < (V, VI)",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",1,"(I, II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < (III, IV, V, VI)",357
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, II, III, IV, V, VI)",4392
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, II) < (III, IV, V, VI)",153
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < (III, IV, V) < VI",543
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, III, IV, V, VI)",1498
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, III, IV, V) < VI",1826
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < IV < (III, V) < VI",436
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, IV) < (III, V) < VI",447
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < II < (III, V) < VI",223
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < (II, III, V) < VI",117
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, III, IV) < V < VI",494
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, II, III, IV, V) < VI",2519
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < III < V < (II, VI)",1117
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < IV < III < II < V < VI,741
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < (II, III) < V < VI",759
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < (III, V) < II < VI",173
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < IV < III < V < II < VI,467
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < III < (II, V) < VI",344
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < IV < II < III < V < VI,69
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III, IV) < II < V < VI",103
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV) < II < V < VI",481
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, II, III, IV) < V < VI",166
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, IV) < III < V < VI",149
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV, V) < (II, VI)",397
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < (III, V) < (II, VI)",72
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < III < (II, V, VI)",144
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < (III, IV) < V < VI",163
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V, VI)",40
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < II < IV < III < V < VI,53
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, IV) < V < III < VI",187
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV) < V < II < VI",30
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < II < IV < V < III < VI,86
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV) < (II, V) < VI",376
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV, V) < II < VI",42
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (III, IV) < V < (II, VI)",59
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < III < V < (II, VI)",20
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V) < VI",467
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < III < II < V < VI",134
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < IV < V < (III, VI)",136
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < III < V < II < VI",23
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < IV < (III, V, VI)",84
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < IV < II < V < III < VI,57
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < (III, IV) < (V, VI)",45
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III) < V < VI",687
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V) < VI",343
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V, VI)",37
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III, IV) < (II, V, VI)",60
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < (II, III, V) < VI",290
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, IV) < V < (III, VI)",7
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < III < (II, IV) < V < VI",8
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV, V) < VI",19
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III) < (II, IV) < V < VI",45
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < IV < (II, III, V, VI)",9
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, II, III, IV) < (V, VI)",11
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < III < (II, IV, V) < VI",21
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < III < IV < II < V < VI,9
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, III) < IV < II < V < VI",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < II < IV < III < (V, VI)",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"(I, IV) < III < (II, V, VI)",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,"I < (II, III, IV) < (V, VI)",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",2,I < IV < III < V < VI < II,5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III, IV, V, VI)",16119
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II) < (III, IV, V, VI)",139
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, III, IV, V, VI)",2559
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < IV < III < V < II < VI,605
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < (III, IV, V, VI)",361
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < (III, IV, V) < VI",719
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < V < (II, VI)",48
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, III, IV) < V < VI",467
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, III, IV, V) < VI",5000
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < II < V < VI",63
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < IV < III < II < V < VI,403
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < II < V < VI",370
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < III < V < (II, VI)",659
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < III < (II, V) < VI",1296
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (II, III) < V < VI",334
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < (III, IV) < V < VI",113
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III, IV, V) < VI",4028
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < III < II < V < VI",72
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V) < VI",645
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, IV) < III < V < VI",102
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < III < (II, V, VI)",112
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V) < VI",726
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V, VI)",459
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < (II, V) < VI",4070
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V) < VI",1306
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < III < V < II < VI",99
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < V < II < VI",176
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < III < V < (II, VI)",70
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV, V) < (II, VI)",293
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < (II, V, VI)",613
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < IV < (III, V) < VI",289
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV, V) < II < VI",85
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, IV) < (III, V) < VI",348
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (II, III, V) < VI",504
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV) < V < VI",717
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < III < (II, V, VI)",51
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III, IV) < V < VI",232
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < (II, IV) < V < VI",171
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III, V, VI)",277
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < II < IV < III < V < VI,32
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III, IV) < (V, VI)",32
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V, VI)",197
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < IV < (II, V) < VI",464
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II, IV) < V < VI",54
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < (II, IV, V) < VI",660
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < IV < II < III < V < VI,52
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"IV < (I, III) < (II, V) < VI",51
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < V < II < VI",14
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (II, III, V, VI)",189
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, V) < II < VI",294
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < V < (II, VI)",31
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V, VI)",427
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"IV < (I, II, III, V) < VI",91
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < VI < (II, V)",90
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < (II, IV, V) < VI",472
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < III < IV < II < V < VI,46
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV, V, VI) < II",58
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (III, V, VI) < II",102
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < IV < II < V < VI",120
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV, V, VI) < II",30
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, V, VI) < II",86
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < VI < (II, V)",16
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < IV < (II, V) < VI",214
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, V) < VI < II",5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, III, IV) < (V, VI)",10
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, V) < (II, VI)",93
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < II < (III, V) < VI",160
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (II, III) < V < VI",32
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, IV) < V < III < VI",124
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < (V, VI) < II",49
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < VI < (III, V) < II",114
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < II < IV < V < III < VI,72
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II, IV, V, VI)",71
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < (II, V)",115
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II, IV) < (V, VI)",10
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < II < (IV, V) < VI",74
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < VI < V < II",32
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < (IV, V) < (III, VI)",26
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV, VI) < (III, V) < II",196
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV, VI) < (II, V)",279
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < IV < (II, V, VI)",10
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (III, VI) < V < II",43
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV, V) < (II, VI)",10
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II, IV, V) < VI",12
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV, VI) < V < II",179
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV, VI) < (II, III, V)",53
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < IV < II < V < III < VI,51
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < IV < V < (III, VI)",228
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < (III, V) < II < VI",33
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, VI) < (II, V)",19
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, IV) < V < (III, VI)",19
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < VI < (II, III, V)",71
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < (IV, V) < II < VI",7
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II) < (IV, V, VI)",21
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < VI < (II, III, V)",28
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < III < II < (IV, V) < VI",3
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III) < (IV, V, VI)",16
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < II < IV < (III, V, VI)",37
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III) < IV < VI < (II, V)",18
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,I < III < IV < V < II < VI,10
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < (V, VI) < II",3
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < VI < (III, V) < II",7
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < (III, VI) < V < II",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, II) < (IV, V) < VI",9
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"III < (I, IV) < II < V < VI",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III) < (IV, V) < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III) < IV < V < VI",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(II, III) < (I, IV, V, VI)",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV, VI) < (II, V)",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, IV) < VI < III < V < II",5
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < (II, VI) < V",2
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, III, IV) < II < (V, VI)",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < VI < V < II",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"(I, II, III, IV, VI) < V",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < (III, IV) < II < (V, VI)",1
+"psp-torch 0.1.0 cuda float64 (5800X, RTX 3060)",3,"I < IV < VI < III < (II, V)",1

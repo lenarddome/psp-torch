@@ -2,7 +2,8 @@
 
 Usage::
 
-    uv run python benchmarks/devices.py [--devices cpu,cuda] [--out benchmarks/results/devices.csv]
+    uv run python benchmarks/devices.py [--devices cpu,cuda] [--machine NAME] \
+        [--out benchmarks/results/devices.csv]
 
 Two things decide whether a run gains from the GPU: how much work one call of
 ``model`` does, and how many parameter sets each call receives, which in a PSP
@@ -14,19 +15,21 @@ run is the number of patterns still filling. This script measures both:
 - ``pspGlobal`` end to end on the same models, with the batch size set by the
   number of starting points and a population that keeps every pattern filling.
 
-Rows: ``device, dtype, model, kind, batch, seconds, evaluations``. ``kind`` is
-``model`` for a single call or ``psp`` for a whole run.
+Rows: ``machine, device, dtype, model, kind, batch, seconds, evaluations``. ``kind`` is
+``model`` for a single call or ``psp`` for a whole run. The rows of ``--machine``
+(by default the host name) replace that machine's earlier rows and leave the others.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
+import platform
 import time
 from collections.abc import Callable
 from pathlib import Path
 
 import torch
+from compare import read_rows, write_rows
 
 from psp import pspGlobal
 from psp.models.alcove import alcove_curves, alcove_training, weak_order
@@ -82,6 +85,7 @@ def main() -> None:
     parser.add_argument("--devices", default="cpu,cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--out", default=str(RESULTS))
     parser.add_argument("--max-batch", type=int, default=4096)
+    parser.add_argument("--machine", default=platform.node(), help="name of this machine")
     args = parser.parse_args()
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -113,6 +117,7 @@ def main() -> None:
                     )
                     rows.append(
                         {
+                            "machine": args.machine,
                             "device": device.type,
                             "dtype": str(dtype).split(".")[-1],
                             "model": model_name,
@@ -163,6 +168,7 @@ def main() -> None:
                     result = run()
                     rows.append(
                         {
+                            "machine": args.machine,
                             "device": device.type,
                             "dtype": str(dtype).split(".")[-1],
                             "model": model_name,
@@ -174,10 +180,8 @@ def main() -> None:
                     )
                     print(rows[-1], flush=True)
 
-    with open(out, "w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=list(rows[0]), lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+    others = [r for r in read_rows(out) if r.get("machine") != args.machine]
+    write_rows(out, others + rows)
     print("wrote", out)
 
 

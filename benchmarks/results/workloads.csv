@@ -95,3 +95,75 @@ psp-torch 0.1.0 cpu rowwise,"300 regions, 100 iterations, save",3,2.0597,100,300
 psp-torch 0.1.0 cpu rowwise,"1000 regions, 100 iterations",1,7.6982,100,1000,78901,0
 psp-torch 0.1.0 cpu rowwise,"1000 regions, 100 iterations",2,7.8956,100,1000,82197,0
 psp-torch 0.1.0 cpu rowwise,"1000 regions, 100 iterations",3,7.9866,100,1000,81723,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",1,0.0240,137,100,1751,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",2,0.0398,257,100,1870,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",3,0.0158,92,100,1608,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",4,0.0298,185,100,1956,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",5,0.0190,112,100,1723,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",6,0.0250,154,100,1850,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",7,0.0358,228,100,1956,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",8,0.0241,149,100,1912,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",9,0.0212,130,100,1722,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","test model, pop 10",10,0.0196,117,100,1816,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","100 regions, pop 20, cap 1500",1,0.0178,100,95,2200,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","100 regions, pop 20, cap 1500",2,0.0167,93,97,2281,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","100 regions, pop 20, cap 1500",3,0.0163,89,96,2240,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","100 regions, pop 20, cap 1500",4,0.0172,97,98,2241,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","100 regions, pop 20, cap 1500",5,0.0153,81,100,2383,1
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations",1,0.0772,100,300,22493,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations",2,0.0655,100,300,24330,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations",3,0.0651,100,300,23640,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations, save",1,1.3241,100,300,22493,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations, save",2,0.7329,100,300,24330,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","300 regions, 100 iterations, save",3,0.7209,100,300,23640,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1000 regions, 100 iterations",1,1.0990,100,1000,78901,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1000 regions, 100 iterations",2,0.9033,100,1000,82197,0
+"psp-torch 0.1.0 cpu (5800X, RTX 3060)","1000 regions, 100 iterations",3,0.9063,100,1000,81723,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",1,0.2634,245,100,2054,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",2,0.0339,86,100,1627,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",3,0.0542,141,100,1693,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",4,0.0608,158,100,1718,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",5,0.0648,170,100,1842,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",6,0.0598,155,100,1955,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",7,0.0655,171,100,1885,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",8,0.0378,97,100,1637,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",9,0.0549,143,100,1802,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","test model, pop 10",10,0.1432,380,100,1904,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","100 regions, pop 20, cap 1500",1,0.0321,81,98,2221,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","100 regions, pop 20, cap 1500",2,0.0386,98,98,2280,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","100 regions, pop 20, cap 1500",3,0.0416,106,98,2321,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","100 regions, pop 20, cap 1500",4,0.0329,83,93,2149,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","100 regions, pop 20, cap 1500",5,0.0360,91,95,2221,1
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations",1,0.0481,100,300,24610,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations",2,0.0475,100,300,23877,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations",3,0.0476,100,300,24035,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations, save",1,0.8480,100,300,24610,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations, save",2,0.6950,100,300,23877,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","300 regions, 100 iterations, save",3,0.6994,100,300,24035,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1000 regions, 100 iterations",1,0.1274,100,1000,83449,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1000 regions, 100 iterations",2,0.1228,100,1000,81608,0
+"psp-torch 0.1.0 cuda (5800X, RTX 3060)","1000 regions, 100 iterations",3,0.1209,100,1000,81586,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",1,0.0627,137,100,1751,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",2,0.0821,257,100,1870,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",3,0.0517,92,100,1608,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",4,0.0739,185,100,1956,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",5,0.0573,112,100,1723,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",6,0.0664,154,100,1850,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",7,0.0804,228,100,1956,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",8,0.0675,149,100,1912,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",9,0.0601,130,100,1722,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","test model, pop 10",10,0.0605,117,100,1816,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","100 regions, pop 20, cap 1500",1,0.0635,100,95,2200,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","100 regions, pop 20, cap 1500",2,0.0642,93,97,2281,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","100 regions, pop 20, cap 1500",3,0.0633,89,96,2240,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","100 regions, pop 20, cap 1500",4,0.0640,97,98,2241,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","100 regions, pop 20, cap 1500",5,0.0647,81,100,2383,1
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations",1,0.5312,100,300,22493,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations",2,0.5726,100,300,24330,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations",3,0.5560,100,300,23640,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations, save",1,1.2516,100,300,22493,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations, save",2,1.2111,100,300,24330,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","300 regions, 100 iterations, save",3,1.1750,100,300,23640,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","1000 regions, 100 iterations",1,2.3116,100,1000,78901,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","1000 regions, 100 iterations",2,2.4127,100,1000,82197,0
+"psp-torch 0.1.0 cpu rowwise (5800X, RTX 3060)","1000 regions, 100 iterations",3,2.3967,100,1000,81723,0

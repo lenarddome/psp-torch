@@ -3,7 +3,8 @@
 Usage::
 
     uv run python benchmarks/compare.py --r-library <path to a library with psp installed> \
-        [--rscript Rscript] [--r-label "psp 1.0.6"] [--devices cpu,cuda] [--skip-r]
+        [--rscript Rscript] [--r-label "psp 1.0.6"] [--devices cpu,cuda] [--skip-r] \
+        [--machine "5800X, RTX 3060"]
 
 It runs, in turn, ``benchmarks/r/benchmark.R`` and ``benchmarks/r/experiments.R``
 (the scripts of the R package) with the given library, then ``benchmark.py`` and
@@ -11,7 +12,9 @@ It runs, in turn, ``benchmarks/r/benchmark.R`` and ``benchmarks/r/experiments.R`
 workloads once more calling the model one parameter set at a time), and writes everything to
 ``benchmarks/results/``: ``workloads.csv``, ``overhead.csv``, ``save.csv`` and
 ``discovery.csv``. Rows of a build that is run again replace its earlier rows.
-Finally it prints the median seconds per workload for every build.
+Finally it prints the median seconds per workload for every build. ``--machine``
+appends the machine's name to every label, so that runs from several machines sit
+side by side in the same files.
 
 Each build runs in its own process while the machine is otherwise idle; run it
 with nothing else going on.
@@ -84,10 +87,17 @@ def run_r(rscript: str, library: str, label: str, scratch: Path) -> None:
         replace_build(RESULTS / f"{name}.csv", label, read_rows(scratch / f"{name}.csv"))
 
 
-def run_torch(device: str, scratch: Path, rowwise: bool = False) -> None:
+def machine_suffix(machine: str | None) -> str:
+    return f" ({machine})" if machine else ""
+
+
+def run_torch(
+    device: str, scratch: Path, rowwise: bool = False, machine: str | None = None
+) -> None:
     import psp
 
     label = f"psp-torch {psp.__version__} {device}{' rowwise' if rowwise else ''}"
+    label += machine_suffix(machine)
     print(f"torch: {label}", flush=True)
     out = subprocess.run(
         [sys.executable, str(HERE / "benchmark.py"), "--label", label, "--device", device]
@@ -151,6 +161,9 @@ def main() -> None:
         action="store_true",
         help="also time the CPU workloads calling the model once per parameter set, as R does",
     )
+    parser.add_argument(
+        "--machine", default=None, help="name of this machine, appended to every label"
+    )
     parser.add_argument("--scratch", default=str(HERE / "results" / "_scratch"))
     args = parser.parse_args()
     RESULTS.mkdir(parents=True, exist_ok=True)
@@ -158,11 +171,11 @@ def main() -> None:
     if not args.skip_r:
         if not args.r_library:
             parser.error("--r-library is required unless --skip-r is given")
-        run_r(args.rscript, args.r_library, args.r_label, scratch)
+        run_r(args.rscript, args.r_library, args.r_label + machine_suffix(args.machine), scratch)
     for device in args.devices.split(","):
-        run_torch(device, scratch)
+        run_torch(device, scratch, machine=args.machine)
     if args.rowwise:
-        run_torch("cpu", scratch, rowwise=True)
+        run_torch("cpu", scratch, rowwise=True, machine=args.machine)
     print()
     print(summary())
 
