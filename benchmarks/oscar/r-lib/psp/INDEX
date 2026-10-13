@@ -1,0 +1,6 @@
+psp-package             Parameter Space Partitioning MCMC for Global
+                        Model Evaluation
+pspGlobal               Parameter Space Partitioning
+psp_control             Control the behaviour of the psp_global
+                        implementation
+psp_global              Parameter Space Partitioning
