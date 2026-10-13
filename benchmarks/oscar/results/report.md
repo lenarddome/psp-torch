@@ -54,4 +54,4 @@ The model draws its initial state at random on every evaluation, and R and torch
 - CPU: AMD Ryzen 7 5800X 8-Core Processor, torch threads 8
 - GPU: NVIDIA GeForce RTX 3060
 - Linux 7.0.0-38-generic, Python 3.14.4, torch 2.11.0+cu128, R version 4.5.2 (2025-10-31)
-- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, OSCAR compiled from `tmp-models/` (`architecture.cpp` + `OSCAR.cpp`) with `Rcpp::sourceCpp()` and R's default flags (`-O2`).
+- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, OSCAR compiled from `benchmarks/oscar/tmp-models/` (`architecture.cpp` + `OSCAR.cpp`) with `Rcpp::sourceCpp()` and R's default flags (`-O2`).

@@ -8,9 +8,9 @@ suppressMessages({library(Rcpp); library(data.table); library(clobe); library(ps
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 setwd(dir)
 Rcpp::sourceCpp("oscar_all.cpp", verbose = FALSE)
-source(file.path(repo, "tmp-models", "convert.R"))
-source(file.path(repo, "tmp-models", "imac.R"))
-data <- fread(file.path(repo, "tmp-models", "ply207-canonical-ibre.csv"))
+source(file.path(repo, "benchmarks", "oscar", "tmp-models", "convert.R"))
+source(file.path(repo, "benchmarks", "oscar", "tmp-models", "imac.R"))
+data <- fread(file.path(repo, "benchmarks", "oscar", "tmp-models", "ply207-canonical-ibre.csv"))
 data$abresp <- factor(as.character(data$abresp), levels = c("0", "1", "2"), labels = c("common", "rare", "none"))
 ppts <- unique(data$ppt)[seq_len(n_ppt)]
 stimuli <- c("A", "B", "BC", "C")

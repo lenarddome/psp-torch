@@ -2,7 +2,7 @@
 
 Usage::
 
-    uv run python benchmarks/oscar/run.py --r-library benchmarks/oscar/r-lib --models tmp-models \
+    uv run python benchmarks/oscar/run.py --r-library benchmarks/oscar/r-lib \
         [--steps model,psp] [--participants 14] [--starts 100] [--iterations 200] [--workers 14]
 
 Two measurements, both written to ``benchmarks/oscar/results/``:
@@ -48,7 +48,7 @@ def main() -> None:
     parser.add_argument("--r-library", required=True)
     parser.add_argument(
         "--models",
-        default=str(ROOT / "tmp-models"),
+        default=str(HERE / "tmp-models"),
         help="directory with OSCAR.cpp and the R helpers",
     )
     parser.add_argument("--rscript", default="Rscript")

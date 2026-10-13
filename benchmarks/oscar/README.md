@@ -5,7 +5,7 @@ A local benchmark of the participant-level OSCAR routine: the compiled C++ model
 | File | What it does |
 | --- | --- |
 | `run.py` | Runs every step below in turn, then `report.py`. |
-| `r/common.R` | Loads psp from the given library, compiles `architecture.cpp` + `OSCAR.cpp` from `tmp-models/` with `Rcpp::sourceCpp()`, sources `convert.R` and `imac.R`, builds a participant's trial matrix as `psp.R` does. |
+| `r/common.R` | Loads psp from the given library, compiles `architecture.cpp` + `OSCAR.cpp` from `tmp-models/` (next to this README) with `Rcpp::sourceCpp()`, sources `convert.R` and `imac.R`, builds a participant's trial matrix as `psp.R` does. |
 | `r/model.R` | Seconds per evaluation for the first participant: `OSCAR()` alone and the routine's `evaluate()`, one parameter set per call. |
 | `model.py` | Seconds per batched call of the port's `evaluate()` + `discretize()` for 1 to 16,384 parameter sets, CPU float64, GPU float32 and float64. |
 | `r/psp_run.R` | `pspGlobal()` per participant for the first N participants, spread over forked worker processes (`psp.R` uses foreach over `detectCores() - 2`). |

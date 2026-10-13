@@ -258,11 +258,11 @@ for ppt, res in zip(members, results, strict=True):
 
 # %% 16. Optional: the compiled C++ through R, on the same parameters and initial state
 # Needs R with Rcpp, RcppArmadillo, data.table and clobe, the R package psp in the library below
-# (benchmarks/oscar/README.md installs it), and the C++ sources in tmp-models/.
+# (benchmarks/oscar/README.md installs it), and the C++ sources in benchmarks/oscar/tmp-models/.
 import subprocess
 import tempfile
 
-LIB, MODELS = ROOT / "benchmarks" / "oscar" / "r-lib", ROOT / "tmp-models"
+LIB, MODELS = ROOT / "benchmarks" / "oscar" / "r-lib", ROOT / "benchmarks" / "oscar" / "tmp-models"
 if LIB.exists() and (MODELS / "OSCAR.cpp").exists():
     work = Path(tempfile.mkdtemp())
     pd.DataFrame(eta0[0].numpy()).to_csv(work / "eta0.csv", index=False)
@@ -284,7 +284,7 @@ if LIB.exists() and (MODELS / "OSCAR.cpp").exists():
     print(f"trial-by-trial probabilities, torch vs C++: largest difference {np.abs(mine - cpp).max():.2e}")
     assert np.abs(mine - cpp).max() < 1e-9
 else:
-    print("R library or tmp-models/ missing; skipped")
+    print("R library or benchmarks/oscar/tmp-models/ missing; skipped")
 
 # %%
 print("all checks passed")

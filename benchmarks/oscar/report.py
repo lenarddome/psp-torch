@@ -348,7 +348,7 @@ def main() -> None:
         f"- CPU: {cpu_name()}, torch threads {torch.get_num_threads()}",
         f"- GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'none'}",
         f"- {platform.system()} {platform.release()}, Python {platform.python_version()}, torch {torch.__version__}, {r_version()}",
-        "- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, OSCAR compiled from `tmp-models/` "
+        "- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, OSCAR compiled from `benchmarks/oscar/tmp-models/` "
         "(`architecture.cpp` + `OSCAR.cpp`) with `Rcpp::sourceCpp()` and R's default flags (`-O2`).",
         "",
     ]
