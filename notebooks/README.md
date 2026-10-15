@@ -12,6 +12,10 @@ The articles of the R package, replicated with psp-torch. Each notebook is commi
 | [benchmarks-oscar.ipynb](benchmarks-oscar.ipynb) | **Benchmarks: OSCAR.** The compiled C++ of OSCAR called from R against the batched port on the CPU and the GPU: one call of the model by batch size, and the participant-level routine for 14 participants. Reads [../benchmarks/oscar/results](../benchmarks/oscar/results). |
 | [benchmarks-clobe.ipynb](benchmarks-clobe.ipynb) | **Benchmarks: clobe.** `psp.clobe` against the R package clobe 0.8.0 on the same inputs: seconds per call of every function on the CPU and the GPU, and a check that both give the same results. Reads [../benchmarks/clobe/results](../benchmarks/clobe/results). |
 
+## Figures
+
+Every figure is drawn in the style of [figure_style.py](figure_style.py), shared by all the notebooks: shown at high resolution in the notebook, and saved as a vector PDF (fonts embedded) and a 300 dpi PNG in `figures/<notebook>/`, ready for a paper or slides. The `figures/` folder is not tracked; running a notebook writes its figures.
+
 To refresh everything from scratch:
 
 ```sh
