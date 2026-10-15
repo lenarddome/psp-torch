@@ -82,7 +82,7 @@ extend-exclude = ["*.ipynb", "psp-reference"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "N"]
-# pspGlobal keeps the name of the R function it ports
+# PSP and PSPLockstep keep the acronym of the method in uppercase
 ignore = ["N802", "N803", "N806"]
 
 [tool.mypy]

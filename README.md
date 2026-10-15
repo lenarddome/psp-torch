@@ -2,7 +2,7 @@
 
 Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch.
 
-`psp-torch` is a port of the R package [psp](https://lenarddome.com/psp/) (Dome & Wills) that keeps its interface: `pspGlobal()` takes a `model`, a `discretize` function and a `control` mapping, and returns every ordinal pattern the model produced together with the population of its region. Unlike the R package, it evaluates the model on a whole batch of parameter sets at once, so a run can use the GPU, and models written as tensor code need no loop.
+`psp-torch` is a port of the R package [psp](https://lenarddome.com/psp/) (Dome & Wills) that keeps its interface: `PSP()`, the R package's `pspGlobal()`, takes a `model`, a `discretize` function and a `control` mapping, and returns every ordinal pattern the model produced together with the population of its region. Unlike the R package, it evaluates the model on a whole batch of parameter sets at once, so a run can use the GPU, and models written as tensor code need no loop.
 
 - [Tutorial: what can prospect theory predict?](notebooks/tutorial.ipynb)
 - [Recipe: ALCOVE and the six category structures](notebooks/recipe-alcove.ipynb)
@@ -33,7 +33,7 @@ A model of risky choice with two parameters, and the pattern of choices it makes
 
 ```python
 import torch
-from psp import pspGlobal
+from psp import PSP
 from psp.models import prospect
 
 torch.manual_seed(2026)
@@ -48,7 +48,7 @@ control = {
     "dimensionality": 4,
     "responses": 4,
 }
-result = pspGlobal(prospect.model, prospect.discretize, control, quiet=True)
+result = PSP(prospect.model, prospect.discretize, control, quiet=True)
 for pattern, count in zip(result.ordinal_patterns, result.ordinal_counts):
     print(f"{int(count):>5}  {prospect.describe(pattern)}")
 ```
@@ -58,7 +58,7 @@ for pattern, count in zip(result.ordinal_patterns, result.ordinal_counts):
 ## The interface
 
 ```python
-pspGlobal(model, discretize, control, save=False, path=".", extension=".csv", quiet=False,
+PSP(model, discretize, control, save=False, path=".", extension=".csv", quiet=False,
           *, batched=True, device=None, dtype=None, generator=None) -> PSPResult
 ```
 
@@ -87,10 +87,10 @@ The result has `ordinal_patterns` of shape `(patterns, dimensionality, dimension
 
 ### Many independent runs at once
 
-`psp.pspMany(model, discretize, controls, ...)` runs one independent search per control (for example one per participant, each on its own trial order) and advances them in lockstep: every iteration, the proposals of all runs go to `model` in one call, with the index of the run each row belongs to. Each run keeps its own pattern store, files and result. This is how hundreds of small searches fill a GPU.
+`psp.PSPLockstep(model, discretize, controls, ...)` runs one independent search per control (for example one per participant, each on its own trial order) and advances them in lockstep: every iteration, the proposals of all runs go to `model` in one call, with the index of the run each row belongs to. Each run keeps its own pattern store, files and result. This is how hundreds of small searches fill a GPU.
 
 ```python
-results = pspMany(lambda par, run: evaluate(par, training, sequence=run), discretize, controls)
+results = PSPLockstep(lambda par, run: evaluate(par, training, sequence=run), discretize, controls)
 ```
 
 ### Models written for one parameter set
@@ -98,13 +98,13 @@ results = pspMany(lambda par, run: evaluate(par, training, sequence=run), discre
 Any function that takes one parameter vector and returns one output vector, as `model` does in R, works with `batched=False` or through `psp.rowwise()`, which can also hand the rows over as NumPy arrays:
 
 ```python
-from psp import pspGlobal, rowwise
+from psp import PSP, rowwise
 
 def model(par):          # par: one parameter set, a 1-D tensor
     return par.cumsum(0)
 
-result = pspGlobal(model, discretize, control, batched=False)
-result = pspGlobal(rowwise(model, numpy=True), discretize, control)   # par is a numpy array
+result = PSP(model, discretize, control, batched=False)
+result = PSP(rowwise(model, numpy=True), discretize, control)   # par is a numpy array
 ```
 
 ### Using the GPU

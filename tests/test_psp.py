@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 import torch
 
-from psp import PSPResult, pspGlobal
+from psp import PSP, PSPResult
 
 
 def _positions() -> torch.Tensor:
@@ -59,7 +59,7 @@ def control(iterations: int, population: int) -> dict:
 @pytest.fixture(scope="module")
 def out2() -> PSPResult:
     torch.manual_seed(1)
-    return pspGlobal(model, discretize, control(1000, 10), quiet=True, save=False)
+    return PSP(model, discretize, control(1000, 10), quiet=True, save=False)
 
 
 def test_finds_all_100_regions(out2: PSPResult) -> None:
@@ -79,7 +79,7 @@ def test_unique_inequality_matrices_recruited_once(out2: PSPResult) -> None:
 
 def test_iteration_threshold_terminates(out2: PSPResult) -> None:
     torch.manual_seed(2)
-    out3 = pspGlobal(model, discretize, control(100, 30000), quiet=True)
+    out3 = PSP(model, discretize, control(100, 30000), quiet=True)
     assert out3.iterations == 100
 
 
@@ -96,7 +96,7 @@ def test_result_behaves_like_the_r_list(out2: PSPResult) -> None:
 def test_rowwise_contract_matches_the_r_package() -> None:
     """model and discretize written for one parameter set, as in R."""
     torch.manual_seed(3)
-    out = pspGlobal(
+    out = PSP(
         lambda par: model(par.unsqueeze(0))[0],
         lambda d: torch.full((2, 2), float(d.argmin())),
         control(1000, 10),

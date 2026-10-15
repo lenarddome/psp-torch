@@ -1,6 +1,6 @@
 """Many independent parameter space partitioning runs, advanced in lockstep.
 
-:func:`pspMany` runs one :func:`psp.PSP` search per ``control`` (for example
+:func:`PSPLockstep` runs one :func:`psp.PSP` search per ``control`` (for example
 one per participant, each on its own trial order) and keeps them independent:
 each has its own pattern store, its own counts, its own files and its own
 result. What they share is the model call: every iteration, the proposals of
@@ -23,14 +23,14 @@ from ._global import PSPResult, clamp_parameters, hyper_points
 from ._io import RunWriter
 from ._store import PatternStore
 
-__all__ = ["pspMany", "ManyModel"]
+__all__ = ["PSPLockstep", "LockstepModel"]
 
-#: A model for :func:`pspMany`: ``(parameters (n, d), run (n,)) -> (n, responses)``.
-ManyModel = Callable[[torch.Tensor, torch.Tensor], Any]
+#: A model for :func:`PSPLockstep`: ``(parameters (n, d), run (n,)) -> (n, responses)``.
+LockstepModel = Callable[[torch.Tensor, torch.Tensor], Any]
 
 
-def pspMany(
-    model: ManyModel,
+def PSPLockstep(
+    model: LockstepModel,
     discretize: Callable[[torch.Tensor], Any],
     controls: Sequence[Mapping[str, Any] | Control],
     *,

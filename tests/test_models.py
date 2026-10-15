@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from psp import pspGlobal
+from psp import PSP
 from psp.models import alcove as alc
 from psp.models import prospect
 
@@ -148,7 +148,7 @@ class TestProspect:
             "dimensionality": 4,
             "responses": 4,
         }
-        out = pspGlobal(prospect.model, prospect.discretize, control, quiet=True)
+        out = PSP(prospect.model, prospect.discretize, control, quiet=True)
         found = {prospect.describe(p) for p in out.ordinal_patterns}
         assert "Riskier in Problems 4 and 8" in found
         assert len(found) == 8

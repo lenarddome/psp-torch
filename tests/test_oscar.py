@@ -7,7 +7,7 @@ import pandas as pd
 import pytest
 import torch
 
-from psp import pspMany
+from psp import PSPLockstep
 from psp.models import oscar as osc
 
 from .conftest import DATA
@@ -139,7 +139,7 @@ def test_pspmany_runs_independent_searches(data: osc.IbreData, chosen: list[str]
         seen_runs.append(run.clone())
         return osc.evaluate(unit, batch, sequence=run, generator=generator)
 
-    results = pspMany(
+    results = PSPLockstep(
         model,
         osc.discretize,
         controls,
@@ -169,13 +169,13 @@ def test_pspmany_rejects_mismatched_runs() -> None:
         "population": 5,
     }
     with pytest.raises(ValueError, match="iterations and population"):
-        pspMany(
+        PSPLockstep(
             lambda u, r: u,
             lambda x: torch.ones(x.shape[0], 2, 2),
             [base, {**base, "iterations": 3}],
         )
     with pytest.raises(ValueError, match="one path per run"):
-        pspMany(
+        PSPLockstep(
             lambda u, r: u,
             lambda x: torch.ones(x.shape[0], 2, 2),
             [base, base],

@@ -1,4 +1,4 @@
-"""Parameter space partitioning: the :func:`pspGlobal` sampler and its result."""
+"""Parameter space partitioning: the :func:`PSP` sampler and its result."""
 
 from __future__ import annotations
 
@@ -14,15 +14,13 @@ from ._control import Control
 from ._io import RunWriter
 from ._store import PatternStore
 
-__all__ = ["pspGlobal", "PSPResult", "hyper_points", "clamp_parameters"]
+__all__ = ["PSP", "PSPResult", "hyper_points", "clamp_parameters"]
 
 
 @dataclass(frozen=True)
 class PSPResult(Mapping[str, Any]):
-    """What :func:`pspGlobal` returns.
-
-    It behaves like the list the R package returns, so ``result["ordinal_counts"]``
-    works, and like a dataclass, so ``result.ordinal_counts`` works too.
+    """Container. It holds and validates the results of a :func:`PSP` run.
+    It behaves like a mapping and a dataclass.
 
     Attributes
     ----------
@@ -78,8 +76,8 @@ def hyper_points(
 ) -> torch.Tensor:
     """Random steps of at most ``radius`` in each parameter, shape ``(counts, dimensions)``.
 
-    This is the jumping distribution of the R package: a direction picked
-    uniformly on the unit hypersphere (Weisstein, "Hypersphere Point Picking"),
+    This is the jumping distribution: a direction picked uniformly on the unit
+    hypersphere (Weisstein, "Hypersphere Point Picking"),
     scaled in each dimension by a factor drawn uniformly between 0 and that
     dimension's radius. The scale factors are drawn once per call and shared by
     all ``counts`` points, as in the C++ implementation.
@@ -92,6 +90,10 @@ def hyper_points(
         Radius of each dimension, shape ``(dimensions,)``; its device and dtype are used.
     generator
         Random number generator on the same device as ``radius``.
+        
+    References
+    ----------
+    Weisstein, Eric W. "Hypersphere Point Picking." From MathWorld--A Wolfram Resource. https://mathworld.wolfram.com/HyperspherePointPicking.html
     """
     dimensions = int(radius.numel())
     direction = torch.randn(
@@ -110,8 +112,7 @@ def clamp_parameters(
     """Move every parameter set onto the bounds where it left them."""
     return torch.maximum(torch.minimum(parameters, upper), lower)
 
-
-def pspGlobal(
+def PSP(
     model: Model,
     discretize: Discretize,
     control: Mapping[str, Any] | Control,
@@ -128,8 +129,7 @@ def pspGlobal(
     """Partition a model's parameter space by the ordinal patterns it produces.
 
     A PyTorch implementation of the parameter space partitioning MCMC algorithm
-    of Pitt, Kim, Navarro and Myung (2006), with the interface of ``pspGlobal()``
-    in the R package ``psp``. The algorithm:
+    of Pitt, Kim, Navarro and Myung (2006). The algorithm:
 
     0. Evaluate ``model`` on every row of ``control["init"]``. The patterns
        ``discretize`` makes of the outputs are the first regions found.
@@ -154,8 +154,9 @@ def pspGlobal(
         sets produce the same pattern when the matrices are identical, with
         ``-0.0`` equal to ``0.0`` and ``NaN`` equal to ``NaN``.
     control
-        The settings, a mapping with the keys of the R package:
-
+        The settings as a set of control arguments, either a :class:`Control` or
+        a mapping with the same keys. The required keys are:
+ß
         ``init``
             Starting parameter sets, one per row.
         ``lower``, ``upper``
@@ -212,12 +213,12 @@ def pspGlobal(
     Examples
     --------
     >>> import torch
-    >>> from psp import pspGlobal
+    >>> from psp import PSP
     >>> torch.manual_seed(1)  # doctest: +ELLIPSIS
     <torch._C.Generator object at ...>
     >>> model = lambda par: par                       # the outputs are the parameters
     >>> discretize = lambda out: (out > 0.5).double().diag_embed()  # which half of each axis
-    >>> result = pspGlobal(model, discretize, {
+    >>> result = PSP(model, discretize, {
     ...     "init": [[0.5, 0.5]], "lower": [0, 0], "upper": [1, 1],
     ...     "radius": 0.5, "population": 20, "iterations": 100}, quiet=True)
     >>> result.patterns

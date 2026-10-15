@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `psp.pspGlobal()` is now `psp.PSP()`; its arguments and result are unchanged.
+- `psp.pspMany()` is now `psp.PSPLockstep()`, and its model type `psp.ManyModel` is now
+  `psp.LockstepModel`; arguments and results are unchanged.
+
 ## [0.1.0] - 2026-10-08
 
 The first release: a PyTorch port of `pspGlobal()` from the R package psp 1.0.6.

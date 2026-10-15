@@ -8,7 +8,7 @@ import numpy as np
 import pytest
 import torch
 
-from psp import Control, hyper_points, pspGlobal, read_saved, saved_paths
+from psp import PSP, Control, hyper_points, read_saved, saved_paths
 
 from .conftest import voronoi_control, voronoi_model
 
@@ -16,7 +16,7 @@ from .conftest import voronoi_control, voronoi_model
 def test_every_evaluation_is_counted_exactly_once() -> None:
     torch.manual_seed(1)
     init = torch.rand(3, 3, dtype=torch.float64)
-    out = pspGlobal(
+    out = PSP(
         lambda par: par,
         lambda x: torch.ones(x.shape[0], 2, 2),
         {
@@ -41,7 +41,7 @@ def test_first_iteration_proposes_from_every_pattern_found_at_the_start(tmp_pref
     vor = voronoi_model(regions=50, dimensions=3)
     torch.manual_seed(2)
     init = torch.rand(10, 3, dtype=torch.float64)
-    pspGlobal(
+    PSP(
         vor.model,
         vor.discretize,
         voronoi_control(50, 3, iterations=1, population=1000, init=init),
@@ -58,7 +58,7 @@ def test_each_proposal_is_within_radius_of_the_last_point_in_its_region(tmp_pref
     radius = 0.1
     vor = voronoi_model(regions=30, dimensions=3)
     torch.manual_seed(3)
-    pspGlobal(
+    PSP(
         vor.model,
         vor.discretize,
         voronoi_control(30, 3, iterations=30, population=15, radius=radius),
@@ -85,7 +85,7 @@ def test_each_proposal_is_within_radius_of_the_last_point_in_its_region(tmp_pref
 def test_sampler_fills_every_discovered_region_before_the_iteration_cap() -> None:
     vor = voronoi_model(regions=50, dimensions=3)
     torch.manual_seed(4)
-    out = pspGlobal(
+    out = PSP(
         vor.model, vor.discretize, voronoi_control(50, 3, iterations=500, population=10), quiet=True
     )
     assert out.iterations < 500
@@ -95,7 +95,7 @@ def test_sampler_fills_every_discovered_region_before_the_iteration_cap() -> Non
 def test_saved_files_record_full_precision_values_and_correct_pattern_ids(tmp_prefix: str) -> None:
     vor = voronoi_model(regions=20, dimensions=3)
     torch.manual_seed(5)
-    out = pspGlobal(
+    out = PSP(
         vor.model,
         vor.discretize,
         voronoi_control(20, 3, iterations=10, population=1000),
@@ -123,7 +123,7 @@ def test_saved_files_record_full_precision_values_and_correct_pattern_ids(tmp_pr
 def test_saved_parameters_and_model_outputs_keep_full_double_precision(tmp_prefix: str) -> None:
     eps = np.finfo(np.float64).eps
     values = torch.tensor([1 + 20 * eps, 1 / 3, math.pi * 1e5], dtype=torch.float64)
-    pspGlobal(
+    PSP(
         lambda par: values.unsqueeze(0).expand(par.shape[0], 3),
         lambda x: torch.ones(x.shape[0], 2, 2),
         {
@@ -159,7 +159,7 @@ def test_saved_paths_follow_the_r_naming(tmp_path) -> None:
 def test_stored_ordinal_patterns_are_unique_and_counted() -> None:
     vor = voronoi_model(regions=40, dimensions=3)
     torch.manual_seed(6)
-    out = pspGlobal(
+    out = PSP(
         vor.model,
         vor.discretize,
         voronoi_control(40, 3, iterations=20, population=1000),
@@ -171,7 +171,7 @@ def test_stored_ordinal_patterns_are_unique_and_counted() -> None:
 
 
 def test_negative_zero_and_zero_are_the_same_ordinal_pattern() -> None:
-    out = pspGlobal(
+    out = PSP(
         lambda par: par,
         lambda x: torch.where(x[:, :1] > 0.5, -0.0, 0.0).reshape(-1, 1, 1).expand(-1, 2, 2),
         {
@@ -193,7 +193,7 @@ def test_negative_zero_and_zero_are_the_same_ordinal_pattern() -> None:
 
 def test_identical_patterns_containing_nan_are_the_same_ordinal_pattern() -> None:
     nan = float("nan")
-    out = pspGlobal(
+    out = PSP(
         lambda par: par,
         lambda x: torch.tensor([[1.0, nan], [nan, 1.0]]).expand(x.shape[0], 2, 2),
         {
@@ -230,7 +230,7 @@ def test_generator_makes_runs_reproducible() -> None:
     for _ in range(2):
         generator = torch.Generator().manual_seed(11)
         runs.append(
-            pspGlobal(
+            PSP(
                 vor.model,
                 vor.discretize,
                 voronoi_control(30, 3, 20, 5),
@@ -256,7 +256,7 @@ def test_runs_on_every_device(device: torch.device) -> None:
     vor = voronoi_model(regions=20, dimensions=3)
     ctrl = voronoi_control(20, 3, iterations=200, population=5)
     generator = torch.Generator(device=device).manual_seed(0)
-    out = pspGlobal(
+    out = PSP(
         vor.model,
         vor.discretize,
         ctrl,
@@ -271,5 +271,5 @@ def test_runs_on_every_device(device: torch.device) -> None:
 
 def test_progress_is_printed_unless_quiet(capsys: pytest.CaptureFixture[str]) -> None:
     vor = voronoi_model(regions=5, dimensions=2)
-    pspGlobal(vor.model, vor.discretize, voronoi_control(5, 2, iterations=2, population=1000))
+    PSP(vor.model, vor.discretize, voronoi_control(5, 2, iterations=2, population=1000))
     assert capsys.readouterr().out == "Iteration: [1]\nIteration: [2]\n"

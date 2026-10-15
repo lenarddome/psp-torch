@@ -7,14 +7,14 @@ from ._callbacks import Discretize, Model, rowwise
 from ._control import UNBOUNDED, Control
 from ._global import PSP, PSPResult, clamp_parameters, hyper_points
 from ._io import SavedRun, has_pyarrow, read_saved, saved_paths
-from ._many import ManyModel, pspMany
+from ._many import LockstepModel, PSPLockstep
 
 __version__ = "0.1.0"
 
 __all__ = [
     "PSP",
-    "pspMany",
-    "ManyModel",
+    "PSPLockstep",
+    "LockstepModel",
     "PSPResult",
     "Control",
     "UNBOUNDED",

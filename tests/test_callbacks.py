@@ -1,4 +1,4 @@
-"""The contract between pspGlobal and the user-supplied model and discretize functions.
+"""The contract between PSP and the user-supplied model and discretize functions.
 
 A port of tests/testthat/test_psp_cpp_callbacks.R.
 """
@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 import torch
 
-from psp import pspGlobal, rowwise
+from psp import PSP, rowwise
 
 
 def callback_control() -> dict:
@@ -34,7 +34,7 @@ def test_model_receives_a_batch_of_parameter_sets() -> None:
         seen.append(par)
         return torch.tensor([[1.0, 2.0]]).expand(par.shape[0], 2)
 
-    pspGlobal(model, lambda x: torch.ones(x.shape[0], 2, 2), callback_control(), quiet=True)
+    PSP(model, lambda x: torch.ones(x.shape[0], 2, 2), callback_control(), quiet=True)
     assert len(seen) == 3
     for par in seen:
         assert torch.is_tensor(par)
@@ -49,7 +49,7 @@ def test_rowwise_model_receives_a_plain_vector() -> None:
         seen.append(par)
         return [1.0, 2.0]
 
-    pspGlobal(model, lambda x: np.ones((2, 2)), callback_control(), quiet=True, batched=False)
+    PSP(model, lambda x: np.ones((2, 2)), callback_control(), quiet=True, batched=False)
     assert len(seen) == 3
     for par in seen:
         assert par.shape == (2,)
@@ -71,7 +71,7 @@ def test_discretize_receives_model_output_as_doubles() -> None:
         seen.append(x)
         return torch.ones(x.shape[0], 2, 2, dtype=torch.int64)
 
-    out = pspGlobal(
+    out = PSP(
         lambda par: torch.tensor([[1, 2]], dtype=torch.int64).expand(par.shape[0], 2),
         discretize,
         callback_control(),
@@ -90,9 +90,9 @@ def test_errors_raised_by_callbacks_reach_the_caller() -> None:
         raise RuntimeError("discretize broke")
 
     with pytest.raises(RuntimeError, match="model broke"):
-        pspGlobal(broken_model, lambda x: torch.ones(1, 2, 2), callback_control(), quiet=True)
+        PSP(broken_model, lambda x: torch.ones(1, 2, 2), callback_control(), quiet=True)
     with pytest.raises(RuntimeError, match="discretize broke"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(par.shape[0], 2),
             broken_discretize,
             callback_control(),
@@ -111,19 +111,19 @@ def test_error_in_a_later_iteration_reaches_the_caller() -> None:
         return torch.ones(par.shape[0], 2)
 
     with pytest.raises(RuntimeError, match="failed on call 2"):
-        pspGlobal(model, lambda x: torch.ones(x.shape[0], 2, 2), callback_control(), quiet=True)
+        PSP(model, lambda x: torch.ones(x.shape[0], 2, 2), callback_control(), quiet=True)
 
 
 def test_model_output_of_the_wrong_length_or_type_is_rejected() -> None:
     with pytest.raises(ValueError, match="responses"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(par.shape[0], 3),
             lambda x: torch.ones(1, 2, 2),
             callback_control(),
             quiet=True,
         )
     with pytest.raises(ValueError, match="numeric"):
-        pspGlobal(
+        PSP(
             lambda par: ["a", "b"],
             lambda x: torch.ones(1, 2, 2),
             callback_control(),
@@ -131,7 +131,7 @@ def test_model_output_of_the_wrong_length_or_type_is_rejected() -> None:
             batched=False,
         )
     with pytest.raises(ValueError, match="one row of values per parameter set"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(5, 2),
             lambda x: torch.ones(1, 2, 2),
             callback_control(),
@@ -141,14 +141,14 @@ def test_model_output_of_the_wrong_length_or_type_is_rejected() -> None:
 
 def test_discretize_output_that_is_not_a_dimensionality_sized_matrix_is_rejected() -> None:
     with pytest.raises(ValueError, match="matrix"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(par.shape[0], 2),
             lambda x: torch.ones(4),
             callback_control(),
             quiet=True,
         )
     with pytest.raises(ValueError, match="dimensionality"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(par.shape[0], 2),
             lambda x: torch.ones(1, 3, 3),
             callback_control(),
@@ -159,7 +159,7 @@ def test_discretize_output_that_is_not_a_dimensionality_sized_matrix_is_rejected
 def test_sizes_are_inferred_when_control_omits_them() -> None:
     ctrl = callback_control()
     del ctrl["responses"], ctrl["dimensionality"], ctrl["stimuli_names"]
-    out = pspGlobal(
+    out = PSP(
         lambda par: torch.ones(par.shape[0], 7),
         lambda x: torch.ones(x.shape[0], 3, 3),
         ctrl,
@@ -167,7 +167,7 @@ def test_sizes_are_inferred_when_control_omits_them() -> None:
     )
     assert out.ordinal_patterns.shape == (1, 3, 3)
     with pytest.raises(ValueError, match="square"):
-        pspGlobal(
+        PSP(
             lambda par: torch.ones(par.shape[0], 7),
             lambda x: torch.ones(x.shape[0], 2, 3),
             ctrl,
@@ -180,29 +180,29 @@ def test_invalid_control_settings_are_rejected() -> None:
     ctrl["iterations"] = 0
     ctrl["population"] = 0
     with pytest.raises(ValueError, match="threshold"):
-        pspGlobal(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
+        PSP(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
     ctrl = callback_control()
     ctrl["upper"] = [1]
     with pytest.raises(ValueError, match="same length"):
-        pspGlobal(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
+        PSP(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
     ctrl = callback_control()
     ctrl["parameter_names"] = ["p1"]
     with pytest.raises(ValueError, match="param_names"):
-        pspGlobal(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
+        PSP(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
     ctrl = callback_control()
     ctrl["typo"] = 1
     with pytest.raises(ValueError, match="unknown control keys"):
-        pspGlobal(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
+        PSP(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
     ctrl = callback_control()
     ctrl["radius"] = [0.1, 0.2, 0.3]
     with pytest.raises(ValueError, match="radius"):
-        pspGlobal(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
+        PSP(lambda par: torch.ones(1, 2), lambda x: torch.ones(1, 2, 2), ctrl, quiet=True)
 
 
 def test_unbounded_settings_accept_none_and_inf() -> None:
     ctrl = callback_control()
     ctrl["population"] = None
-    out = pspGlobal(
+    out = PSP(
         lambda par: torch.ones(par.shape[0], 2),
         lambda x: torch.ones(x.shape[0], 2, 2),
         ctrl,
@@ -210,7 +210,7 @@ def test_unbounded_settings_accept_none_and_inf() -> None:
     )
     assert out.iterations == 2
     ctrl["population"] = float("inf")
-    out = pspGlobal(
+    out = PSP(
         lambda par: torch.ones(par.shape[0], 2),
         lambda x: torch.ones(x.shape[0], 2, 2),
         ctrl,
