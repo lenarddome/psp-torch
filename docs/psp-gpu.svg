@@ -2,7 +2,7 @@
 <text x="56" y="92" font-size="11" text-anchor="start" font-weight="bold" fill="#1f2933" opacity="0.75">CPU  (Python objects, NumPy, files)</text>
 <rect x="520" y="70" width="560" height="880" rx="10" fill="rgba(42,120,214,0.08)" stroke="#2a78d6" stroke-width="1.2"/>
 <text x="536" y="92" font-size="11" text-anchor="start" font-weight="bold" fill="#2a78d6" opacity="1.0">DEVICE  (torch tensors: cuda or cpu, one dtype)</text>
-<text x="40" y="40" font-size="12.5" text-anchor="start" font-weight="bold" fill="#1f2933" font-family="Consolas, 'DejaVu Sans Mono', monospace" opacity="1.0">pspGlobal(model, discretize, control, save, …, device, dtype, generator)</text>
+<text x="40" y="40" font-size="12.5" text-anchor="start" font-weight="bold" fill="#1f2933" font-family="Consolas, 'DejaVu Sans Mono', monospace" opacity="1.0">PSP(model, discretize, control, save, …, device, dtype, generator)</text>
 <rect x="56" y="110" width="408" height="70" rx="6" fill="none" stroke="#1f2933" stroke-width="1.2"/>
 <text x="72" y="132" font-size="12" text-anchor="start" font-weight="bold" fill="#1f2933" opacity="1.0">Control.from_mapping</text>
 <text x="72" y="150" font-size="11" text-anchor="start" font-weight="normal" fill="#1f2933" opacity="1.0">validates keys, bounds, names, stopping rule;</text>

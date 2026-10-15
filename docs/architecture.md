@@ -24,9 +24,9 @@ One call of `alcove_curves(unit, training)`: inputs are moved to the device once
 
 The algorithm is the R package's, iteration for iteration: every pattern still below `population` proposes one new parameter set within `radius` of the last set that produced it; all proposals are evaluated, matched to known patterns, and the loop repeats. The port changes one thing. Instead of calling `model` once per proposal, it hands the whole batch of proposals to `model` in one call, and keeps everything that batch touches on the device.
 
-![pspGlobal on the GPU](psp-gpu.svg)
+![PSP on the GPU](psp-gpu.svg)
 
-One iteration of `pspGlobal()`. The left lane is Python on the CPU: the pattern store (a hash table keyed by the bytes of each pattern matrix), population counts and the csv writer. The right lane is torch on the device: centres, random proposals, clamping, the model and discretize calls, and the centre update. One copy of the new patterns crosses from device to host per iteration, and the pattern ids cross back.
+One iteration of `PSP()`. The left lane is Python on the CPU: the pattern store (a hash table keyed by the bytes of each pattern matrix), population counts and the csv writer. The right lane is torch on the device: centres, random proposals, clamping, the model and discretize calls, and the centre update. One copy of the new patterns crosses from device to host per iteration, and the pattern ids cross back.
 
 | | |
 | --- | --- |
@@ -38,6 +38,6 @@ One iteration of `pspGlobal()`. The left lane is Python on the CPU: the pattern 
 | The contract | `model: (k, d) → (k, responses)` and `discretize: (k, responses) → (k, D, D)`. `rowwise(fn)` adapts functions written for one parameter set by looping and stacking, which restores the R package's call pattern and its cost. |
 | Where time goes | For a model costing microseconds the fixed per-iteration cost dominates and the CPU wins. For a model doing real tensor work per row, the single batched call is the whole cost, and the device wins once k is large enough to fill it; the benchmarks notebook measures where that is. |
 
-Many runs at once: `psp.pspMany` keeps one pattern store per run and concatenates the proposals of every run into the single model call of each iteration, passing the run index of each row; the model routes each row to its own trial sequence (see `psp.models.oscar.evaluate` and `notebooks/oscar/run_oscar.py`).
+Many runs at once: `psp.PSPLockstep` keeps one pattern store per run and concatenates the proposals of every run into the single model call of each iteration, passing the run index of each row; the model routes each row to its own trial sequence (see `psp.models.oscar.evaluate` and `notebooks/oscar/run_oscar.py`).
 
 Source files: `psp/_global.py` (the loop), `psp/_many.py` (many runs in lockstep), `psp/_store.py` (pattern store), `psp/_control.py` (settings), `psp/_io.py` (saving), `psp/models/alcove.py` (the model).
