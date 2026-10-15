@@ -12,6 +12,7 @@ The workloads of the R package's [benchmarks article](https://lenarddome.com/psp
 | `devices.py` | Seconds per call of `model` and `discretize` for batches of 1 to 4,096 parameter sets, on every device and dtype, for a near-free model, a 1,000-region Voronoi model and ALCOVE; and whole runs with 1, 16 and 256 starting points. | `results/devices.csv` |
 | `alcove_benchmark.py` | ALCOVE with the learning rates free up to 1: 20 starting points, radius 0.15, population 50, cap 1,000 iterations, seeds 1 to 3. Time, regions found, evaluations, and the number of regions found after each iteration. `--device`, `--dtype`, `--seeds`. `--import-r` merges the files the R script writes. | `results/alcove.csv`, `alcove_discovery.csv`, `alcove_patterns.csv` |
 | `r/alcove_benchmark.R` | The same ALCOVE workload for the R package, with catlearn's `slpALCOVE()`. | three csv files in a directory of your choice |
+| `clobe/run.py` | `psp.clobe` against the R package clobe 0.8.0: seconds per call of every function, on the same inputs. See [clobe/README.md](clobe/README.md). | `clobe/results/r.csv`, `torch.csv` |
 
 Rows of a build that is run again replace its earlier rows, so a single build can be re-measured without touching the others. The build label defaults to `psp-torch <version> <device> [<dtype>|rowwise]`, followed by ` (<machine>)` when `--machine` is given.
 

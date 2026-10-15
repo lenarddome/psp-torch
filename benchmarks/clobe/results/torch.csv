@@ -1,0 +1,40 @@
+function,size,build,seconds,samples,check
+imac (one vector),1,psp-torch cpu float64,4.23803e-05,5,-9
+imac (every row),1000,psp-torch cpu float64,0.000181753,5,345
+patterns,1000,psp-torch cpu float64,0.000419967,5,554
+imac (every row),10000,psp-torch cpu float64,0.00139616,5,302
+patterns,10000,psp-torch cpu float64,0.00216059,5,1557
+imac (every row),100000,psp-torch cpu float64,0.02272,5,3225
+patterns,100000,psp-torch cpu float64,0.0267953,5,2187
+gdistance,1000,psp-torch cpu float64,0.000489562,5,0.686136660715578
+gdistance,10000,psp-torch cpu float64,0.00227582,5,0.554236849027623
+gdistance,38703,psp-torch cpu float64,0.00311726,5,0.707106781186548
+pattern_distance,100,psp-torch cpu float64,0.000140862,5,128906
+pattern_distance,1000,psp-torch cpu float64,0.000859704,5,13071772
+pattern_distance,5000,psp-torch cpu float64,0.0645995,5,329275610
+orderings (semiorder),5,psp-torch cpu float64,0.000953152,5,2371
+orderings (semiorder),6,psp-torch cpu float64,0.0128586,5,38703
+orderings (semiorder),7,psp-torch cpu float64,0.252529,5,763099
+orderings (weak),7,psp-torch cpu float64,0.0064198,5,47293
+orderings (weak),8,psp-torch cpu float64,0.126037,5,545835
+orderings (weak),9,psp-torch cpu float64,3.76374,5,7087261
+brutes,5,psp-torch cpu float64,0.00123403,5,2131
+brutes,6,psp-torch cpu float64,0.0430405,5,28623
+brutes,7,psp-torch cpu float64,0.568232,5,437179
+brutes,8,psp-torch cpu float64,6.93545,5,7185783
+imac (every row),1000,psp-torch cuda float64,0.000179732,5,345
+patterns,1000,psp-torch cuda float64,0.000612316,5,554
+imac (every row),10000,psp-torch cuda float64,0.000200916,5,302
+patterns,10000,psp-torch cuda float64,0.000658671,5,1557
+imac (every row),100000,psp-torch cuda float64,0.00108947,5,3225
+patterns,100000,psp-torch cuda float64,0.00194029,5,2187
+gdistance,1000,psp-torch cuda float64,0.00103509,5,0.686136660715578
+gdistance,10000,psp-torch cuda float64,0.0013053,5,0.554236849027623
+gdistance,38703,psp-torch cuda float64,0.00150754,5,0.707106781186548
+pattern_distance,100,psp-torch cuda float64,0.000475995,5,128906
+pattern_distance,1000,psp-torch cuda float64,0.000576516,5,13071772
+pattern_distance,5000,psp-torch cuda float64,0.00424675,5,329275610
+brutes,5,psp-torch cuda float64,0.00146269,5,2131
+brutes,6,psp-torch cuda float64,0.00293161,5,28623
+brutes,7,psp-torch cuda float64,0.02351,5,437179
+brutes,8,psp-torch cuda float64,0.269138,5,7185783
