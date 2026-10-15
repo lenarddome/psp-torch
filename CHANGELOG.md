@@ -17,8 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   differences with thresholds within 8 eps of the dtype instead of R's `sqrt(.Machine$double.eps)`.
   `imac`, `patterns` and `brutes` take `inclusive=True` for the rule of clobe before 0.8.0, which
   counts a difference equal to a threshold as larger or smaller rather than approximately equal.
-- `notebooks/clobe/`: the four vignettes of the R package clobe, ported to `psp.clobe`, with the
-  models of the g-distance vignette placed on the α-β plane of Dome and Wills (2025).
+- `notebooks/clobe/`: the four vignettes of the R package clobe, ported to `psp.clobe` and aligned
+  with the published paper (Dome and Wills, 2025), with figures throughout, and a tutorial on the
+  zone of model adequacy (a split-half analysis of the human data).
+- `notebooks/figure_style.py`: one publication-ready figure style for every notebook; each figure
+  is also saved as a vector PDF and a 300 dpi PNG under `notebooks/figures/` (not tracked).
 - `benchmarks/clobe/` and `notebooks/benchmarks-clobe.ipynb`: `psp.clobe` against clobe 0.8.0 on
   the same inputs, function by function, on the CPU and the GPU.
 
