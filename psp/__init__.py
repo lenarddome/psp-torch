@@ -3,6 +3,7 @@
 >>> from psp import PSP
 """
 
+from . import clobe
 from ._callbacks import Discretize, Model, rowwise
 from ._control import UNBOUNDED, Control
 from ._global import PSP, PSPResult, clamp_parameters, hyper_points
@@ -27,5 +28,6 @@ __all__ = [
     "saved_paths",
     "has_pyarrow",
     "SavedRun",
+    "clobe",
     "__version__",
 ]

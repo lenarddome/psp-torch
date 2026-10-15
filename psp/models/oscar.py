@@ -28,6 +28,8 @@ from typing import Literal
 import numpy as np
 import torch
 
+from .. import clobe
+
 __all__ = [
     "OSCAR_PARAMETERS",
     "OSCAR_BOUNDS",
@@ -487,19 +489,14 @@ def evaluate(
 def imac(
     probabilities: torch.Tensor, thresholds: tuple[float, float] = (0.125, -0.125)
 ) -> torch.Tensor:
-    """clobe's inequality matrix constructor, batched.
+    """clobe's inequality matrix constructor as the PSP routine used it:
+    :func:`psp.clobe.imac` with ``inclusive=True``.
 
     For ``probabilities`` of shape ``(B, m)`` returns ``(B, m, m)``: above the
     diagonal, 1 where ``p_i - p_j >= thresholds[0]``, -1 where ``<= thresholds[1]``,
     0 between; 2 on and below the diagonal. A NaN difference stays NaN.
     """
-    upper, lower = thresholds
-    p = probabilities
-    diff = p.unsqueeze(2) - p.unsqueeze(1)  # (B, m, m): p_i - p_j
-    value = torch.where(diff >= upper, 1.0, torch.where(diff <= lower, -1.0, 0.0)).to(p.dtype)
-    value = torch.where(torch.isnan(diff), diff, value)
-    strict_upper = torch.triu(torch.ones_like(diff[0], dtype=torch.bool), diagonal=1)
-    return torch.where(strict_upper, value, torch.full_like(value, 2.0))
+    return clobe.imac(probabilities, thresholds, inclusive=True)
 
 
 def discretize(
