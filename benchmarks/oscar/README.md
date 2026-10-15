@@ -1,6 +1,6 @@
 # OSCAR: R + RcppArmadillo against the torch port
 
-A local benchmark of the participant-level OSCAR routine: the compiled C++ model called from R with the R package psp, against `psp.models.oscar` with `pspMany` on the CPU and on the GPU. The results and the report are in `results/` (`report.md`, `model.png`, `psp.png`).
+A local benchmark of the participant-level OSCAR routine: the compiled C++ model called from R with the R package psp, against `psp.models.oscar` with `PSPLockstep` on the CPU and on the GPU. The results and the report are in `results/` (`report.md`, `model.png`, `psp.png`). The notebook [notebooks/benchmarks-oscar.ipynb](../../notebooks/benchmarks-oscar.ipynb) reads them and explains what they show.
 
 | File | What it does |
 | --- | --- |

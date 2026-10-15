@@ -8,7 +8,7 @@ Usage::
 Rows are appended to ``overhead.csv``, ``save.csv`` and ``discovery.csv`` in the
 output directory (default ``benchmarks/results``), with the columns of the R script.
 
-- overhead: a near-free model, so any time not spent calling it is pspGlobal's.
+- overhead: a near-free model, so any time not spent calling it is PSP's.
 - save: the extra cost of ``save=True`` with 300 model outputs per evaluation.
 - discovery: regions found by 30 runs on a 50-region model.
 - settings: regions found on the same model with other populations, radii and starting
@@ -26,7 +26,7 @@ from pathlib import Path
 import torch
 
 import psp
-from psp import pspGlobal
+from psp import PSP
 from psp.models.voronoi import voronoi_control, voronoi_model
 
 RESULTS = Path(__file__).resolve().parent / "results"
@@ -93,7 +93,7 @@ def main() -> None:
         for rep in range(1, 4):
             generator = torch.Generator(device=device).manual_seed(rep)
             total, out = seconds(
-                lambda generator=generator: pspGlobal(
+                lambda generator=generator: PSP(
                     model, discretize, ctrl, quiet=True, device=device, generator=generator
                 ),
                 device,
@@ -105,7 +105,7 @@ def main() -> None:
                 lambda points=points, n=n: [discretize(model(points[i : i + 1])) for i in range(n)],
                 device,
             )
-            # and in one batch, which is how pspGlobal calls them
+            # and in one batch, which is how PSP calls them
             batched, _ = seconds(lambda points=points: discretize(model(points)), device)
             emit(
                 out_dir,
@@ -129,7 +129,7 @@ def main() -> None:
         for seed in range(1, 4):
             generator = torch.Generator(device=device).manual_seed(seed)
             with_save, out = seconds(
-                lambda generator=generator: pspGlobal(
+                lambda generator=generator: PSP(
                     v.model,
                     v.discretize,
                     ctrl,
@@ -143,7 +143,7 @@ def main() -> None:
             )
             generator = torch.Generator(device=device).manual_seed(seed)
             without, _ = seconds(
-                lambda generator=generator: pspGlobal(
+                lambda generator=generator: PSP(
                     v.model, v.discretize, ctrl, quiet=True, device=device, generator=generator
                 ),
                 device,
@@ -169,7 +169,7 @@ def main() -> None:
         for seed in range(1, 31):
             generator = torch.Generator(device=device).manual_seed(seed)
             elapsed, out = seconds(
-                lambda generator=generator: pspGlobal(
+                lambda generator=generator: PSP(
                     v.model, v.discretize, ctrl, quiet=True, device=device, generator=generator
                 ),
                 device,
@@ -219,7 +219,7 @@ def main() -> None:
                     ctrl = voronoi_control(
                         50, 3, 500, setting["population"], setting["radius"], init
                     )
-                    out = pspGlobal(
+                    out = PSP(
                         v.model, v.discretize, ctrl, quiet=True, device=device, generator=generator
                     )
                     found.update(p.numpy().tobytes() for p in out.ordinal_patterns)

@@ -30,7 +30,7 @@ from pathlib import Path
 import pandas as pd
 import torch
 
-from psp import pspGlobal, read_saved
+from psp import PSP, read_saved
 from psp.models.alcove import (
     ALCOVE_PARAMETERS,
     TYPES,
@@ -133,7 +133,7 @@ def main() -> None:
         path = Path(tempfile.mkdtemp()) / "alcove"
         generator = torch.Generator(device=device).manual_seed(2026)
         start = time.perf_counter()
-        result = pspGlobal(
+        result = PSP(
             model, discretize, control(init), save=True, path=path, quiet=True, generator=generator
         )
         seconds = time.perf_counter() - start
@@ -187,7 +187,7 @@ def main() -> None:
                 (20, 4), generator=torch.Generator().manual_seed(seed), dtype=torch.float64
             ).to(device)
             generator = torch.Generator(device=device).manual_seed(seed)
-            out = pspGlobal(
+            out = PSP(
                 lambda u, tr=other: alcove_curves(u, tr),
                 discretize,
                 control(init),

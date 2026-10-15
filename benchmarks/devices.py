@@ -12,7 +12,7 @@ run is the number of patterns still filling. This script measures both:
 - ``model`` alone: seconds per call for batches of 1 to 4,096 parameter sets,
   for a near-free model (returns its parameters), the Voronoi model with 1,000
   centres, and ALCOVE with 30 simulated learners, in float32 and float64.
-- ``pspGlobal`` end to end on the same models, with the batch size set by the
+- ``PSP`` end to end on the same models, with the batch size set by the
   number of starting points and a population that keeps every pattern filling.
 
 Rows: ``machine, device, dtype, model, kind, batch, seconds, evaluations``. ``kind`` is
@@ -31,7 +31,7 @@ from pathlib import Path
 import torch
 from compare import read_rows, write_rows
 
-from psp import pspGlobal
+from psp import PSP
 from psp.models.alcove import alcove_curves, alcove_training, weak_order
 from psp.models.voronoi import voronoi_model
 
@@ -154,7 +154,7 @@ def main() -> None:
                         device=device,
                         dtype=dtype,
                     ):
-                        return pspGlobal(
+                        return PSP(
                             model,
                             discretize,
                             ctrl,

@@ -1,7 +1,7 @@
 "what","rep","evaluations","seconds"
-"OSCAR() alone",1,1000,2.315
-"OSCAR() alone",2,1000,2.32
-"OSCAR() alone",3,1000,2.332
-"evaluate()",1,1000,5.56
-"evaluate()",2,1000,5.821
-"evaluate()",3,1000,5.536
+"OSCAR() alone",1,1000,2.262
+"OSCAR() alone",2,1000,2.268
+"OSCAR() alone",3,1000,2.285
+"evaluate()",1,1000,5.442
+"evaluate()",2,1000,5.362
+"evaluate()",3,1000,5.27

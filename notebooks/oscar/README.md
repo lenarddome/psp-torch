@@ -4,13 +4,13 @@ One parameter space partitioning run per participant of the inverse base-rate ef
 
 ## What one run does
 
-For a participant, `pspGlobal` searches the five parameters P, α, μ, ρ, β within the bounds (1, 5), (0.001, 1), (0.001, 1), (0.001, 5), (0.001, 5). The model runs OSCAR through that participant's training and test trials (supervised design: training trials learn with feedback, test trials only respond) and returns, behind a 0.5 anchor, the mean P(rare) at test for A, B, BC and C. The ordinal pattern is clobe's inequality matrix of those five values with thresholds ±0.125; any NaN makes the whole matrix 99. As in `evaluate()` of `imac.R`, the initial saliences and weights are drawn afresh, uniform in (0, 0.001), on every evaluation.
+For a participant, `PSP` searches the five parameters P, α, μ, ρ, β within the bounds (1, 5), (0.001, 1), (0.001, 1), (0.001, 5), (0.001, 5). The model runs OSCAR through that participant's training and test trials (supervised design: training trials learn with feedback, test trials only respond) and returns, behind a 0.5 anchor, the mean P(rare) at test for A, B, BC and C. The ordinal pattern is clobe's inequality matrix of those five values with thresholds ±0.125; any NaN makes the whole matrix 99. As in `evaluate()` of `imac.R`, the initial saliences and weights are drawn afresh, uniform in (0, 0.001), on every evaluation.
 
 Settings, as in `run.r`: 1,000 random starting points (one matrix of starts shared by all participants, as the R routine does), radius 1, population 1,000,000 (so every pattern keeps proposing until the cap), 10,000 iterations.
 
 ## How the runs are batched
 
-All participants advance in lockstep (`psp.pspMany`): each iteration, the proposals of every run are concatenated and OSCAR is called once with every row routed to its participant's trial sequence (padded to 112 trials). Each participant keeps its own pattern store, counts, files and result, exactly as separate `pspGlobal` calls would. `--group N` limits how many participants share a group, if memory is tight.
+All participants advance in lockstep (`psp.PSPLockstep`): each iteration, the proposals of every run are concatenated and OSCAR is called once with every row routed to its participant's trial sequence (padded to 112 trials). Each participant keeps its own pattern store, counts, files and result, exactly as separate `PSP` calls would. `--group N` limits how many participants share a group, if memory is tight.
 
 ## Running it
 

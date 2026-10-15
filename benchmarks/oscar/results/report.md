@@ -6,21 +6,21 @@ One participant (1,000 parameter sets for R, 3 repeats; 5 repeats per batch for 
 
 | R + RcppArmadillo | per evaluation |
 | --- | --- |
-| `OSCAR() alone` | 2.32 ms |
-| `evaluate()` | 5.56 ms |
+| `OSCAR() alone` | 2.27 ms |
+| `evaluate()` | 5.36 ms |
 
 | batch | torch cpu float64 | torch cuda float32 | torch cuda float64 | vs R evaluate(), cpu float64 | vs R evaluate(), cuda float32 | vs R evaluate(), cuda float64 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 81.35 ms | 229.38 ms | 228.23 ms | 0.068× | 0.024× | 0.024× |
-| 4 | 21.75 ms | 58.17 ms | 58.46 ms | 0.26× | 0.096× | 0.095× |
-| 16 | 6.54 ms | 14.66 ms | 14.74 ms | 0.85× | 0.38× | 0.38× |
-| 64 | 2.44 ms | 3.68 ms | 3.70 ms | 2.3× | 1.5× | 1.5× |
-| 256 | 1.32 ms | 926.4 µs | 931.8 µs | 4.2× | 6× | 6× |
-| 1024 | 1.03 ms | 232.7 µs | 231.5 µs | 5.4× | 23.9× | 24.0× |
-| 4096 | 378.7 µs | 58.6 µs | 125.5 µs | 14.7× | 94.9× | 44.3× |
-| 16384 | 367.8 µs | 20.3 µs | 118.7 µs | 15.1× | 273.5× | 46.8× |
+| 1 | 82.57 ms | 232.44 ms | 230.44 ms | 0.065× | 0.023× | 0.023× |
+| 4 | 22.30 ms | 59.04 ms | 59.24 ms | 0.24× | 0.091× | 0.091× |
+| 16 | 6.70 ms | 14.82 ms | 14.89 ms | 0.8× | 0.36× | 0.36× |
+| 64 | 2.47 ms | 3.74 ms | 3.73 ms | 2.2× | 1.4× | 1.4× |
+| 256 | 1.32 ms | 940.3 µs | 936.6 µs | 4.1× | 5.7× | 5.7× |
+| 1024 | 1.03 ms | 235.6 µs | 233.4 µs | 5.2× | 22.8× | 23.0× |
+| 4096 | 379.3 µs | 59.1 µs | 125.0 µs | 14.1× | 90.7× | 42.9× |
+| 16384 | 312.6 µs | 20.3 µs | 118.0 µs | 17.2× | 264.0× | 45.4× |
 
-Fastest per evaluation: torch cpu float64 367.8 µs at 16,384 sets per call (15.1× R's `evaluate()`); torch cuda float32 20.3 µs at 16,384 sets per call (273.5× R's `evaluate()`); torch cuda float64 118.7 µs at 16,384 sets per call (46.8× R's `evaluate()`).
+Fastest per evaluation: torch cpu float64 312.6 µs at 16,384 sets per call (17.2× R's `evaluate()`); torch cuda float32 20.3 µs at 16,384 sets per call (264.0× R's `evaluate()`); torch cuda float64 118.0 µs at 16,384 sets per call (45.4× R's `evaluate()`).
 
 ![time per evaluation](model.png)
 
@@ -32,11 +32,11 @@ The first 14 participants, 100 starting points (one matrix shared by all partici
 
 | build | how | minutes, all participants | evaluations per second | speed-up vs R | patterns per participant | evaluations per participant |
 | --- | --- | --- | --- | --- | --- | --- |
-| R + C++ | 14 worker processes | 7.5 | 1,099 | 1× | 198–216, median 204 | 35,417 |
-| torch cpu float64 | 1 process, lockstep | 4.4 | 1,861 | 1.7× | 194–215, median 205 | 34,916 |
-| torch cuda float32 | 1 process, lockstep | 0.9 | 9,597 | 8.6× | 196–220, median 208 | 35,461 |
+| R + C++ | 14 worker processes | 7.4 | 1,111 | 1× | 198–216, median 204 | 35,417 |
+| torch cpu float64 | 1 process, lockstep | 4.4 | 1,864 | 1.7× | 194–215, median 205 | 34,916 |
+| torch cuda float32 | 1 process, lockstep | 0.9 | 9,706 | 8.6× | 196–220, median 208 | 35,461 |
 
-Each R participant took a median of 399 s in the parallel run; the same 35,417 evaluations at the 5.56 ms of a lone `evaluate()` come to about 197 s, so with 14 workers on 16 hardware threads each R process ran about 2.0 times slower than alone. That is the R routine as `psp.R` runs it on this machine; the port's CPU run used torch's own threads in one process.
+Each R participant took a median of 419 s in the parallel run; the same 35,417 evaluations at the 5.36 ms of a lone `evaluate()` come to about 190 s, so with 14 workers on 16 hardware threads each R process ran about 2.2 times slower than alone. That is the R routine as `psp.R` runs it on this machine; the port's CPU run used torch's own threads in one process.
 
 ![wall-clock time](psp.png)
 

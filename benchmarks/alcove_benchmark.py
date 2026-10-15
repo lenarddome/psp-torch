@@ -36,7 +36,7 @@ import torch
 from compare import RESULTS, machine_suffix, read_rows, replace_build
 
 import psp
-from psp import pspGlobal, read_saved
+from psp import PSP, read_saved
 from psp.models.alcove import (
     ALCOVE_PARAMETERS_FULL,
     alcove_curves,
@@ -100,7 +100,7 @@ def run(
         if device.type == "cuda":
             torch.cuda.synchronize()
         start = time.perf_counter()
-        out = pspGlobal(
+        out = PSP(
             model,
             discretize,
             control,

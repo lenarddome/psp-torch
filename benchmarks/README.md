@@ -6,7 +6,7 @@ The workloads of the R package's [benchmarks article](https://lenarddome.com/psp
 
 | Script | What it measures | Writes |
 | --- | --- | --- |
-| `benchmark.py` | Time per run of `pspGlobal()` on five fixed workloads (the R package's `benchmark.R`), one csv row per run on stdout. `--device`, `--rowwise` (call the model one parameter set at a time, as R does). | stdout |
+| `benchmark.py` | Time per run of `PSP()` on five fixed workloads (the R package's `benchmark.R`), one csv row per run on stdout. `--device`, `--rowwise` (call the model one parameter set at a time, as R does). | stdout |
 | `experiments.py` | Overhead with a near-free model, the cost of `save=True`, regions found on a 50-region model, and the effect of population, radius and starting points. `--experiments overhead,save,discovery,settings`. | `results/overhead.csv`, `save.csv`, `discovery.csv`, `settings.csv` |
 | `compare.py` | Runs `r/benchmark.R` and `r/experiments.R` (the R package's own scripts, unchanged) with a given R library, then `benchmark.py` and `experiments.py` for every device, and merges everything into `results/`. `--rowwise` adds the row-wise CPU run; `--skip-r` runs only the torch side. | `results/workloads.csv` and the files above |
 | `devices.py` | Seconds per call of `model` and `discretize` for batches of 1 to 4,096 parameter sets, on every device and dtype, for a near-free model, a 1,000-region Voronoi model and ALCOVE; and whole runs with 1, 16 and 256 starting points. | `results/devices.csv` |
@@ -73,4 +73,4 @@ The figures of the notebook are also exported as PNG files in `results/figures/`
 | `alcove_discovery.csv` | `build, seed, iteration, evaluations, patterns` (distinct patterns found so far) |
 | `alcove_patterns.csv` | `build, seed, order, count` (every ordering a run found, with its population) |
 
-Seconds are wall-clock time of one complete `pspGlobal()` call with `quiet=True`: every model evaluation plus everything the package does around them, including csv writing where `save=True`. R uses `system.time()[["elapsed"]]`, Python `time.perf_counter()`.
+Seconds are wall-clock time of one complete `PSP()` call with `quiet=True`: every model evaluation plus everything the package does around them, including csv writing where `save=True`. R uses `system.time()[["elapsed"]]`, Python `time.perf_counter()`.

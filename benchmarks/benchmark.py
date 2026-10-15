@@ -1,4 +1,4 @@
-"""Benchmarks pspGlobal on the fixed set of workloads of the R package's ``benchmarks/benchmark.R``.
+"""Benchmarks PSP on the fixed set of workloads of the R package's ``benchmarks/benchmark.R``.
 
 Usage::
 
@@ -22,7 +22,7 @@ from pathlib import Path
 import torch
 
 import psp
-from psp import pspGlobal
+from psp import PSP
 from psp.models.voronoi import voronoi_control, voronoi_model
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,7 +53,7 @@ def run(
         if device.type == "cuda":
             torch.cuda.synchronize()
         start = time.perf_counter()
-        out = pspGlobal(
+        out = PSP(
             model,
             discretize,
             control,

@@ -38,7 +38,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from psp import pspMany
+from psp import PSPLockstep
 from psp.models.oscar import (
     EVALUATED_STIMULI,
     OSCAR_BOUNDS,
@@ -156,7 +156,7 @@ def main() -> None:
             f"started {started}",
             flush=True,
         )
-        results = pspMany(
+        results = PSPLockstep(
             model,
             disc,
             controls,
