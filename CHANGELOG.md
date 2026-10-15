@@ -7,8 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `psp.clobe`: a port of the R package clobe 0.8.0 (Dome and Wills, 2025): `imac`, `patterns`,
+  `gdistance`, `pattern_distance`, `orderings`, `brutes`, `stirling2`, `fubini` and
+  `semiorders`, checked against the R package's test suite and outputs exported from it.
+  `imac` is batched and fits the `discretize` contract of `PSP()`; counts are exact integers;
+  `brutes` runs on any torch device. For float32 and lower precision, `imac` compares
+  differences with thresholds within 8 eps of the dtype instead of R's `sqrt(.Machine$double.eps)`.
+  `imac`, `patterns` and `brutes` take `inclusive=True` for the rule of clobe before 0.8.0, which
+  counts a difference equal to a threshold as larger or smaller rather than approximately equal.
+- `notebooks/clobe/`: the four vignettes of the R package clobe, ported to `psp.clobe`, with the
+  models of the g-distance vignette placed on the α-β plane of Dome and Wills (2025).
+- `benchmarks/clobe/` and `notebooks/benchmarks-clobe.ipynb`: `psp.clobe` against clobe 0.8.0 on
+  the same inputs, function by function, on the CPU and the GPU.
+
 ### Changed
 
+- `psp.models.oscar.imac` now calls `psp.clobe.imac(..., inclusive=True)`; its output is unchanged.
 - `psp.pspGlobal()` is now `psp.PSP()`; its arguments and result are unchanged.
 - `psp.pspMany()` is now `psp.PSPLockstep()`, and its model type `psp.ManyModel` is now
   `psp.LockstepModel`; arguments and results are unchanged.

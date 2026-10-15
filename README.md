@@ -118,6 +118,25 @@ Pass `device="cuda"` (and, when the model allows it, `dtype=torch.float32`). The
 - `psp.models.oscar`: OSCAR on the inverse base-rate effect data of 354 participants (`dome2025ibre`, shipped as package data), batched over parameter sets and participants, validated against the C++ implementation; with the trial-matrix converter, the `evaluate` reduction and clobe's `imac` inequality matrix. The model of the participant-level run in [notebooks/oscar](notebooks/oscar/README.md).
 - `psp.models.voronoi`: a cheap toy model whose regions are Voronoi cells, used by the tests and benchmarks.
 
+### Comparing models with human data: `psp.clobe`
+
+`psp.clobe` is a port of the R package [clobe](https://github.com/lenarddome/clobe) 0.8.0, the tools of Dome and Wills (2025) for comparing the heterogeneity of a model with that of people: inequality matrices (`imac`, `patterns`), g-distance (`gdistance`), distances between patterns (`pattern_distance`), and the universal set of possible patterns, counted (`semiorders`, `fubini`, `stirling2`) or enumerated (`orderings`, `brutes`). `imac` is batched, so it can be the `discretize` of a run, and `gdistance` takes the patterns a run found:
+
+```python
+from functools import partial
+from psp import PSP, clobe
+
+thresholds = (0.1, -0.1)
+result = PSP(model, partial(clobe.imac, thresholds=thresholds), control)
+
+human = clobe.patterns(data, thresholds)   # (participants, stimuli) -> unique patterns
+clobe.gdistance(human.inequality_matrices, result.ordinal_patterns,
+                universal=clobe.semiorders(data.shape[1]), weight=0.5,
+                frequencies=human.frequencies)
+```
+
+Matrices are stacked as `(n, k, k)` rather than `(k, k, n)`, indices are 0-based, counts are exact Python integers, `brutes` runs on any device (`device="cuda"`) instead of a thread pool, and `gdistance` always returns `alpha`, `beta` and `accommodation` (R's `xtdo = TRUE`).
+
 ## Differences from the R package
 
 - `model` and `discretize` are batched by default (see above).
