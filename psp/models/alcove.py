@@ -1,7 +1,7 @@
 """ALCOVE (Kruschke, 1992) on the six category structures of Shepard, Hovland and Jenkins (1961).
 
 This is a batched port of ``slpALCOVE()`` and ``nosof94train()`` from the R
-package catlearn (Wills et al., 2025), wrapped for :func:`psp.pspGlobal` as in
+package catlearn (Wills et al., 2025), wrapped for :func:`psp.PSP` as in
 the ALCOVE recipe of the R package psp. Many parameter sets are run through the
 same training sequences at once, which is what makes a long PSP run affordable
 on a GPU.

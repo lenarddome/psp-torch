@@ -9,12 +9,14 @@ __all__ = ["PatternStore"]
 
 
 class PatternStore:
-    """Every ordinal pattern found so far, how often, and where to propose from next.
+    """Bookkeeping utility. Stores every ordinal pattern found so far, 
+    their frequencies, and the centres of the jumping distributions (proposes
+    candidate parameter sets; the points in the parameter space used to jump 
+    from to new points).
 
     Two matrices are the same pattern when they are identical element by element,
-    with ``-0.0`` treated as ``0.0`` and every ``NaN`` treated as the same ``NaN``,
-    exactly as in the R package. Patterns are numbered in the order they were found,
-    from 0.
+    with ``-0.0`` treated as ``0.0`` and every ``NaN`` treated as the same ``NaN``.
+    Patterns are numbered in the order they were found, from 0.
 
     Parameters
     ----------
@@ -67,11 +69,13 @@ class PatternStore:
         n = int(ordinal.shape[0])
         if n == 0:
             return torch.empty(0, dtype=torch.int64)
-        # canonical bytes: -0 folded into 0 and every NaN folded into the same NaN
+        ## canonical bytes: -0 folded into 0 and every NaN folded into the same NaN
+        ## move catalogued ordinal patterns to CPU and convert to float64 for comparison
         canonical = ordinal.detach().to("cpu", torch.float64).numpy() + 0.0
         canonical[np.isnan(canonical)] = np.nan
         ids = np.empty(n, dtype=np.int64)
         new_rows: list[int] = []
+        ## compare byte-representations of each stored pattern to the new ones, and add any new patterns to the store
         for i in range(n):
             key = canonical[i].tobytes()
             pattern_id = self._index.get(key)
@@ -83,6 +87,7 @@ class PatternStore:
             ids[i] = pattern_id
         ids_tensor = torch.from_numpy(ids)
 
+        ## adds new rows to the counts and centres tensors, and updates the counts and centres of all patterns
         if new_rows:
             grown = len(self._patterns)
             self._counts = torch.cat(
@@ -100,7 +105,7 @@ class PatternStore:
             )
         self._counts += torch.bincount(ids_tensor, minlength=len(self._patterns))
 
-        # each pattern's centre is the last parameter set in this batch that produced it
+        ## each pattern's centre is the last parameter set in this batch that produced it
         device_ids = ids_tensor.to(self._centres.device)
         last = torch.full(
             (len(self._patterns),), -1, dtype=torch.int64, device=self._centres.device

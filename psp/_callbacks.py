@@ -1,4 +1,4 @@
-"""The contract between :func:`psp.pspGlobal` and the user's ``model`` and ``discretize``.
+"""The contract (agreement) between :func:`psp.PSP` and the user's ``model`` and ``discretize``.
 
 Both callbacks are *batched* by default: ``model`` receives every parameter set
 of an iteration at once, as a ``(n, dimensions)`` tensor, and ``discretize``
@@ -27,11 +27,14 @@ Discretize = Callable[[torch.Tensor], Any]
 def rowwise(
     fn: Callable[..., Any], *, numpy: bool = False
 ) -> Callable[[torch.Tensor], torch.Tensor]:
-    """Adapt a function of one parameter set into a batched one.
-
+    """A function that adapts parameter space partitioning evaluations from a
+    batched operation to a sequential one. This function is here to help users
+    who are porting models from the R package, which is written for one parameter
+    set at a time. Use it with ``PSP(..., batched=False)``.
+    
     ``rowwise(fn)`` calls ``fn`` once per row of its input and stacks the results,
     so a ``model`` or ``discretize`` written as in the R package, for a single
-    vector, can be handed to :func:`psp.pspGlobal`. Each row is passed as a 1-D
+    vector, can be handed to :func:`psp.PSP`. Each row is passed as a 1-D
     tensor, or as a NumPy array when ``numpy=True``; ``fn`` may return a tensor,
     an array, a list or a scalar.
 
@@ -76,7 +79,9 @@ def rowwise(
 
 
 def as_numeric_tensor(value: Any, what: str, device: torch.device) -> torch.Tensor:
-    """Convert a callback's return value to a numeric tensor on ``device``.
+    """Utility function. Convert a callback's return value to a numeric tensor on
+    ``device``. Used to check that the user's ``model`` and ``discretize`` return
+    numeric values as the right type of data structure.
 
     Raises
     ------

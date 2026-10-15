@@ -1,8 +1,4 @@
-"""Validation of the ``control`` settings of :func:`psp.pspGlobal`.
-
-The R package takes ``control`` as a plain list. This module accepts the same
-keys in a :class:`dict` (or a :class:`Control` instance) and turns them into a
-validated, device-resident :class:`Control`.
+"""Validation of the ``control`` settings of :func:`psp.PSP`.
 """
 
 from __future__ import annotations
@@ -60,11 +56,12 @@ def _as_names(name: str, value: Any, prefix: str, count: int) -> tuple[str, ...]
 
 @dataclass(frozen=True)
 class Control:
-    """Validated settings of a parameter space partitioning run.
+    """Validate control arguments for the parameter space partitioning run.
+    It checks that the required keys are present and that the values are of
+    the right type and shape. Use
 
-    Build it from the same keys the R package uses, for example
     ``Control.from_mapping({"lower": [0, 0], "upper": [1, 1], ...})``, or pass the
-    mapping to :func:`psp.pspGlobal` directly.
+    mapping to :func:`psp.PSP` directly.
 
     Attributes
     ----------
@@ -75,7 +72,6 @@ class Control:
         for an unbounded parameter.
     radius
         Largest step the search takes in any one parameter, shape ``(dimensions,)``.
-        The R package takes a single number; a vector gives each parameter its own.
     population
         Number of parameter sets each pattern needs before the search stops
         proposing from it. ``2**63 - 1`` when unbounded.
@@ -123,7 +119,7 @@ class Control:
         device: torch.device | str | None = None,
         dtype: torch.dtype | None = None,
     ) -> Control:
-        """Validate a ``control`` mapping with the keys of the R package.
+        """Validate a ``control`` mapping with the expected keys.
 
         Required keys: ``init``, ``lower``, ``upper``, ``radius``, and at least one
         of ``population`` and ``iterations``. Optional keys: ``parameter_names``,
@@ -132,14 +128,15 @@ class Control:
         Raises
         ------
         ValueError
-            With the same messages as the R package for the same mistakes.
+            If any of the required keys are missing, or if any of the values are
+            of the wrong type or shape.
         """
         if isinstance(control, Control):
             if device is None and dtype is None:
                 return control
             control = control.to_mapping()
         if not isinstance(control, Mapping):
-            raise TypeError("control must be a mapping with the keys of the R package")
+            raise TypeError(f"control must be a mapping with the expected keys, not {type(control).__name__}")
         unknown = set(control) - _KNOWN_KEYS
         if unknown:
             raise ValueError(f"unknown control keys: {sorted(unknown)}")
@@ -231,7 +228,7 @@ class Control:
         )
 
     def to_mapping(self) -> dict[str, Any]:
-        """The settings as a plain dict with the keys of the R package."""
+        """The settings as a plain dict."""
         return {
             "init": self.init,
             "lower": self.lower,

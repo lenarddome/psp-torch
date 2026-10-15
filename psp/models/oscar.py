@@ -46,7 +46,7 @@ __all__ = [
     "EVALUATED_STIMULI",
 ]
 
-#: The five free parameters, in the order pspGlobal() passes them.
+#: The five free parameters, in the order PSP() passes them.
 OSCAR_PARAMETERS = ("P", "alpha", "mu", "rho", "beta")
 #: Their bounds in the PSP routine (run.r): lower, upper.
 OSCAR_BOUNDS = ((1.0, 1e-3, 1e-3, 1e-3, 1e-3), (5.0, 1.0, 1.0, 5.0, 5.0))
@@ -131,7 +131,11 @@ def dome2025ibre() -> IbreData:
     """The inverse base-rate effect data (ply207): 354 participants, training then 72 test trials.
 
     ``abresp`` is ``common``, ``rare`` or ``none``; ``phase`` is ``training`` or ``test``.
+
+    References:
+        Dome, L., & Wills, A. J. (2025). g-Distance: On the Comparison of Model and Human Heterogeneity. Psychological Review, 132(3), 632–655. https://doi.org/10.1037/rev0000550
     """
+
     resource = resources.files("psp.data").joinpath("dome2025ibre.csv.gz")
     with resource.open("rb") as raw, gzip.open(raw, "rt", encoding="utf-8") as text:
         reader = csv.reader(text)
@@ -236,8 +240,7 @@ def random_initial_state(
     device: torch.device | str = "cpu",
     dtype: torch.dtype = torch.float64,
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Initial saliences and weights as ``evaluate()`` in imac.R draws them: uniform in (0, scale).
-
+    """Initialize non-zero saliences and weights for a batch of parameter sets.
     Returns ``eta0`` with a zero diagonal and ``weights0``, both of shape ``(batch, 5, 5)``.
     """
     n = len(NODES)
@@ -382,6 +385,7 @@ def oscar(
         stim = row[:, 3].long() ## extract current trial for all rows in the batch
 
         ## save current outputs before learning
+        ## sums up all probabilities and then divide them by their counts to get the average probability of rare for each stimulus
         rare = torch.where(test, prob[:, rare_index], torch.zeros_like(prob[:, rare_index]))
         rare_sum.scatter_add_(1, stim.unsqueeze(1), rare.unsqueeze(1))
         rare_count.scatter_add_(1, stim.unsqueeze(1), test.to(dtype).unsqueeze(1))
@@ -448,11 +452,17 @@ def evaluate(
     weights0: torch.Tensor | None = None,
     zero_first_column: bool = True,
 ) -> torch.Tensor:
-    """The ``model`` of the PSP routine: a 0.5 anchor, then P(rare) at test for A, B, BC and C.
+    """The ``model`` for the PSP routine:
+        
+        1. Evalutes OSCAR.
+        2. Adds a 0.5 anchor.
+        3. Computes P(rare) at test for A, B, BC and C.
 
     ``par`` holds P, alpha, mu, rho and beta in its columns, shape ``(B, 5)``. The
     initial saliences and weights are drawn afresh for every row, as ``evaluate()``
-    in imac.R does, unless ``eta0`` and ``weights0`` are given. Returns ``(B, 5)``.
+    in imac.R does, unless ``eta0`` and ``weights0`` are given.
+
+    Returns ``(B, 5)``.
     """
     par = par.reshape(-1, len(OSCAR_PARAMETERS))
     params = {name: par[:, k] for k, name in enumerate(OSCAR_PARAMETERS)}

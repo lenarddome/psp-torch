@@ -1,4 +1,4 @@
-"""Writing and reading the files produced by ``pspGlobal(save=True)``."""
+"""Writing and reading the files produced by ``PSP(save=True)``."""
 
 from __future__ import annotations
 
@@ -100,7 +100,8 @@ def _format_pyarrow(iterations: np.ndarray, values: np.ndarray, ids: np.ndarray)
 
 
 class RunWriter:
-    """Writes every evaluated parameter set and its model output to two csv files.
+    """Writes every evaluated parameter set and its model output to two corresponding
+    csv files.
 
     Each row is ``iteration, <values...>, pattern``, with 0-based pattern ids that
     index ``ordinal_patterns``. See :class:`_Table` for the number formatting.
@@ -170,7 +171,7 @@ class SavedRun:
 
 
 def read_saved(path: str | Path, extension: str = ".csv") -> SavedRun:
-    """Read the files written by ``pspGlobal(save=True, path=path, extension=extension)``.
+    """Read the files written by ``PSP(save=True, path=path, extension=extension)``.
 
     Requires pandas, which is an optional dependency (``pip install psp-torch[notebooks]``).
     """

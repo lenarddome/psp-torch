@@ -1,6 +1,6 @@
 """Many independent parameter space partitioning runs, advanced in lockstep.
 
-:func:`pspMany` runs one :func:`psp.pspGlobal` search per ``control`` (for example
+:func:`pspMany` runs one :func:`psp.PSP` search per ``control`` (for example
 one per participant, each on its own trial order) and keeps them independent:
 each has its own pattern store, its own counts, its own files and its own
 result. What they share is the model call: every iteration, the proposals of
@@ -51,18 +51,18 @@ def pspMany(
         going, ``(n, dimensions)``, and ``run``, an ``(n,)`` int64 tensor giving the
         index in ``controls`` of the run each row belongs to; returns ``(n, responses)``.
     discretize
-        As in :func:`psp.pspGlobal`: ``(n, responses)`` to ``(n, D, D)``.
+        As in :func:`psp.PSP`: ``(n, responses)`` to ``(n, D, D)``.
     controls
-        One control mapping per run, with the keys of :func:`psp.pspGlobal`. Runs may
+        One control mapping per run, with the keys of :func:`psp.PSP`. Runs may
         differ in ``init``, bounds and ``radius``; they must share ``iterations`` and
         ``population`` and the number of parameters.
     save, paths, extension
-        Write every evaluation of run ``r`` to ``paths[r]`` as :func:`psp.pspGlobal` does.
+        Write every evaluation of run ``r`` to ``paths[r]`` as :func:`psp.PSP` does.
     quiet
         Do not print the iteration number, the number of runs still going and the
         number of rows evaluated.
     device, dtype, generator
-        As in :func:`psp.pspGlobal`.
+        As in :func:`psp.PSP`.
 
     Returns
     -------
