@@ -29,7 +29,7 @@ def main() -> None:
             notebook,
             timeout=7200,
             kernel_name="python3",
-            resources={"metadata": {"path": str(HERE)}},
+            resources={"metadata": {"path": str(path.parent)}},
         ).execute()
         nbformat.write(notebook, path)
         print("executed", path.relative_to(HERE.parent))
