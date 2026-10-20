@@ -112,13 +112,13 @@ Pass `device="cuda"` (and, when the model allows it, `dtype=torch.float32`). The
 ### Models shipped with the package
 
 - `psp.models.prospect`: prospect theory on four bets of Kahneman and Tversky (1979), the model of the tutorial.
-- `psp.models.alcove`: ALCOVE (Kruschke, 1992) on the six category structures of Shepard, Hovland and Jenkins (1961): a batched port of catlearn's `slpALCOVE()` that reproduces catlearn's trial-by-trial output to machine precision, with catlearn's training orders and the `nosof94` data shipped as package data. The model of the ALCOVE recipe, with the parameter ranges of Pitt et al. (`ALCOVE_PARAMETERS`) or the learning rates free up to 1 (`ALCOVE_PARAMETERS_FULL`).
-- `psp.models.oscar`: OSCAR (Dome & Wills, 2026; [arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)) on the inverse base-rate effect data of 354 participants (`dome2025ibre`, shipped as package data), batched over parameter sets and participants, validated against the C++ implementation; with the trial-matrix converter, the `evaluate` reduction and clobe's `imac` inequality matrix. The model of the participant-level run in [notebooks/oscar](notebooks/oscar/README.md).
+- `psp.models.alcove`: ALCOVE (Kruschke, 1992) on the six category structures of Shepard, Hovland and Jenkins (1961): a batched port of the `slpALCOVE()` of catlearn (Wills et al., 2025) that reproduces catlearn's trial-by-trial output to machine precision, with catlearn's training orders and the `nosof94` data of Nosofsky, Gluck, Palmeri, McKinley and Glauthier (1994) shipped as package data. The model of the ALCOVE recipe, with the parameter ranges of Pitt et al. (`ALCOVE_PARAMETERS`) or the learning rates free up to 1 (`ALCOVE_PARAMETERS_FULL`).
+- `psp.models.oscar`: OSCAR (Dome & Wills, 2026a; [arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)) on the inverse base-rate effect data of 354 participants (`dome2025ibre`, shipped as package data), batched over parameter sets and participants, validated against the C++ implementation; with the trial-matrix converter, the `evaluate` reduction and clobe's `imac` inequality matrix. The model of the participant-level run in [notebooks/oscar](notebooks/oscar/README.md).
 - `psp.models.voronoi`: a cheap toy model whose regions are Voronoi cells, used by the tests and benchmarks.
 
 ### Comparing models with human data: `psp.clobe`
 
-`psp.clobe` is a set of tools of Dome and Wills (2025) for comparing the heterogeneity of a model with that of people: inequality matrices (`imac`, `patterns`), g-distance (`gdistance`), distances between patterns (`pattern_distance`), and the universal set of possible patterns, counted (`semiorders`, `fubini`, `stirling2`) or enumerated (`orderings`, `brutes`). `imac` is batched, so it can be the `discretize` of a run, and `gdistance` takes the patterns a run found:
+`psp.clobe` is a set of tools supporting the analyses of Dome and Wills (2025), for comparing the heterogeneity of a model with that of people: inequality matrices (`imac`, `patterns`), g-distance (`gdistance`), distances between patterns (`pattern_distance`), and the universal set of possible patterns, counted (`semiorders`, `fubini`, `stirling2`) or enumerated (`orderings`, `brutes`). `imac` is batched, so it can be the `discretize` of a run, and `gdistance` takes the patterns a run found:
 
 ```python
 from functools import partial
@@ -158,15 +158,21 @@ Matrices are stacked as `(n, k, k)` rather than `(k, k, n)`, indices are 0-based
 
 Dome, L., & Wills, A. J. (2025). g-Distance: On the comparison of model and human heterogeneity. *Psychological Review, 132*(3), 632-655. [https://doi.org/10.1037/rev0000550](https://doi.org/10.1037/rev0000550)
 
-Dome, L., & Wills, A. J. (2026). psp: Parameter Space Partitioning MCMC for Global Model Evaluation. R package version 1.0.6. [https://CRAN.R-project.org/package=psp](https://CRAN.R-project.org/package=psp)
+Dome, L., & Wills, A. J. (2026a). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)
 
-Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)
+Dome, L., & Wills, A. J. (2026b). psp: Parameter Space Partitioning MCMC for Global Model Evaluation. R package version 1.0.6. [https://CRAN.R-project.org/package=psp](https://CRAN.R-project.org/package=psp)
 
-Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47.
+Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. *Econometrica, 47*(2), 263–292. [https://doi.org/10.2307/1914185](https://doi.org/10.2307/1914185)
 
-Kruschke, J. K. (1992). ALCOVE: An exemplar-based connectionist model of category learning. Psychological Review, 99(1), 22–44. [https://doi.org/10.1037/0033-295X.99.1.22](https://doi.org/10.1037/0033-295X.99.1.22)
+Kruschke, J. K. (1992). ALCOVE: An exemplar-based connectionist model of category learning. *Psychological Review, 99*(1), 22–44. [https://doi.org/10.1037/0033-295X.99.1.22](https://doi.org/10.1037/0033-295X.99.1.22)
+
+Nosofsky, R. M., Gluck, M. A., Palmeri, T. J., McKinley, S. C., & Glauthier, P. (1994). Comparing models of rule-based classification learning: A replication and extension of Shepard, Hovland, and Jenkins (1961). *Memory & Cognition, 22*(3), 352–369. [https://doi.org/10.3758/BF03200862](https://doi.org/10.3758/BF03200862)
 
 Pitt, M. A., Kim, W., Navarro, D. J., & Myung, J. I. (2006). Global model analysis by parameter space partitioning. *Psychological Review, 113*(1), 57–83. [https://doi.org/10.1037/0033-295X.113.1.57](https://doi.org/10.1037/0033-295X.113.1.57)
+
+Shepard, R. N., Hovland, C. I., & Jenkins, H. M. (1961). Learning and memorization of classifications. *Psychological Monographs: General and Applied, 75*(13), 1–42. [https://doi.org/10.1037/h0093825](https://doi.org/10.1037/h0093825)
+
+Wills, A. J., Dome, L., Edmunds, C., Honke, G., Inkster, A., Schlegelmilch, R., & Spicer, S. (2025). catlearn: Formal Psychological Models of Categorization and Learning. R package version 1.1. [https://CRAN.R-project.org/package=catlearn](https://CRAN.R-project.org/package=catlearn)
 
 ## License
 

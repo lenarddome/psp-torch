@@ -3,6 +3,8 @@
 # to P(rare) at test), each called once per parameter set as pspGlobal() calls the model.
 #
 #   Rscript model.R <lib> <tmp-models dir> <out csv> <evaluations> <repeats>
+#
+# OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
 args <- commandArgs(trailingOnly = TRUE)
 lib <- args[1]; models <- args[2]; out <- args[3]
 n <- as.integer(args[4]); repeats <- as.integer(args[5])

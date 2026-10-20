@@ -1,6 +1,6 @@
 # OSCAR: R + RcppArmadillo against the torch port
 
-A local benchmark of the participant-level OSCAR routine: the compiled C++ model called from R with the R package psp, against `psp.models.oscar` with `PSPLockstep` on the CPU and on the GPU. The results and the report are in `results/` (`report.md`, `model.png`, `psp.png`). The notebook [notebooks/benchmarks-oscar.ipynb](../../notebooks/benchmarks-oscar.ipynb) reads them and explains what they show.
+A local benchmark of the participant-level routine of OSCAR (Dome & Wills, 2026): the compiled C++ model called from R with the R package psp, against `psp.models.oscar` with `PSPLockstep` on the CPU and on the GPU. The results and the report are in `results/` (`report.md`, `model.png`, `psp.png`). The notebook [notebooks/benchmarks-oscar.ipynb](../../notebooks/benchmarks-oscar.ipynb) reads them and explains what they show.
 
 | File | What it does |
 | --- | --- |
@@ -23,3 +23,7 @@ uv run python benchmarks/oscar/run.py --r-library benchmarks/oscar/r-lib
 ```
 
 Defaults: 14 participants, 100 starting points, 200 iterations, 14 R workers, 1,000 parameter sets for the R model timing. `--steps model` or `--steps psp` runs one part; `--participants`, `--starts`, `--iterations` and `--workers` change the routine's settings. Run it with nothing else going on.
+
+## References
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)

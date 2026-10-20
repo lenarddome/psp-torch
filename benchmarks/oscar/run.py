@@ -1,5 +1,7 @@
 """OSCAR: R + RcppArmadillo against the torch port on the CPU and on the GPU.
 
+OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
+
 Usage::
 
     uv run python benchmarks/oscar/run.py --r-library benchmarks/oscar/r-lib \

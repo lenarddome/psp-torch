@@ -6,7 +6,7 @@ The articles of the R package, replicated with psp-torch. Each notebook is commi
 | --- | --- |
 | [tutorial.ipynb](tutorial.ipynb) | **What can prospect theory predict?** A complete first analysis: a two-parameter model of risky choice, how to write `model` and `discretize` for a batch of parameter sets, running `PSP()`, checking the partition against brute force, and checking that the search found everything. |
 | [recipe-alcove.ipynb](recipe-alcove.ipynb) | **ALCOVE and the six category structures.** The analysis of Pitt et al. (2006) on a slow learning model with four parameters: patterns that allow ties, planning and saving a long run, reading a partition you cannot plot, and robustness checks. Reads the results of [alcove/run_alcove.py](alcove/run_alcove.py). |
-| [oscar/](oscar/README.md) | **OSCAR on dome2025ibre.** One PSP run per participant, all advanced in lockstep on the GPU; prepared for a large GPU, not run here. |
+| [oscar/](oscar/README.md) | **OSCAR on dome2025ibre.** OSCAR (Dome & Wills, 2026), one PSP run per participant, all advanced in lockstep on the GPU; prepared for a large GPU, not run here. |
 | [clobe/](clobe/README.md) | **The clobe vignettes.** Inequality matrices, the universal set and g-distance with `psp.clobe`, the port of the R package clobe: the four vignettes of the R package, rewritten for the port. |
 | [benchmarks.ipynb](benchmarks.ipynb) | **Benchmarks.** The port against the R package on the same machine and workloads, and when the GPU is worth using. Reads [../benchmarks/results](../benchmarks/results). |
 | [benchmarks-oscar.ipynb](benchmarks-oscar.ipynb) | **Benchmarks: OSCAR.** The compiled C++ of OSCAR called from R against the batched port on the CPU and the GPU: one call of the model by batch size, and the participant-level routine for 14 participants. Reads [../benchmarks/oscar/results](../benchmarks/oscar/results). |
@@ -25,3 +25,9 @@ uv run python benchmarks/compare.py --r-library <library with psp 1.0.6> --devic
 uv run python benchmarks/devices.py
 uv run python notebooks/execute.py
 ```
+
+## References
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)
+
+Pitt, M. A., Kim, W., Navarro, D. J., & Myung, J. I. (2006). Global model analysis by parameter space partitioning. *Psychological Review, 113*(1), 57–83. [https://doi.org/10.1037/0033-295X.113.1.57](https://doi.org/10.1037/0033-295X.113.1.57)

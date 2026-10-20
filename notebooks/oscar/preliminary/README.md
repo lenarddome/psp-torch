@@ -2,7 +2,7 @@
 
 Reduced settings for all three builds: 100 starting points (one matrix shared by the participants, seed 1 in R),
 radius 1, population 1,000,000, 200 iterations, seed 2026. The R routine ran the participants one after another
-with the compiled C++ OSCAR (`compare.R`, psp 1.0.6); the port ran them in lockstep with `run_oscar.py --first 5
+with the compiled C++ of OSCAR (Dome & Wills, 2026; `compare.R`, psp 1.0.6); the port ran them in lockstep with `run_oscar.py --first 5
 --starts 100 --iterations 200 --seed 2026 --no-save`. Machine: 12 CPU threads, NVIDIA T400 (4 GB).
 
 | Participant | R, psp 1.0.6 + C++ | torch GPU float32 | torch CPU float64 |
@@ -25,3 +25,7 @@ both found. The model draws its initial state at random on every evaluation, so 
 
 Files: `r_summary.csv` and `r_patterns.csv` (R: time, counts, every matrix's upper triangle in column-major order
 and its population), `torch_*_tracking.csv` (the port's `tracking.csv` files), `compare.R` (the R side).
+
+## References
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)

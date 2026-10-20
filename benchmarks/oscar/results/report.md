@@ -1,5 +1,7 @@
 # OSCAR: R + RcppArmadillo against the torch port, CPU and GPU
 
+OSCAR is the model of Dome and Wills (2026), [arXiv:2608.06149](https://doi.org/10.48550/arXiv.2608.06149).
+
 ## One call of the model
 
 One participant (1,000 parameter sets for R, 3 repeats; 5 repeats per batch for torch). R calls the compiled `OSCAR()` once per parameter set, as `pspGlobal()` calls the model; `evaluate()` adds what the routine does around it (a fresh random initial state, and the data.table reduction to P(rare) at test). The port's `evaluate()` does all of that for the whole batch in one call; its time includes `discretize()`.

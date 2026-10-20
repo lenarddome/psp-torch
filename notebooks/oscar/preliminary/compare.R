@@ -1,5 +1,7 @@
 # The participant-level OSCAR routine (psp.R) for the first N participants of ply207 with
 # reduced settings, timed, with the patterns found saved for comparison with the torch port.
+#
+# OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
 args <- commandArgs(trailingOnly = TRUE)
 lib <- args[1]; dir <- args[2]; repo <- args[3]; out <- args[4]
 n_ppt <- as.integer(args[5]); starts <- as.integer(args[6]); iterations <- as.integer(args[7])

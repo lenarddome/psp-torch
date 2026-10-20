@@ -1,6 +1,8 @@
 # Shared setup of the R side: the R psp package, the compiled C++ OSCAR (RcppArmadillo) and the
 # helpers of the participant-level routine (convert.R, imac.R), as psp.R / run.r use them.
 # Sourced with `lib` (an R library holding psp) and `models` (the tmp-models directory) defined.
+#
+# OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
 .libPaths(c(lib, .libPaths()))
 suppressMessages({library(Rcpp); library(RcppArmadillo); library(data.table); library(clobe); library(psp)})
 

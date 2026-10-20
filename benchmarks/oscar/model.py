@@ -1,5 +1,7 @@
 """Seconds per call of the batched OSCAR ``evaluate()`` for the first participant, by batch size.
 
+OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
+
 Usage::
 
     uv run python benchmarks/oscar/model.py --out results/model_torch.csv [--devices cpu,cuda]

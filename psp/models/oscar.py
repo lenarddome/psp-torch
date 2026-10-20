@@ -1,6 +1,8 @@
-"""OSCAR on the inverse base-rate effect data (dome2025ibre), batched over sets and participants.
+"""OSCAR (Dome & Wills, 2026) on the inverse base-rate effect data (dome2025ibre)
+from Dome & Wills (2025), batched over sets and participants.
 
-A port of the OSCAR model (``architecture.cpp`` and ``model-row-by-row.cpp``) and of
+OSCAR is the model of the inverse base-rate effect of Dome and Wills (2026). This module is
+a port of its C++ implementation (``architecture.cpp`` and ``model-row-by-row.cpp``) and of
 the participant-level PSP routine around it (``convert.R``, ``imac.R``, ``psp.R``):
 
 - :func:`oscar` runs the network for a batch of parameter sets, each row on one
@@ -15,6 +17,14 @@ the participant-level PSP routine around it (``convert.R``, ``imac.R``, ``psp.R`
 Every function takes whole batches: no loop runs over parameter sets or
 participants, only over trials and over the ten recurrent attention-shift
 iterations of a learning trial.
+
+Dome, L., & Wills, A. J. (2025). g-Distance: On the comparison of model and human
+heterogeneity. *Psychological Review, 132*(3), 632–655. https://doi.org/10.1037/rev0000550
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational
+account of the inverse base-rate effect across predictive, observational, and
+unsupervised procedures (arXiv:2608.06149). arXiv.
+https://doi.org/10.48550/arXiv.2608.06149
 """
 
 from __future__ import annotations

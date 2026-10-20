@@ -1,6 +1,8 @@
 # %% [markdown]
 # # Trying out `psp.models.oscar`, one step at a time
 #
+# OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
+#
 # Run cell by cell (`# %%`, Shift+Enter in VS Code) or line by line in a REPL started at the
 # repository root (`uv run python`). Every step prints what it made and checks it with an
 # `assert`, so a cell that runs without an error has passed. The order follows the module:

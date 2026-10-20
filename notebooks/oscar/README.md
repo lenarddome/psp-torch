@@ -1,6 +1,6 @@
 # OSCAR on dome2025ibre: the participant-level PSP run
 
-One parameter space partitioning run per participant of the inverse base-rate effect data (354 participants, each on their own trial order), for the OSCAR model. This is the port of `psp.R` / `run.r`; the model is `psp.models.oscar`, validated against the compiled C++ to 1e-10 (`tests/test_oscar.py`).
+One parameter space partitioning run per participant of the inverse base-rate effect data (354 participants, each on their own trial order), for the OSCAR model of Dome and Wills (2026). This is the port of `psp.R` / `run.r`; the model is `psp.models.oscar`, validated against the compiled C++ to 1e-10 (`tests/test_oscar.py`).
 
 ## What one run does
 
@@ -42,3 +42,7 @@ Saving is the other cost. With the default settings every participant's run eval
 | `patterns/OSCAR_4.<ppt>.npz` | `ordinal_patterns` (patterns, 5, 5) and `ordinal_counts` |
 | `frequencies.csv` | `ppt, dataset, id, frequency`: the population of each pattern (ids 1-based, as in R) |
 | `tracking.csv` | `ppt, started, completed, iterations, patterns, evaluations` |
+
+## References
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)

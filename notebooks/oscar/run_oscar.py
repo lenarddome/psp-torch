@@ -1,5 +1,7 @@
 """Partitions OSCAR's parameter space for every participant of dome2025ibre, one run each.
 
+OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
+
 A port of ``psp.R`` / ``run.r``: each participant is an independent PSP run on that
 participant's own trial order, with the same settings as the R routine (1,000
 random starting points, radius 1, population 1,000,000 so that every pattern

@@ -4,7 +4,7 @@ How ALCOVE was ported to run many parameter sets at once on the GPU, and how the
 
 ## 1. ALCOVE as a batched tensor program
 
-catlearn's `slpALCOVE()` runs one network through one list of trials. The port (`psp.models.alcove.alcove`) keeps the same trial loop but gives every tensor two leading batch dimensions, `b` for the parameter set and `s` for the learner sequence, so one pass of the loop advances B × 30 networks. No kernel ever loops over a parameter set or a learner; the only sequential dimension is the trial.
+The `slpALCOVE()` of catlearn (Wills et al., 2025) runs one network through one list of trials. The port (`psp.models.alcove.alcove`) keeps the same trial loop but gives every tensor two leading batch dimensions, `b` for the parameter set and `s` for the learner sequence, so one pass of the loop advances B × 30 networks. No kernel ever loops over a parameter set or a learner; the only sequential dimension is the trial.
 
 ![ALCOVE on the GPU](alcove-gpu.svg)
 
@@ -41,3 +41,9 @@ One iteration of `PSP()`. The left lane is Python on the CPU: the pattern store 
 Many runs at once: `psp.PSPLockstep` keeps one pattern store per run and concatenates the proposals of every run into the single model call of each iteration, passing the run index of each row; the model routes each row to its own trial sequence (see `psp.models.oscar.evaluate` and `notebooks/oscar/run_oscar.py`).
 
 Source files: `psp/_global.py` (the loop), `psp/_many.py` (many runs in lockstep), `psp/_store.py` (pattern store), `psp/_control.py` (settings), `psp/_io.py` (saving), `psp/models/alcove.py` (the model).
+
+## References
+
+Kruschke, J. K. (1992). ALCOVE: An exemplar-based connectionist model of category learning. *Psychological Review, 99*(1), 22–44. <https://doi.org/10.1037/0033-295X.99.1.22>
+
+Wills, A. J., Dome, L., Edmunds, C., Honke, G., Inkster, A., Schlegelmilch, R., & Spicer, S. (2025). catlearn: Formal Psychological Models of Categorization and Learning. R package version 1.1. <https://CRAN.R-project.org/package=catlearn>

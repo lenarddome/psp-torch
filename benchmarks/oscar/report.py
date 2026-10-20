@@ -1,5 +1,7 @@
 """Summarises the OSCAR benchmark in ``results/``: ``report.md`` and two figures.
 
+OSCAR is the model of Dome and Wills (2026), https://doi.org/10.48550/arXiv.2608.06149.
+
 Usage::
 
     uv run python benchmarks/oscar/report.py
@@ -355,7 +357,13 @@ def psp_section() -> list[str]:
 
 
 def main() -> None:
-    lines = ["# OSCAR: R + RcppArmadillo against the torch port, CPU and GPU", ""]
+    lines = [
+        "# OSCAR: R + RcppArmadillo against the torch port, CPU and GPU",
+        "",
+        "OSCAR is the model of Dome and Wills (2026), "
+        "[arXiv:2608.06149](https://doi.org/10.48550/arXiv.2608.06149).",
+        "",
+    ]
     if (RESULTS / "model_r.csv").exists() and (RESULTS / "model_torch.csv").exists():
         lines += model_section()
     if (RESULTS / "psp_r" / "wall.csv").exists() and (RESULTS / "psp_torch_wall.csv").exists():
