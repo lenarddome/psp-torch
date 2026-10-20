@@ -1,15 +1,15 @@
 # psp-torch
 
-[![psp: parameter space partitioning](docs/assets/psp-lockup-light.svg)](https://lenarddome.github.io/psp-torch/)
+[![psp: parameter space partitioning](https://raw.githubusercontent.com/lenarddome/psp-torch/main/docs/assets/psp-lockup-light.svg)](https://lenarddome.github.io/psp-torch/)
 
 Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch. The methods implemented here were designed to support the type of analyses done by Dome & Wills (2025).
 
 - [Documentation](https://lenarddome.github.io/psp-torch/)
-- [Tutorial: what can prospect theory predict?](notebooks/tutorial.ipynb)
-- [Recipe: ALCOVE and the six category structures](notebooks/recipe-alcove.ipynb)
-- [Benchmarks: the port against the R package, and when the GPU pays off](notebooks/benchmarks.ipynb) (how to run them: [benchmarks/README.md](benchmarks/README.md))
-- [Architecture: how ALCOVE and the sampler run on the GPU](docs/architecture.md)
-- [Changelog](CHANGELOG.md)
+- [Tutorial: what can prospect theory predict?](https://github.com/lenarddome/psp-torch/blob/main/notebooks/tutorial.ipynb)
+- [Recipe: ALCOVE and the six category structures](https://github.com/lenarddome/psp-torch/blob/main/notebooks/recipe-alcove.ipynb)
+- [Benchmarks: the port against the R package, and when the GPU pays off](https://github.com/lenarddome/psp-torch/blob/main/notebooks/benchmarks.ipynb) (how to run them: [benchmarks/README.md](https://github.com/lenarddome/psp-torch/blob/main/benchmarks/README.md))
+- [Architecture: how ALCOVE and the sampler run on the GPU](https://github.com/lenarddome/psp-torch/blob/main/docs/architecture.md)
+- [Changelog](https://github.com/lenarddome/psp-torch/blob/main/CHANGELOG.md)
 
 ## Install
 
@@ -64,7 +64,7 @@ If you are using psp-torch in your work, please cite the following papers:
 
 ## Quick start
 
-A model of risky choice with two parameters, and the pattern of choices it makes on four bets (the [tutorial](notebooks/tutorial.ipynb) explains the model):
+A model of risky choice with two parameters, and the pattern of choices it makes on four bets (the [tutorial](https://github.com/lenarddome/psp-torch/blob/main/notebooks/tutorial.ipynb) explains the model):
 
 ```python
 import torch
@@ -96,4 +96,4 @@ To learn how to use psp-torch, and more about the type of analyses it can suppor
 
 ## License
 
-AGPL-3.0, see [LICENSE](LICENSE).
+AGPL-3.0, see [LICENSE](https://github.com/lenarddome/psp-torch/blob/main/LICENSE).
