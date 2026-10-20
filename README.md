@@ -26,6 +26,40 @@ uv run pytest
 uv run ruff check psp tests && uv run mypy psp
 ```
 
+## Citing psp-torch
+
+If you are using psp-torch in your work, please cite the following papers:
+
+* Dome, L., & Wills, A. J. (2025). g-Distance: On the comparison of model and human heterogeneity. Psychological Review, 132(3), 632–655. https://doi.org/10.1037/rev0000550
+* Pitt, M. A., Kim, W., Navarro, D. J., & Myung, J. I. (2006). Global model analysis by parameter space partitioning. Psychological Review, 113(1), 57–83. https://doi.org/10.1037/0033-295X.113.1.57
+
+```bibtex
+@article{dome2025gdistance,
+  title = {g-{{Distance}}: {{On}} the Comparison of Model and Human Heterogeneity.},
+  author = {Dome, Lenard and Wills, Andy J.},
+  year = 2025,
+  journal = {Psychological Review},
+  volume = {132},
+  number = {3},
+  pages = {632--655},
+  publisher = {American Psychological Association},
+  doi = {10.1037/rev0000550},
+  langid = {english},
+}
+
+@article{pitt2006global,
+  title = {Global Model Analysis by Parameter Space Partitioning.},
+  author = {Pitt, Mark A. and Kim, Woojae and Navarro, Daniel J. and Myung, Jay I.},
+  year = 2006,
+  journal = {Psychological Review},
+  volume = {113},
+  number = {1},
+  pages = {57--83},
+  publisher = {American Psychological Association},
+  doi = {10.1037/0033-295X.113.1.57},
+}
+```
+
 ## Quick start
 
 A model of risky choice with two parameters, and the pattern of choices it makes on four bets (the [tutorial](notebooks/tutorial.ipynb) explains the model):
