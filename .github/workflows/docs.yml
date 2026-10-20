@@ -1,9 +1,20 @@
 name: Docs
 
+# only when something the site is built from changes: its pages, the docstrings of the API
+# reference, the notebooks it shows, the changelog it includes, or the dependencies
 on:
   push:
     branches: [main]
+    paths: &paths
+      - "docs/**"
+      - "psp/**"
+      - "notebooks/**/*.ipynb"
+      - "CHANGELOG.md"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/docs.yml"
   pull_request:
+    paths: *paths
   workflow_dispatch:
 
 permissions:

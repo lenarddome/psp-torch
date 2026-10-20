@@ -1,9 +1,23 @@
 name: CI
 
+# only when something the jobs lint, test, build or execute changes
 on:
   push:
     branches: [main]
+    paths: &paths
+      - "psp/**"
+      - "tests/**"
+      - "benchmarks/**/*.py"
+      - "notebooks/alcove/**"
+      - "notebooks/tutorial.ipynb"
+      - "notebooks/recipe-alcove.ipynb"
+      - "notebooks/execute.py"
+      - "notebooks/figure_style.py"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/ci.yml"
   pull_request:
+    paths: *paths
   workflow_dispatch:
 
 # a new push to the same branch or pull request cancels the run it replaces
