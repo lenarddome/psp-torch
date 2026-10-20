@@ -10,7 +10,7 @@ from ._global import PSP, PSPResult, clamp_parameters, hyper_points
 from ._io import SavedRun, has_pyarrow, read_saved, saved_paths
 from ._many import LockstepModel, PSPLockstep
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 __all__ = [
     "PSP",

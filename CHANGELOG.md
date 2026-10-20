@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-20
+
+### Added
+
+- `.github/workflows/publish.yml` builds the package and uploads it to PyPI, with trusted
+  publishing, when a GitHub release is published; the release tag must match the version.
+
+### Changed
+
+- The links and the logo in the README are absolute URLs, so they work on PyPI.
+
 ## [0.2.0] - 2026-10-20
 
 ### Added
