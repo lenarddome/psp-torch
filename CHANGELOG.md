@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Continuous integration runs the test suite on Python 3.10 to 3.14, and the package lists
+  Python 3.13 and 3.14 as supported.
+
 ## [0.2.1] - 2026-10-20
 
 ### Added
