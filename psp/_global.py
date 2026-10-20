@@ -19,7 +19,7 @@ __all__ = ["PSP", "PSPResult", "hyper_points", "clamp_parameters"]
 
 @dataclass(frozen=True)
 class PSPResult(Mapping[str, Any]):
-    """Container. It holds and validates the results of a :func:`PSP` run.
+    """Container. Data class. It holds and validates the results of a :func:`PSP` run.
     It behaves like a mapping and a dataclass.
 
     Attributes
@@ -227,17 +227,20 @@ def PSP(
     settings = Control.from_mapping(control, device=device, dtype=dtype)
     run_device = settings.init.device
     run_dtype = settings.init.dtype
+
     if not batched:
         model = rowwise(model)
         discretize = rowwise(discretize)
 
-    responses = settings.responses
-    dimensionality = settings.dimensionality
+    responses = settings.responses ## specify the length of the vector the model returns
+    dimensionality = settings.dimensionality ## specify the size of the square matrix discretize returns
 
     def evaluate(jumping: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        nonlocal responses, dimensionality
+        nonlocal responses, dimensionality ## allow evaluate to modify the values of responses and dimensionality if they are None
         rows = int(jumping.shape[0])
-        continuous = as_numeric_tensor(model(jumping), "model", run_device)
+        ## evaluate the model on the jumping parameter sets and ensure the output is a numeric tensor on the correct device
+        continuous = as_numeric_tensor(model(jumping), "model", run_device) 
+        ## guard against mismatching shapes of the model output and the expected responses
         if continuous.ndim == 1 and rows == 1:
             continuous = continuous.unsqueeze(0)
         if continuous.ndim != 2 or continuous.shape[0] != rows:
@@ -252,8 +255,9 @@ def PSP(
                 f"model returned {continuous.shape[1]} values, but control['responses'] "
                 f"is {responses}"
             )
-        continuous = continuous.to(run_dtype)
+        continuous = continuous.to(run_dtype) ## ensure the model output is in the correct dtype for the run
 
+        ## discretize the continuous outputs and ensure the result is a numeric tensor on the correct device
         ordinal = as_numeric_tensor(discretize(continuous), "discretize", run_device)
         if ordinal.ndim == 2 and rows == 1:
             ordinal = ordinal.unsqueeze(0)
@@ -277,10 +281,12 @@ def PSP(
             )
         return continuous, ordinal
 
+    ## setup environment for the run
     store = PatternStore(settings.dimensions, run_device, run_dtype)
     iteration = 0
     writer: RunWriter | None = None
     try:
+        ## initialize the store with the initial parameter sets and their corresponding patterns
         jumping = settings.init.clone()
         continuous, ordinal = evaluate(jumping)
         ids = store.update(ordinal, jumping)
@@ -290,8 +296,9 @@ def PSP(
                 stimuli_names = tuple(f"stimulus_{k + 1}" for k in range(int(continuous.shape[1])))
             writer = RunWriter(path, extension, settings.parameter_names, stimuli_names)
             writer.write(0, jumping, continuous, ids)
-        underpopulated = store.underpopulated(settings.population)
+        underpopulated = store.underpopulated(settings.population) ## index of patterns that have fewer than the required population of parameter sets
 
+        ## run parameter space partitioning until all patterns are full or the maximum number of iterations is reached
         while underpopulated.numel() > 0 and iteration < settings.iterations:
             iteration += 1
             if not quiet:
