@@ -1,5 +1,4 @@
-"""Validation of the ``control`` settings of :func:`psp.PSP`.
-"""
+"""Validation of the ``control`` settings of :func:`psp.PSP`."""
 
 from __future__ import annotations
 

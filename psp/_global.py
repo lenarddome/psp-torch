@@ -113,6 +113,7 @@ def clamp_parameters(
     """Move every parameter set onto the bounds where it left them."""
     return torch.maximum(torch.minimum(parameters, upper), lower)
 
+
 def PSP(
     model: Model,
     discretize: Discretize,
@@ -233,11 +234,11 @@ def PSP(
         model = rowwise(model)
         discretize = rowwise(discretize)
 
-    responses = settings.responses ## specify the length of the vector the model returns
-    dimensionality = settings.dimensionality ## specify the size of the discretized square matrix
+    responses = settings.responses  ## specify the length of the vector the model returns
+    dimensionality = settings.dimensionality  ## specify the size of the discretized square matrix
 
     def evaluate(jumping: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        nonlocal responses, dimensionality ## allow evaluate to modify the global values if None
+        nonlocal responses, dimensionality  ## allow evaluate to modify the global values if None
         rows = int(jumping.shape[0])
         ## evaluate the model on the jumping parameter sets
         ## ensure the output is a numeric tensor on the correct device
@@ -257,7 +258,7 @@ def PSP(
                 f"model returned {continuous.shape[1]} values, but control['responses'] "
                 f"is {responses}"
             )
-        continuous = continuous.to(run_dtype) ## ensure the model output is in the correct dtype
+        continuous = continuous.to(run_dtype)  ## ensure the model output is in the correct dtype
 
         ## discretize the continuous outputs and
         ## ensure the result is a numeric tensor on the correct device

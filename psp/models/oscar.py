@@ -309,17 +309,17 @@ def oscar(
         ``return_trials`` also ``prob``, ``activations`` and ``error`` of shape
         ``(B, T, 5)``.
     """
-    P = params["P"].reshape(-1, 1, 1) ## attention normalization parameter
-    alpha = params["alpha"].reshape(-1, 1, 1) ## weight learning parameter
-    mu = params["mu"].reshape(-1, 1, 1) ## attention learning parameter
-    rho = params["rho"].reshape(-1, 1, 1) ## attention shift parameter (step-size)
-    beta = params["beta"].reshape(-1, 1) ## inverse temperature
+    P = params["P"].reshape(-1, 1, 1)  ## attention normalization parameter
+    alpha = params["alpha"].reshape(-1, 1, 1)  ## weight learning parameter
+    mu = params["mu"].reshape(-1, 1, 1)  ## attention learning parameter
+    rho = params["rho"].reshape(-1, 1, 1)  ## attention shift parameter (step-size)
+    beta = params["beta"].reshape(-1, 1)  ## inverse temperature
 
     ## set up sizes, devices, and dtypes (float32 or float64) for the model run
     ## this sets up the parameters needed for pytorch to distribute the work
-    B = int(P.shape[0]) ## determine batch size
+    B = int(P.shape[0])  ## determine batch size
     device, dtype = P.device, P.dtype
-    n = len(NODES) ## the number of nodes (layers are fully connected)
+    n = len(NODES)  ## the number of nodes (layers are fully connected)
     if training.ndim == 2:
         training = training.unsqueeze(0)
     ## move participant data to appropriate device (either CPU or GPU)
@@ -333,11 +333,11 @@ def oscar(
     ## parameters are mapped to sequence 0
     if sequence is None:
         sequence = torch.zeros(B, dtype=torch.int64, device=device)
-    sequence = sequence.to(device) ## move
+    sequence = sequence.to(device)  ## move
 
     ## create a mask to reset diagonals to 0
-    eye = torch.eye(n, device=device, dtype=dtype) ## identity matrix
-    off = 1 - eye ## complement of an identity matrix
+    eye = torch.eye(n, device=device, dtype=dtype)  ## identity matrix
+    off = 1 - eye  ## complement of an identity matrix
 
     ## copy initial attention and connection weights
     eta0 = eta0.to(device, dtype) * off
@@ -367,10 +367,10 @@ def oscar(
         eta = torch.where(reset, eta0, eta)
         weights = torch.where(reset, weights0, weights)
 
-        x = row[:, COLSKIP : COLSKIP + n] ## extract input vector
+        x = row[:, COLSKIP : COLSKIP + n]  ## extract input vector
         ## extract excitability vector (binary gates for which output node can respond)
         y = row[:, COLSKIP + n : COLSKIP + 2 * n]
-        f = row[:, -n:] ## extract feedback vector
+        f = row[:, -n:]  ## extract feedback vector
 
         ## if all excitability is 0, avoid numerical instability in softmax by setting all to 1
         y = torch.where((y.sum(dim=1, keepdim=True) == 0), torch.ones_like(y), y)
@@ -388,7 +388,7 @@ def oscar(
 
         ## check whether current trial is a valid test trials
         test = valid & (ctrl == 2)
-        stim = row[:, 3].long() ## extract current trial for all rows in the batch
+        stim = row[:, 3].long()  ## extract current trial for all rows in the batch
 
         ## save current outputs before learning:
         ## sums up all probabilities and then divide them by their counts
