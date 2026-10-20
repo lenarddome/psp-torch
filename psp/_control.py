@@ -136,7 +136,9 @@ class Control:
                 return control
             control = control.to_mapping()
         if not isinstance(control, Mapping):
-            raise TypeError(f"control must be a mapping with the expected keys, not {type(control).__name__}")
+            raise TypeError(
+                f"control must be a mapping with the expected keys, not {type(control).__name__}"
+            )
         unknown = set(control) - _KNOWN_KEYS
         if unknown:
             raise ValueError(f"unknown control keys: {sorted(unknown)}")

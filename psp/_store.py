@@ -9,9 +9,9 @@ __all__ = ["PatternStore"]
 
 
 class PatternStore:
-    """Bookkeeping utility. Stores every ordinal pattern found so far, 
+    """Bookkeeping utility. Stores every ordinal pattern found so far,
     their frequencies, and the centres of the jumping distributions (proposes
-    candidate parameter sets; the points in the parameter space used to jump 
+    candidate parameter sets; the points in the parameter space used to jump
     from to new points).
 
     Two matrices are the same pattern when they are identical element by element,
@@ -75,7 +75,8 @@ class PatternStore:
         canonical[np.isnan(canonical)] = np.nan
         ids = np.empty(n, dtype=np.int64)
         new_rows: list[int] = []
-        ## compare byte-representations of each stored pattern to the new ones, and add any new patterns to the store
+        ## compare byte-representations of each stored pattern to the new ones, and add
+        ## any new patterns to the store
         for i in range(n):
             key = canonical[i].tobytes()
             pattern_id = self._index.get(key)
@@ -87,7 +88,8 @@ class PatternStore:
             ids[i] = pattern_id
         ids_tensor = torch.from_numpy(ids)
 
-        ## adds new rows to the counts and centres tensors, and updates the counts and centres of all patterns
+        ## adds new rows to the counts and centres tensors, and
+        ## updates the counts and centres of all patterns
         if new_rows:
             grown = len(self._patterns)
             self._counts = torch.cat(

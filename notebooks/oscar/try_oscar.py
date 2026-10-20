@@ -8,6 +8,8 @@
 # the C++ fixtures -> a small PSP run. The last cell (optional) runs the compiled C++ through R.
 
 # %% Setup
+import subprocess
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -42,7 +44,11 @@ assert len(ids) == 354
 
 first = data.participant(ids[0])
 print(f"participant {ids[0]}: {len(first.ppt)} trials, {(first.phase == 'test').sum()} at test")
-print(pd.DataFrame({"stim": first.abstim, "trial": first.trial, "phase": first.phase, "resp": first.abresp}).head(8))
+print(
+    pd.DataFrame(
+        {"stim": first.abstim, "trial": first.trial, "phase": first.phase, "resp": first.abresp}
+    ).head(8)
+)
 assert (first.phase == "test").sum() == 72
 
 try:
@@ -60,7 +66,9 @@ assert list(toy[1:, 0]) == [4, 4, 2, 2]
 assert list(toy[0, 14:]) == [0, 0, 0, 1, 0]  # AB: feedback on the common outcome (X)
 assert list(toy[3, 14:]) == [0, 0, 0, 0, 0]  # no feedback at test
 
-unsup = osc.convert_to_state_list(schedule, [0, 0, 0, 2, 2], trials=[1, 2, 3, 4, 5], design="unsupervised")
+unsup = osc.convert_to_state_list(
+    schedule, [0, 0, 0, 2, 2], trials=[1, 2, 3, 4, 5], design="unsupervised"
+)
 print("unsupervised control codes:", unsup[:, 0], " eligible outputs in training:", unsup[1, 9:14])
 assert unsup[0, 0] == 1 and not unsup[1, 9:14].any()
 
@@ -121,7 +129,10 @@ assert float(off_diagonal.min()) >= osc.ETA_FLOOR
 
 # P(rare) at test, per stimulus, from the sums
 means = out["rare_sum"] / out["rare_count"]
-print("test trials per stimulus:", dict(zip(osc.STIMULI, out["rare_count"][0].int().tolist(), strict=True)))
+print(
+    "test trials per stimulus:",
+    dict(zip(osc.STIMULI, out["rare_count"][0].int().tolist(), strict=True)),
+)
 print("mean P(rare) at test:", dict(zip(osc.STIMULI, means[0].numpy().round(3), strict=True)))
 test = probs[probs.ctrl == 2].groupby("stim").rare.mean()
 assert np.allclose(test.to_numpy(), means[0, [osc.STIMULI.index(s) for s in test.index]].numpy())
@@ -152,7 +163,11 @@ print("batched with padding == one at a time: ok")
 # %% 9. zero_first_column: the C++ quirk in AttentionShift, and the alternative
 quirk = osc.oscar(prm, seq, eta0=eta0[:1], weights0=weights0[:1])
 fixed = osc.oscar(prm, seq, eta0=eta0[:1], weights0=weights0[:1], zero_first_column=False)
-diff = (quirk["rare_sum"] / quirk["rare_count"] - fixed["rare_sum"] / fixed["rare_count"]).abs().nan_to_num()
+diff = (
+    (quirk["rare_sum"] / quirk["rare_count"] - fixed["rare_sum"] / fixed["rare_count"])
+    .abs()
+    .nan_to_num()
+)
 print("largest change in mean P(rare) from zeroing each node's own column:", float(diff.max()))
 
 # %% 10. evaluate(): the model of the PSP routine
@@ -176,8 +191,13 @@ print("evaluate() == oscar() with the same initial state: ok")
 p = torch.tensor([[0.5, 0.1, 0.45, 0.9, 0.62]], dtype=torch.float64)
 matrix = osc.imac(p)
 print("probabilities:", p[0].numpy())
-print(pd.DataFrame(matrix[0].int().numpy(), index=["anchor", *osc.EVALUATED_STIMULI],
-                   columns=["anchor", *osc.EVALUATED_STIMULI]))
+print(
+    pd.DataFrame(
+        matrix[0].int().numpy(),
+        index=["anchor", *osc.EVALUATED_STIMULI],
+        columns=["anchor", *osc.EVALUATED_STIMULI],
+    )
+)
 assert matrix[0, 0, 1] == 1  # 0.5 - 0.1 >= 0.125
 assert matrix[0, 0, 2] == 0  # 0.5 - 0.45 within the thresholds
 assert matrix[0, 0, 3] == -1  # 0.5 - 0.9 <= -0.125
@@ -199,8 +219,10 @@ for idx, ppt in enumerate(fixture_ids, 1):
     for k in range(1, 5):
         e0 = torch.tensor(pd.read_csv(FIXTURES / f"eta0_{idx}_{k}.csv").to_numpy()).unsqueeze(0)
         w0 = torch.tensor(pd.read_csv(FIXTURES / f"weights0_{idx}_{k}.csv").to_numpy()).unsqueeze(0)
-        prm_k = {name: torch.tensor([fixture_params[k - 1][i]], dtype=torch.float64)
-                 for i, name in enumerate(osc.OSCAR_PARAMETERS)}
+        prm_k = {
+            name: torch.tensor([fixture_params[k - 1][i]], dtype=torch.float64)
+            for i, name in enumerate(osc.OSCAR_PARAMETERS)
+        }
         mine = osc.oscar(prm_k, seq_i, eta0=e0, weights0=w0, return_trials=True)
         for name in ("prob", "activations", "error"):
             ref = pd.read_csv(FIXTURES / f"{name}_{idx}_{k}.csv").to_numpy()
@@ -226,9 +248,20 @@ print(f"evaluate() and discretize() match R for all {len(ev)} fixture rows")
 
 # %% 13. On the GPU, if there is one: float64 matches the CPU, float32 is close
 if torch.cuda.is_available():
-    gpu = osc.evaluate(par.cuda(), training.cuda(), sequence=sequence.cuda(), eta0=eta0.cuda(), weights0=weights0.cuda())
-    gpu32 = osc.evaluate(par.cuda().float(), training.cuda().float(), sequence=sequence.cuda(),
-                         eta0=eta0.cuda().float(), weights0=weights0.cuda().float())
+    gpu = osc.evaluate(
+        par.cuda(),
+        training.cuda(),
+        sequence=sequence.cuda(),
+        eta0=eta0.cuda(),
+        weights0=weights0.cuda(),
+    )
+    gpu32 = osc.evaluate(
+        par.cuda().float(),
+        training.cuda().float(),
+        sequence=sequence.cuda(),
+        eta0=eta0.cuda().float(),
+        weights0=weights0.cuda().float(),
+    )
     print("GPU float64 vs CPU:", float((gpu.cpu() - fixed_values).abs().max()))
     print("GPU float32 vs CPU:", float((gpu32.double().cpu() - fixed_values).abs().max()))
     assert torch.allclose(gpu.cpu(), fixed_values, atol=1e-10)
@@ -239,29 +272,47 @@ else:
 seq0 = torch.tensor(one)
 gen = torch.Generator().manual_seed(2026)
 init = lower + torch.rand((20, 5), generator=gen, dtype=torch.float64) * (upper - lower)
-control = {"lower": lower, "upper": upper, "init": init, "radius": 1.0, "population": 1_000_000,
-           "iterations": 20, "parameter_names": list(osc.OSCAR_PARAMETERS),
-           "dimensionality": 5, "responses": 5}
-result = PSP(lambda u: osc.evaluate(u, seq0, generator=gen), osc.discretize, control,
-                   quiet=True, generator=gen)
-print(f"{result.patterns} patterns from {result.evaluations:,} evaluations in {result.iterations} iterations")
+control = {
+    "lower": lower,
+    "upper": upper,
+    "init": init,
+    "radius": 1.0,
+    "population": 1_000_000,
+    "iterations": 20,
+    "parameter_names": list(osc.OSCAR_PARAMETERS),
+    "dimensionality": 5,
+    "responses": 5,
+}
+result = PSP(
+    lambda u: osc.evaluate(u, seq0, generator=gen),
+    osc.discretize,
+    control,
+    quiet=True,
+    generator=gen,
+)
+print(
+    f"{result.patterns} patterns from {result.evaluations:,} evaluations "
+    f"in {result.iterations} iterations"
+)
 top = result.ordinal_counts.argsort(descending=True)[:3]
 for k in top.tolist():
     print(int(result.ordinal_counts[k]), "evaluations:\n", result.ordinal_patterns[k].int())
 
 # %% 15. The same for three participants at once with PSPLockstep(), as run_oscar.py does
 controls = [dict(control) for _ in members]
-results = PSPLockstep(lambda u, run: osc.evaluate(u, training, sequence=run, generator=gen), osc.discretize,
-                  controls, quiet=True, generator=gen)
+results = PSPLockstep(
+    lambda u, run: osc.evaluate(u, training, sequence=run, generator=gen),
+    osc.discretize,
+    controls,
+    quiet=True,
+    generator=gen,
+)
 for ppt, res in zip(members, results, strict=True):
     print(f"{ppt}: {res.patterns} patterns, {res.evaluations:,} evaluations")
 
 # %% 16. Optional: the compiled C++ through R, on the same parameters and initial state
 # Needs R with Rcpp, RcppArmadillo, data.table and clobe, the R package psp in the library below
 # (benchmarks/oscar/README.md installs it), and the C++ sources in benchmarks/oscar/tmp-models/.
-import subprocess
-import tempfile
-
 LIB, MODELS = ROOT / "benchmarks" / "oscar" / "r-lib", ROOT / "benchmarks" / "oscar" / "tmp-models"
 if LIB.exists() and (MODELS / "OSCAR.cpp").exists():
     work = Path(tempfile.mkdtemp())
@@ -270,18 +321,25 @@ if LIB.exists() and (MODELS / "OSCAR.cpp").exists():
     pd.DataFrame([par[0].numpy()]).to_csv(work / "params.csv", index=False)
     script = f"""
     lib <- "{LIB}"; models <- "{MODELS}"
-    source("{ROOT / 'benchmarks' / 'oscar' / 'r' / 'common.R'}")
-    p <- unlist(read.csv("{work / 'params.csv'}"))
+    source("{ROOT / "benchmarks" / "oscar" / "r" / "common.R"}")
+    p <- unlist(read.csv("{work / "params.csv"}"))
     st <- list(P = p[1], alpha = p[2], mu = p[3], rho = p[4], beta = p[5], colskip = 4,
-               eta = as.matrix(read.csv("{work / 'eta0.csv'}")), weights = as.matrix(read.csv("{work / 'weights0.csv'}")))
+               eta = as.matrix(read.csv("{work / "eta0.csv"}")),
+               weights = as.matrix(read.csv("{work / "weights0.csv"}")))
     out <- OSCAR(st = st, tr = data.matrix(participant_training("{members[0]}")))
-    write.csv(out$output, "{work / 'prob.csv'}", row.names = FALSE)
+    write.csv(out$output, "{work / "prob.csv"}", row.names = FALSE)
     """
     subprocess.run(["Rscript", "-e", script], check=True, capture_output=True, text=True)
     cpp = pd.read_csv(work / "prob.csv").to_numpy()
-    mine = osc.oscar({k: v[:1] for k, v in batch_params.items()}, torch.tensor(osc.participant_training(data, members[0])),
-                     eta0=eta0[:1], weights0=weights0[:1], return_trials=True)["prob"][0].numpy()
-    print(f"trial-by-trial probabilities, torch vs C++: largest difference {np.abs(mine - cpp).max():.2e}")
+    mine = osc.oscar(
+        {k: v[:1] for k, v in batch_params.items()},
+        torch.tensor(osc.participant_training(data, members[0])),
+        eta0=eta0[:1],
+        weights0=weights0[:1],
+        return_trials=True,
+    )["prob"][0].numpy()
+    difference = np.abs(mine - cpp).max()
+    print(f"trial-by-trial probabilities, torch vs C++: largest difference {difference:.2e}")
     assert np.abs(mine - cpp).max() < 1e-9
 else:
     print("R library or benchmarks/oscar/tmp-models/ missing; skipped")

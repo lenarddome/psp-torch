@@ -1,8 +1,6 @@
 # psp-torch
 
-Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch.
-
-`psp-torch` is a port of the R package [psp](https://lenarddome.com/psp/) (Dome & Wills) that keeps its interface: `PSP()`, the R package's `pspGlobal()`, takes a `model`, a `discretize` function and a `control` mapping, and returns every ordinal pattern the model produced together with the population of its region. Unlike the R package, it evaluates the model on a whole batch of parameter sets at once, so a run can use the GPU, and models written as tensor code need no loop.
+Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch. The methods implemented here were designed to support the type of analyses done by Dome & Wills (2025).
 
 - [Tutorial: what can prospect theory predict?](notebooks/tutorial.ipynb)
 - [Recipe: ALCOVE and the six category structures](notebooks/recipe-alcove.ipynb)
@@ -115,12 +113,12 @@ Pass `device="cuda"` (and, when the model allows it, `dtype=torch.float32`). The
 
 - `psp.models.prospect`: prospect theory on four bets of Kahneman and Tversky (1979), the model of the tutorial.
 - `psp.models.alcove`: ALCOVE (Kruschke, 1992) on the six category structures of Shepard, Hovland and Jenkins (1961): a batched port of catlearn's `slpALCOVE()` that reproduces catlearn's trial-by-trial output to machine precision, with catlearn's training orders and the `nosof94` data shipped as package data. The model of the ALCOVE recipe, with the parameter ranges of Pitt et al. (`ALCOVE_PARAMETERS`) or the learning rates free up to 1 (`ALCOVE_PARAMETERS_FULL`).
-- `psp.models.oscar`: OSCAR on the inverse base-rate effect data of 354 participants (`dome2025ibre`, shipped as package data), batched over parameter sets and participants, validated against the C++ implementation; with the trial-matrix converter, the `evaluate` reduction and clobe's `imac` inequality matrix. The model of the participant-level run in [notebooks/oscar](notebooks/oscar/README.md).
+- `psp.models.oscar`: OSCAR (Dome & Wills, 2026; [arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)) on the inverse base-rate effect data of 354 participants (`dome2025ibre`, shipped as package data), batched over parameter sets and participants, validated against the C++ implementation; with the trial-matrix converter, the `evaluate` reduction and clobe's `imac` inequality matrix. The model of the participant-level run in [notebooks/oscar](notebooks/oscar/README.md).
 - `psp.models.voronoi`: a cheap toy model whose regions are Voronoi cells, used by the tests and benchmarks.
 
 ### Comparing models with human data: `psp.clobe`
 
-`psp.clobe` is a port of the R package [clobe](https://github.com/lenarddome/clobe) 0.8.0, the tools of Dome and Wills (2025) for comparing the heterogeneity of a model with that of people: inequality matrices (`imac`, `patterns`), g-distance (`gdistance`), distances between patterns (`pattern_distance`), and the universal set of possible patterns, counted (`semiorders`, `fubini`, `stirling2`) or enumerated (`orderings`, `brutes`). `imac` is batched, so it can be the `discretize` of a run, and `gdistance` takes the patterns a run found:
+`psp.clobe` is a set of tools of Dome and Wills (2025) for comparing the heterogeneity of a model with that of people: inequality matrices (`imac`, `patterns`), g-distance (`gdistance`), distances between patterns (`pattern_distance`), and the universal set of possible patterns, counted (`semiorders`, `fubini`, `stirling2`) or enumerated (`orderings`, `brutes`). `imac` is batched, so it can be the `discretize` of a run, and `gdistance` takes the patterns a run found:
 
 ```python
 from functools import partial
@@ -155,13 +153,20 @@ Matrices are stacked as `(n, k, k)` rather than `(k, k, n)`, indices are 0-based
 | `notebooks/` | The tutorial, the ALCOVE recipe and the benchmarks, with `alcove/run_alcove.py` for the long run, `oscar/run_oscar.py` for the participant-level OSCAR run, and `execute.py` to refresh the notebooks. |
 | `benchmarks/` | The benchmark scripts and their results; see [benchmarks/README.md](benchmarks/README.md) for what each measures and the commands to run them, here or on another machine. |
 | `docs/` | The architecture diagrams (`alcove-gpu.svg`, `psp-gpu.svg`) and their notes. |
-| `psp-reference/` | The source of the R package this port follows, for reference. |
 
 ## Citation
 
-Dome, L., & Wills, A. J. (2026). psp: Parameter Space Partitioning MCMC for Global Model Evaluation. R package version 1.0.6. <https://CRAN.R-project.org/package=psp>
+Dome, L., & Wills, A. J. (2025). g-Distance: On the comparison of model and human heterogeneity. *Psychological Review, 132*(3), 632-655. [https://doi.org/10.1037/rev0000550](https://doi.org/10.1037/rev0000550)
 
-Pitt, M. A., Kim, W., Navarro, D. J., & Myung, J. I. (2006). Global model analysis by parameter space partitioning. *Psychological Review, 113*(1), 57–83. <https://doi.org/10.1037/0033-295X.113.1.57>
+Dome, L., & Wills, A. J. (2026). psp: Parameter Space Partitioning MCMC for Global Model Evaluation. R package version 1.0.6. [https://CRAN.R-project.org/package=psp](https://CRAN.R-project.org/package=psp)
+
+Dome, L., & Wills, A. J. (2026). Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv:2608.06149). arXiv. [https://doi.org/10.48550/arXiv.2608.06149](https://doi.org/10.48550/arXiv.2608.06149)
+
+Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47.
+
+Kruschke, J. K. (1992). ALCOVE: An exemplar-based connectionist model of category learning. Psychological Review, 99(1), 22–44. [https://doi.org/10.1037/0033-295X.99.1.22](https://doi.org/10.1037/0033-295X.99.1.22)
+
+Pitt, M. A., Kim, W., Navarro, D. J., & Myung, J. I. (2006). Global model analysis by parameter space partitioning. *Psychological Review, 113*(1), 57–83. [https://doi.org/10.1037/0033-295X.113.1.57](https://doi.org/10.1037/0033-295X.113.1.57)
 
 ## License
 

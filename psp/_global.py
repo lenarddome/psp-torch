@@ -90,10 +90,11 @@ def hyper_points(
         Radius of each dimension, shape ``(dimensions,)``; its device and dtype are used.
     generator
         Random number generator on the same device as ``radius``.
-        
+
     References
     ----------
-    Weisstein, Eric W. "Hypersphere Point Picking." From MathWorld--A Wolfram Resource. https://mathworld.wolfram.com/HyperspherePointPicking.html
+    Weisstein, Eric W. "Hypersphere Point Picking." From MathWorld--A Wolfram Resource.
+    https://mathworld.wolfram.com/HyperspherePointPicking.html
     """
     dimensions = int(radius.numel())
     direction = torch.randn(
@@ -156,7 +157,7 @@ def PSP(
     control
         The settings as a set of control arguments, either a :class:`Control` or
         a mapping with the same keys. The required keys are:
-ß
+
         ``init``
             Starting parameter sets, one per row.
         ``lower``, ``upper``
@@ -233,13 +234,14 @@ def PSP(
         discretize = rowwise(discretize)
 
     responses = settings.responses ## specify the length of the vector the model returns
-    dimensionality = settings.dimensionality ## specify the size of the square matrix discretize returns
+    dimensionality = settings.dimensionality ## specify the size of the discretized square matrix
 
     def evaluate(jumping: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        nonlocal responses, dimensionality ## allow evaluate to modify the values of responses and dimensionality if they are None
+        nonlocal responses, dimensionality ## allow evaluate to modify the global values if None
         rows = int(jumping.shape[0])
-        ## evaluate the model on the jumping parameter sets and ensure the output is a numeric tensor on the correct device
-        continuous = as_numeric_tensor(model(jumping), "model", run_device) 
+        ## evaluate the model on the jumping parameter sets
+        ## ensure the output is a numeric tensor on the correct device
+        continuous = as_numeric_tensor(model(jumping), "model", run_device)
         ## guard against mismatching shapes of the model output and the expected responses
         if continuous.ndim == 1 and rows == 1:
             continuous = continuous.unsqueeze(0)
@@ -255,9 +257,10 @@ def PSP(
                 f"model returned {continuous.shape[1]} values, but control['responses'] "
                 f"is {responses}"
             )
-        continuous = continuous.to(run_dtype) ## ensure the model output is in the correct dtype for the run
+        continuous = continuous.to(run_dtype) ## ensure the model output is in the correct dtype
 
-        ## discretize the continuous outputs and ensure the result is a numeric tensor on the correct device
+        ## discretize the continuous outputs and
+        ## ensure the result is a numeric tensor on the correct device
         ordinal = as_numeric_tensor(discretize(continuous), "discretize", run_device)
         if ordinal.ndim == 2 and rows == 1:
             ordinal = ordinal.unsqueeze(0)
@@ -296,9 +299,10 @@ def PSP(
                 stimuli_names = tuple(f"stimulus_{k + 1}" for k in range(int(continuous.shape[1])))
             writer = RunWriter(path, extension, settings.parameter_names, stimuli_names)
             writer.write(0, jumping, continuous, ids)
-        underpopulated = store.underpopulated(settings.population) ## index of patterns that have fewer than the required population of parameter sets
+        ## index of patterns that have fewer than the required population of parameter sets
+        underpopulated = store.underpopulated(settings.population)
 
-        ## run parameter space partitioning until all patterns are full or the maximum number of iterations is reached
+        ## run parameter space partitioning until all patterns are full or all iterations are done
         while underpopulated.numel() > 0 and iteration < settings.iterations:
             iteration += 1
             if not quiet:

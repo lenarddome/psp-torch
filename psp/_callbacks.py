@@ -31,7 +31,7 @@ def rowwise(
     batched operation to a sequential one. This function is here to help users
     who are porting models from the R package, which is written for one parameter
     set at a time. Use it with ``PSP(..., batched=False)``.
-    
+
     ``rowwise(fn)`` calls ``fn`` once per row of its input and stacks the results,
     so a ``model`` or ``discretize`` written as in the R package, for a single
     vector, can be handed to :func:`psp.PSP`. Each row is passed as a 1-D

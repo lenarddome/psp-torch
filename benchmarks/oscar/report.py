@@ -127,9 +127,7 @@ def model_section() -> list[str]:
     ax.set_xscale("log", base=4)
     ax.set_yscale("log")
     ax.xaxis.set_major_formatter(lambda v, _: f"{v:,.0f}")
-    ax.yaxis.set_major_formatter(
-        lambda v, _: f"{v / 1000:g} ms" if v >= 1000 else f"{v:g} µs"
-    )
+    ax.yaxis.set_major_formatter(lambda v, _: f"{v / 1000:g} ms" if v >= 1000 else f"{v:g} µs")
     ax.set_xlabel("parameter sets per call")
     ax.set_title("Time per evaluation of OSCAR, one participant, log scales", pad=28)
     ax.annotate(
@@ -154,10 +152,13 @@ def model_section() -> list[str]:
     return [
         "## One call of the model",
         "",
-        f"One participant ({int(r.evaluations.iloc[0]):,} parameter sets for R, 3 repeats; 5 repeats per batch for torch). "
-        "R calls the compiled `OSCAR()` once per parameter set, as `pspGlobal()` calls the model; `evaluate()` adds what "
-        "the routine does around it (a fresh random initial state, and the data.table reduction to P(rare) at test). "
-        "The port's `evaluate()` does all of that for the whole batch in one call; its time includes `discretize()`.",
+        f"One participant ({int(r.evaluations.iloc[0]):,} parameter sets for R, 3 repeats; "
+        "5 repeats per batch for torch). "
+        "R calls the compiled `OSCAR()` once per parameter set, as `pspGlobal()` calls the model; "
+        "`evaluate()` adds what the routine does around it (a fresh random initial state, "
+        "and the data.table reduction to P(rare) at test). "
+        "The port's `evaluate()` does all of that for the whole batch in one call; "
+        "its time includes `discretize()`.",
         "",
         "| R + RcppArmadillo | per evaluation |",
         "| --- | --- |",
@@ -175,10 +176,12 @@ def model_section() -> list[str]:
         "",
         "![time per evaluation](model.png)",
         "",
-        "Where the GPU lines show one colour, float32 and float64 coincide: below a few thousand parameter sets per "
-        "call the GPU's time is kernel launches (about 112 trials × 10 attention-shift iterations of small operations "
-        "per call), not arithmetic, so the precision does not matter. The same fixed cost makes one torch call "
-        "with a single parameter set some 35 times slower than one C++ call.",
+        "Where the GPU lines show one colour, float32 and float64 coincide: "
+        "below a few thousand parameter sets per call the GPU's time is kernel launches "
+        "(about 112 trials × 10 attention-shift iterations of small operations per call), "
+        "not arithmetic, so the precision does not matter. "
+        "The same fixed cost makes one torch call with a single parameter set "
+        "some 35 times slower than one C++ call.",
         "",
     ]
 
@@ -196,18 +199,20 @@ def keys_torch(directory: Path) -> pd.DataFrame:
 
 
 def contention_note(r_sum: pd.DataFrame, workers: int) -> list[str]:
-    """How long one R participant took in the parallel run, against the same work in a lone process."""
+    """How long one R participant took in the parallel run, against the same work alone."""
     if not (RESULTS / "model_r.csv").exists():
         return []
     r = pd.read_csv(RESULTS / "model_r.csv")
     per_eval = (r.seconds / r.evaluations)[r.what == "evaluate()"].median()
     alone = r_sum.evaluations.median() * per_eval
     return [
-        f"Each R participant took a median of {r_sum.seconds.median():.0f} s in the parallel run; the same "
-        f"{r_sum.evaluations.median():,.0f} evaluations at the {1000 * per_eval:.2f} ms of a lone `evaluate()` "
-        f"come to about {alone:.0f} s, so with {workers} workers on {os.cpu_count()} hardware threads each R process "
-        f"ran about {r_sum.seconds.median() / alone:.1f} times slower than alone. That is the R routine as `psp.R` "
-        "runs it on this machine; the port's CPU run used torch's own threads in one process.",
+        f"Each R participant took a median of {r_sum.seconds.median():.0f} s in the parallel run; "
+        f"the same {r_sum.evaluations.median():,.0f} evaluations "
+        f"at the {1000 * per_eval:.2f} ms of a lone `evaluate()` come to about {alone:.0f} s, "
+        f"so with {workers} workers on {os.cpu_count()} hardware threads "
+        f"each R process ran about {r_sum.seconds.median() / alone:.1f} times slower than alone. "
+        "That is the R routine as `psp.R` runs it on this machine; "
+        "the port's CPU run used torch's own threads in one process.",
         "",
     ]
 
@@ -250,7 +255,10 @@ def psp_section() -> list[str]:
                 "minutes, all participants": f"{seconds / 60:.1f}",
                 "evaluations per second": f"{summary.evaluations.sum() / seconds:,.0f}",
                 "speed-up vs R": times(builds[0][2] / seconds),
-                "patterns per participant": f"{summary.patterns.min()}–{summary.patterns.max()}, median {summary.patterns.median():.0f}",
+                "patterns per participant": (
+                    f"{summary.patterns.min()}–{summary.patterns.max()}, "
+                    f"median {summary.patterns.median():.0f}"
+                ),
                 "evaluations per participant": f"{summary.evaluations.median():,.0f}",
             }
         )
@@ -286,7 +294,8 @@ def psp_section() -> list[str]:
     ax.set_xlim(0, max(minutes) * 1.15)
     ax.set_title(f"Wall-clock time of the routine for {n} participants", pad=24)
     ax.annotate(
-        "lower is faster; R runs the participants in parallel processes, the port all at once in one",
+        "lower is faster; "
+        "R runs the participants in parallel processes, the port all at once in one",
         xy=(0, 1),
         xycoords="axes fraction",
         xytext=(0, 6),
@@ -308,12 +317,18 @@ def psp_section() -> list[str]:
     return [
         "## The participant-level routine",
         "",
-        f"The first {n} participants, 100 starting points (one matrix shared by all participants, as `psp.R`), radius 1, "
-        "population 1,000,000 (so every pattern keeps proposing until the cap), 200 iterations, seed 2026. "
-        f"R runs `pspGlobal()` with the compiled OSCAR once per participant, spread over {int(r_wall.workers)} forked "
-        "processes (`psp.R` runs foreach over `detectCores() - 2`); its time is the wall clock of the whole parallel run. "
-        "The port runs `notebooks/oscar/run_oscar.py --no-save`, every participant's search advancing in lockstep with "
-        "one batched OSCAR call per iteration; its time is the wall clock of that whole process, "
+        f"The first {n} participants, "
+        "100 starting points (one matrix shared by all participants, as `psp.R`), radius 1, "
+        "population 1,000,000 (so every pattern keeps proposing until the cap), "
+        "200 iterations, seed 2026. "
+        "R runs `pspGlobal()` with the compiled OSCAR once per participant, "
+        f"spread over {int(r_wall.workers)} forked processes "
+        "(`psp.R` runs foreach over `detectCores() - 2`); "
+        "its time is the wall clock of the whole parallel run. "
+        "The port runs `notebooks/oscar/run_oscar.py --no-save`, "
+        "every participant's search advancing in lockstep "
+        "with one batched OSCAR call per iteration; "
+        "its time is the wall clock of that whole process, "
         "Python's start-up, data loading and CUDA initialisation included.",
         "",
         markdown(table),
@@ -323,15 +338,18 @@ def psp_section() -> list[str]:
         "",
         "Do they find the same inequality matrices? Per participant, against R:",
         "",
-        "| build | shared (median) | R only | torch only | share of evaluations in shared matrices (worst participant) |",
+        "| build | shared (median) | R only | torch only "
+        "| share of evaluations in shared matrices (worst participant) |",
         "| --- | --- | --- | --- | --- |",
         *[
-            f"| {b} | {r.shared:.0f} | {r.r_only:.0f} | {r.torch_only:.0f} | R {r.r_in_shared:.1%}, torch {r.t_in_shared:.1%} |"
+            f"| {b} | {r.shared:.0f} | {r.r_only:.0f} | {r.torch_only:.0f} "
+            f"| R {r.r_in_shared:.1%}, torch {r.t_in_shared:.1%} |"
             for b, r in summary.iterrows()
         ],
         "",
-        "The model draws its initial state at random on every evaluation, and R and torch use different random numbers, "
-        "so no two runs take the same path; matrices only one run found hold one or a few evaluations each.",
+        "The model draws its initial state at random on every evaluation, "
+        "and R and torch use different random numbers, so no two runs take the same path; "
+        "matrices only one run found hold one or a few evaluations each.",
         "",
     ]
 
@@ -347,9 +365,12 @@ def main() -> None:
         "",
         f"- CPU: {cpu_name()}, torch threads {torch.get_num_threads()}",
         f"- GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'none'}",
-        f"- {platform.system()} {platform.release()}, Python {platform.python_version()}, torch {torch.__version__}, {r_version()}",
-        "- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, OSCAR compiled from `benchmarks/oscar/tmp-models/` "
-        "(`architecture.cpp` + `OSCAR.cpp`) with `Rcpp::sourceCpp()` and R's default flags (`-O2`).",
+        f"- {platform.system()} {platform.release()}, Python {platform.python_version()}, "
+        f"torch {torch.__version__}, {r_version()}",
+        "- R side: psp 1.0.6 from CRAN in `benchmarks/oscar/r-lib`, "
+        "OSCAR compiled from `benchmarks/oscar/tmp-models/` "
+        "(`architecture.cpp` + `OSCAR.cpp`) with `Rcpp::sourceCpp()` "
+        "and R's default flags (`-O2`).",
         "",
     ]
     (RESULTS / "report.md").write_text("\n".join(lines), encoding="utf-8")

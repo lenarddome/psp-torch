@@ -7,8 +7,8 @@ Usage::
 
 Two measurements, both written to ``benchmarks/oscar/results/``:
 
-- ``model``: seconds per evaluation of one participant's OSCAR, the C++ called once per parameter
-  set from R (``r/model.R``: ``OSCAR()`` alone and the routine's ``evaluate()``), against one batched
+- ``model``: seconds per evaluation of OSCAR, the C++ called once per parameter set
+  from R (``r/model.R``: ``OSCAR()`` alone and the routine's ``evaluate()``), against one batched
   call of the port's ``evaluate()`` for 1 to 16,384 parameter sets (``model.py``).
 - ``psp``: the participant-level routine for the first N participants with reduced settings. R runs
   ``pspGlobal()`` per participant, the participants spread over ``--workers`` processes as psp.R
