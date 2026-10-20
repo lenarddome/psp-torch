@@ -1,3 +1,13 @@
+```{image} assets/psp-lockup-light.svg
+:alt: psp, parameter space partitioning
+:class: only-light psp-hero
+```
+
+```{image} assets/psp-lockup-dark.svg
+:alt: psp, parameter space partitioning
+:class: only-dark psp-hero
+```
+
 # psp-torch
 
 Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung,

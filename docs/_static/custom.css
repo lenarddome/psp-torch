@@ -5,66 +5,76 @@
   height: auto;
 }
 
-/* The psp palette: navy #1B2340, coral #FF6B5A, yellow #FFD866, teal #139AAE, sky #BFE7EE.
-   Text keeps at least 4.5:1 contrast with its background: on white, links use the teal deepened
-   towards navy (#15768D, 5.2:1), since the teal itself gives 3.4:1; coral, yellow and sky, too
-   light for text on white, are used for accents and highlights. Dark mode is navy, the
-   background of the dark logo, where every colour of the palette reads as text. */
+/* The colours of the logo: navy #1B2340, coral #FF6B5A and yellow #FFD866, with the greys of its
+   tagline (#4A5068 on light, #B8BED2 on dark) and the box colour of the dark logo (#34417A).
+   Text keeps at least 4.5:1 contrast with its background. Coral gives 2.8:1 on white, so in light
+   mode it marks links (their underline) and accents rather than colouring text. */
 :root {
   --psp-navy: #1b2340;
-  --psp-navy-raised: #232c4f;
-  --psp-navy-surface: #2a3560;
+  --psp-navy-box: #34417a;
   --psp-coral: #ff6b5a;
   --psp-yellow: #ffd866;
-  --psp-teal: #139aae;
-  --psp-teal-deep: #15768d;
-  --psp-sky: #bfe7ee;
+  --psp-grey-light: #4a5068;
+  --psp-grey-dark: #b8bed2;
 }
 
 html[data-theme="light"] {
-  --pst-color-primary: var(--psp-teal-deep);
-  --pst-color-primary-bg: var(--psp-sky);
+  --pst-color-primary: var(--psp-navy);
+  --pst-color-primary-bg: #e8eaf2;
   --pst-color-secondary: var(--psp-coral);
   --pst-color-secondary-bg: #ffe1dd;
   --pst-color-accent: var(--psp-coral);
-  --pst-color-link: var(--psp-teal-deep);
+  --pst-color-link: var(--psp-navy);
   --pst-color-link-hover: var(--psp-navy);
   --pst-color-link-higher-contrast: var(--psp-navy);
   --pst-color-heading: var(--psp-navy);
-  --pst-color-text-base: #1f2433;
+  --pst-color-text-base: var(--psp-navy);
+  --pst-color-text-muted: var(--psp-grey-light);
   --pst-color-inline-code: var(--psp-navy);
-  --pst-color-inline-code-links: var(--psp-teal-deep);
-  --pst-color-target: #fff2c7;
-  --pst-color-table-row-hover-bg: #e8f6f9;
-  --mystnb-source-margin-color: var(--psp-teal);
+  --pst-color-inline-code-links: var(--psp-navy);
+  --pst-color-target: #fff3cc;
+  --pst-color-table-row-hover-bg: #fff8e1;
+  --mystnb-source-margin-color: var(--psp-coral);
 }
 
 html[data-theme="dark"] {
   --pst-color-background: var(--psp-navy);
-  --pst-color-on-background: var(--psp-navy-raised);
-  --pst-color-surface: var(--psp-navy-surface);
-  --pst-color-on-surface: #e8ecf6;
-  --pst-color-border: #3a4675;
-  --pst-color-primary: var(--psp-sky);
-  --pst-color-primary-bg: var(--psp-navy-surface);
+  --pst-color-on-background: var(--psp-navy);
+  --pst-color-surface: var(--psp-navy-box);
+  --pst-color-on-surface: #ffffff;
+  --pst-color-border: var(--psp-navy-box);
+  --pst-color-primary: var(--psp-yellow);
+  --pst-color-primary-bg: var(--psp-navy-box);
   --pst-color-secondary: var(--psp-coral);
   --pst-color-secondary-bg: #4a2f3f;
-  --pst-color-accent: var(--psp-yellow);
-  --pst-color-link: var(--psp-sky);
-  --pst-color-link-hover: var(--psp-yellow);
-  --pst-color-link-higher-contrast: var(--psp-sky);
+  --pst-color-accent: var(--psp-coral);
+  --pst-color-link: var(--psp-yellow);
+  --pst-color-link-hover: #ffffff;
+  --pst-color-link-higher-contrast: var(--psp-yellow);
   --pst-color-heading: #ffffff;
-  --pst-color-text-base: #e8ecf6;
-  --pst-color-text-muted: #aab3cf;
-  --pst-color-inline-code: var(--psp-yellow);
-  --pst-color-inline-code-links: var(--psp-sky);
+  --pst-color-text-base: #ffffff;
+  --pst-color-text-muted: var(--psp-grey-dark);
+  --pst-color-inline-code: #ffffff;
+  --pst-color-inline-code-links: var(--psp-yellow);
   --pst-color-target: #4a4430;
-  --pst-color-table-row-hover-bg: var(--psp-navy-surface);
-  --mystnb-source-margin-color: var(--psp-teal);
+  --pst-color-table-row-hover-bg: var(--psp-navy-box);
+  --mystnb-source-margin-color: var(--psp-coral);
 }
 
-/* the header in the navy of the palette, set off from the page by a border */
+/* links are underlined in coral, the dot of the wordmark */
+a {
+  text-decoration-color: var(--psp-coral);
+}
+
+/* the header in navy in dark mode, set off from the page by a border */
 html[data-theme="dark"] .bd-header {
   background-color: var(--psp-navy) !important;
   border-bottom: 1px solid var(--pst-color-border);
+}
+
+/* the logo at the top of the landing page */
+.psp-hero {
+  display: block;
+  width: min(420px, 100%);
+  margin: 0 0 1.5rem;
 }

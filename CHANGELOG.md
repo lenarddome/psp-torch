@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-20
+
 ### Added
 
 - `psp.clobe`: a port of the R package clobe 0.8.0 (Dome and Wills, 2025): `imac`, `patterns`,
