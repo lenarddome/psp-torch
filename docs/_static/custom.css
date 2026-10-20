@@ -1,0 +1,6 @@
+/* The notebooks save each figure with its width and height. When the page is narrower than the
+   figure, the theme shrinks the width but keeps the height; let the height follow instead. */
+.cell_output img {
+  max-width: 100%;
+  height: auto;
+}

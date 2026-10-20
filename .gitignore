@@ -71,8 +71,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
-# generated at build time: the API pages by autosummary, the notebooks copied by docs/conf.py
-docs/api/generated/
+# the notebooks, copied in by docs/conf.py at build time
 docs/notebooks/
 
 # PyBuilder
