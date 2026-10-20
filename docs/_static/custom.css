@@ -4,3 +4,67 @@
   max-width: 100%;
   height: auto;
 }
+
+/* The psp palette: navy #1B2340, coral #FF6B5A, yellow #FFD866, teal #139AAE, sky #BFE7EE.
+   Text keeps at least 4.5:1 contrast with its background: on white, links use the teal deepened
+   towards navy (#15768D, 5.2:1), since the teal itself gives 3.4:1; coral, yellow and sky, too
+   light for text on white, are used for accents and highlights. Dark mode is navy, the
+   background of the dark logo, where every colour of the palette reads as text. */
+:root {
+  --psp-navy: #1b2340;
+  --psp-navy-raised: #232c4f;
+  --psp-navy-surface: #2a3560;
+  --psp-coral: #ff6b5a;
+  --psp-yellow: #ffd866;
+  --psp-teal: #139aae;
+  --psp-teal-deep: #15768d;
+  --psp-sky: #bfe7ee;
+}
+
+html[data-theme="light"] {
+  --pst-color-primary: var(--psp-teal-deep);
+  --pst-color-primary-bg: var(--psp-sky);
+  --pst-color-secondary: var(--psp-coral);
+  --pst-color-secondary-bg: #ffe1dd;
+  --pst-color-accent: var(--psp-coral);
+  --pst-color-link: var(--psp-teal-deep);
+  --pst-color-link-hover: var(--psp-navy);
+  --pst-color-link-higher-contrast: var(--psp-navy);
+  --pst-color-heading: var(--psp-navy);
+  --pst-color-text-base: #1f2433;
+  --pst-color-inline-code: var(--psp-navy);
+  --pst-color-inline-code-links: var(--psp-teal-deep);
+  --pst-color-target: #fff2c7;
+  --pst-color-table-row-hover-bg: #e8f6f9;
+  --mystnb-source-margin-color: var(--psp-teal);
+}
+
+html[data-theme="dark"] {
+  --pst-color-background: var(--psp-navy);
+  --pst-color-on-background: var(--psp-navy-raised);
+  --pst-color-surface: var(--psp-navy-surface);
+  --pst-color-on-surface: #e8ecf6;
+  --pst-color-border: #3a4675;
+  --pst-color-primary: var(--psp-sky);
+  --pst-color-primary-bg: var(--psp-navy-surface);
+  --pst-color-secondary: var(--psp-coral);
+  --pst-color-secondary-bg: #4a2f3f;
+  --pst-color-accent: var(--psp-yellow);
+  --pst-color-link: var(--psp-sky);
+  --pst-color-link-hover: var(--psp-yellow);
+  --pst-color-link-higher-contrast: var(--psp-sky);
+  --pst-color-heading: #ffffff;
+  --pst-color-text-base: #e8ecf6;
+  --pst-color-text-muted: #aab3cf;
+  --pst-color-inline-code: var(--psp-yellow);
+  --pst-color-inline-code-links: var(--psp-sky);
+  --pst-color-target: #4a4430;
+  --pst-color-table-row-hover-bg: var(--psp-navy-surface);
+  --mystnb-source-margin-color: var(--psp-teal);
+}
+
+/* the header in the navy of the palette, set off from the page by a border */
+html[data-theme="dark"] .bd-header {
+  background-color: var(--psp-navy) !important;
+  border-bottom: 1px solid var(--pst-color-border);
+}

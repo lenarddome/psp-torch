@@ -82,7 +82,13 @@ myst_heading_anchors = 3
 
 html_theme = "pydata_sphinx_theme"
 html_title = f"psp-torch {release}"
+html_favicon = "assets/psp-favicon.svg"
 html_theme_options = {
+    "logo": {
+        "image_light": "_static/psp-wordmark-light.svg",
+        "image_dark": "_static/psp-wordmark-dark.svg",
+        "alt_text": "psp",
+    },
     "github_url": GITHUB,
     "navbar_align": "left",
     "show_toc_level": 2,
@@ -96,7 +102,8 @@ html_context = {
     "github_version": "main",
     "doc_path": "docs",
 }
-html_static_path = ["_static"]
+# the logos in assets/ are served from _static/, next to the stylesheet
+html_static_path = ["_static", "assets"]
 html_css_files = ["custom.css"]
 
 # -- Copying the notebooks in ----------------------------------------------------------------
