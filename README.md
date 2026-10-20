@@ -2,6 +2,12 @@
 
 [![psp: parameter space partitioning](https://raw.githubusercontent.com/lenarddome/psp-torch/main/docs/assets/psp-lockup-light.svg)](https://lenarddome.github.io/psp-torch/)
 
+[![PyPI](https://img.shields.io/pypi/v/psp-torch)](https://pypi.org/project/psp-torch/)
+[![Python](https://img.shields.io/pypi/pyversions/psp-torch)](https://pypi.org/project/psp-torch/)
+[![CI](https://github.com/lenarddome/psp-torch/actions/workflows/ci.yml/badge.svg)](https://github.com/lenarddome/psp-torch/actions/workflows/ci.yml)
+[![Docs](https://github.com/lenarddome/psp-torch/actions/workflows/docs.yml/badge.svg)](https://lenarddome.github.io/psp-torch/)
+[![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue)](https://github.com/lenarddome/psp-torch/blob/main/LICENSE)
+
 Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch. The methods implemented here were designed to support the type of analyses done by Dome & Wills (2025).
 
 - [Documentation](https://lenarddome.github.io/psp-torch/)
