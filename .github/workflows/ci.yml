@@ -4,26 +4,82 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
+# a new push to the same branch or pull request cancels the run it replaces
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# the benchmarks (benchmarks/, notebooks/benchmarks*.ipynb) take hours and are not run here
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.10", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
       - name: Install (CPU build of torch)
-        run: uv sync --python ${{ matrix.python-version }} --no-group cu128 --group cpu
+        run: uv sync --locked --python 3.12 --no-group cu128 --group cpu
       - name: Lint
         run: |
           uv run ruff check psp tests benchmarks notebooks/alcove notebooks/execute.py
           uv run ruff format --check psp tests
       - name: Type-check
         run: uv run mypy psp
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install (CPU build of torch)
+        run: uv sync --locked --python ${{ matrix.python-version }} --no-group cu128 --group cpu
       - name: Test
-        run: uv run pytest
+        run: uv run pytest --durations=10
+
+  # the test suite against the built wheel rather than the source tree, so a data file
+  # left out of the package fails here
+  wheel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Build
+        run: uv build
+      - name: Install the wheel in a clean environment
+        run: |
+          uv venv --python 3.12 "$RUNNER_TEMP/venv"
+          VIRTUAL_ENV="$RUNNER_TEMP/venv" uv pip install dist/*.whl pytest pandas pyarrow \
+            --extra-index-url https://download.pytorch.org/whl/cpu --index-strategy unsafe-best-match
+      - name: Test the installed package
+        run: |
+          cp -r tests "$RUNNER_TEMP/"
+          cd "$RUNNER_TEMP"
+          venv/bin/python -c "import psp; assert 'site-packages' in psp.__file__, psp.__file__"
+          venv/bin/python -m pytest tests -q
+
+  notebooks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install (CPU build of torch)
+        run: uv sync --locked --python 3.12 --no-group cu128 --group cpu
+      # recipe-alcove reads the committed results of notebooks/alcove/run_alcove.py
+      - name: Execute the tutorial and the ALCOVE recipe
+        run: uv run python notebooks/execute.py tutorial.ipynb recipe-alcove.ipynb
