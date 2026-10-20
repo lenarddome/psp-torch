@@ -51,6 +51,7 @@ docs = [
 
 [project.urls]
 Homepage = "https://github.com/lenarddome/psp-torch"
+Documentation = "https://lenarddome.github.io/psp-torch/"
 "R package" = "https://lenarddome.com/psp/"
 
 [tool.uv]

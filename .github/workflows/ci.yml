@@ -11,6 +11,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # `uv run` would otherwise re-sync to the default groups, swapping the CPU build of torch for CUDA
+  UV_NO_SYNC: "1"
+
 # the benchmarks (benchmarks/, notebooks/benchmarks*.ipynb) take hours and are not run here
 jobs:
   lint:

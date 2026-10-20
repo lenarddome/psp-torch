@@ -2,6 +2,7 @@
 
 Parameter space partitioning MCMC for global model evaluation (Pitt, Kim, Navarro & Myung, 2006), in PyTorch. The methods implemented here were designed to support the type of analyses done by Dome & Wills (2025).
 
+- [Documentation](https://lenarddome.github.io/psp-torch/)
 - [Tutorial: what can prospect theory predict?](notebooks/tutorial.ipynb)
 - [Recipe: ALCOVE and the six category structures](notebooks/recipe-alcove.ipynb)
 - [Benchmarks: the port against the R package, and when the GPU pays off](notebooks/benchmarks.ipynb) (how to run them: [benchmarks/README.md](benchmarks/README.md))

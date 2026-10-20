@@ -1,0 +1,59 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# a new push to the same branch or pull request cancels the build it replaces
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # `uv run` would otherwise re-sync to the default groups, swapping the CPU build of torch for CUDA
+  UV_NO_SYNC: "1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install (CPU build of torch, docs tools)
+        run: uv sync --locked --python 3.12 --no-group cu128 --group cpu --group docs
+      # -n checks every cross-reference, -W turns every warning into an error
+      - name: Build
+        run: uv run sphinx-build -b html docs docs/_build/html -n -W --keep-going
+      - name: Upload the site
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/_build/html
+
+  # needs Settings > Pages > Source set to "GitHub Actions"
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # never cancel a deployment halfway
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

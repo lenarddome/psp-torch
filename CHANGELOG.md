@@ -24,6 +24,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   is also saved as a vector PDF and a 300 dpi PNG under `notebooks/figures/` (not tracked).
 - `benchmarks/clobe/` and `notebooks/benchmarks-clobe.ipynb`: `psp.clobe` against clobe 0.8.0 on
   the same inputs, function by function, on the CPU and the GPU.
+- `docs/`: a documentation site built with Sphinx: getting started, a user guide, the tutorials,
+  the clobe vignettes and the benchmarks (the notebooks, shown with their saved outputs), and an
+  API reference for `psp`, `psp.clobe` and the built-in models, generated from the docstrings.
+  `uv run --group docs sphinx-build -b html docs docs/_build/html` builds it locally.
+- Continuous integration: `.github/workflows/ci.yml` lints, type-checks and runs the test suite on
+  Python 3.10 to 3.12 (CPU), runs the tests against the built wheel, and executes the tutorial and
+  the ALCOVE recipe; `.github/workflows/docs.yml` builds the documentation on every pull request,
+  failing on any warning or broken cross-reference, and deploys it to GitHub Pages from `main`.
 
 ### Changed
 
@@ -31,6 +39,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `psp.pspGlobal()` is now `psp.PSP()`; its arguments and result are unchanged.
 - `psp.pspMany()` is now `psp.PSPLockstep()`, and its model type `psp.ManyModel` is now
   `psp.LockstepModel`; arguments and results are unchanged.
+- The tutorial no longer has the interactive "Explore it yourself" figure: its cell raised an
+  `IndexError`, and its widget made `notebooks/execute.py` hang. The tutorial is re-executed.
+- References: the README and the documentation list every work they cite, each checked against
+  its publisher's record; Kahneman and Tversky (1979) is now complete, and Shepard, Hovland and
+  Jenkins (1961), Nosofsky et al. (1994) and catlearn (Wills et al., 2025) are added. OSCAR is
+  cited as Dome and Wills (2026, arXiv:2608.06149) in `psp.models.oscar`, the OSCAR notebooks,
+  READMEs and benchmark scripts.
 
 ## [0.1.0] - 2026-10-08
 
